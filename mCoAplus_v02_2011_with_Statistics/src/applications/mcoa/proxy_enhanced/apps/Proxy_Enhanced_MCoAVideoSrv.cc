@@ -24,6 +24,7 @@
 
 #define CN_APP_MESSAGE 50
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
+#define SEND_VIDEO_NOW 148
 
 using std::cout;
 
@@ -117,6 +118,10 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 			return; // and that's it!
 		}
 
+    	if (msg->getKind() == SEND_VIDEO_NOW){
+    	    sendStreamData(msg);
+    	}
+
 
 
 
@@ -135,7 +140,13 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
             cout<<"MCoASrv received Video-Request from SRC-IP-Adress: "<<srcIPAdresse<<" with sequence number:"<<requestForVideoStream->getSequenceNumber()<<endl;
             //TODO das hier noch mal fixen, das korrekt Daten gesendet werden dann
 
-            sendStreamData(msg);
+
+
+            //Delay the sending process, because of the control flow app having to work as well
+              cMessage *sendVideoNow = new cMessage("SEND VIDEO NOW");
+              sendVideoNow->setKind(SEND_VIDEO_NOW);
+              simtime_t interval = (*waitInterval);
+                 scheduleAt(simTime()+interval, sendVideoNow);
 
 
 
