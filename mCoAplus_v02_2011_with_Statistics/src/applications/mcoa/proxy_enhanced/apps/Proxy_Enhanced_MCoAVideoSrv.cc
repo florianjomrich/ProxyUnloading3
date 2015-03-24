@@ -143,10 +143,9 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
 
             //Delay the sending process, because of the control flow app having to work as well
-              cMessage *sendVideoNow = new cMessage("SEND VIDEO NOW");
-              sendVideoNow->setKind(SEND_VIDEO_NOW);
+              requestForVideoStream->setKind(SEND_VIDEO_NOW);
               simtime_t interval = (*waitInterval);
-                 scheduleAt(simTime()+interval, sendVideoNow);
+              scheduleAt(simTime()+interval, requestForVideoStream);
 
 
 
