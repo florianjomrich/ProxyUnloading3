@@ -51,7 +51,7 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
 
 	MCoAUDPBase::startMCoAUDPBase();
 
-
+    waitInterval = &par("waitInterval");
     packetLen = &par("packetLen");
     videoSize = &par("videoSize");
     localPort = par("localPort");
@@ -129,20 +129,21 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
     else{
 
         if(dynamic_cast<RequestVideoStream*>(msg)){
-
+            cout<<"MCoASrv: Request for sending Video received"<<endl;
 
             RequestVideoStream* requestForVideoStream =  dynamic_cast<RequestVideoStream*>(msg);
 
             //Auslesen der Controll-Informationen - SRC und DEST IP usw. usf. zum Umsetzen des FlowSource_IP-Adressen-Konzeptes
             UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
             IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
-
-            cout<<"MCoASrv: Request for sending Video received"<<endl;
             cout<<"MCoASrv received Video-Request from SRC-IP-Adress: "<<srcIPAdresse<<" with sequence number:"<<requestForVideoStream->getSequenceNumber()<<endl;
+            //TODO das hier noch mal fixen, das korrekt Daten gesendet werden dann
 
 
-
-            sendStreamData(msg);
+            cMessage *timer = new cMessage("UDPVideoStart");
+                    //timer->setContextPointer(d);
+            simtime_t interval = (*waitInterval);
+                    scheduleAt(simTime()+interval, msg);
 
 
 

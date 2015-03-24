@@ -42,7 +42,7 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
     	
     	//FOR PROXY_UNLOADING FJ
     	double startTime = default(10);//start Proxying Process at StartTime
-    	volatile double waitInterval @unit("s"); // interval between requesting video stream packets
+    	
     	bool isCN;
     	bool isMN;
     	bool isHA;

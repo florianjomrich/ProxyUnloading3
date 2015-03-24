@@ -1,0 +1,216 @@
+20:52:44 **** Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+transport/tcp/TCP.cc
+transport/tcp/flavours/TCPBaseAlg.cc
+transport/tcp/flavours/TCPNewReno.cc
+transport/tcp/flavours/TCPReno.cc
+transport/tcp/flavours/TCPNoCongestionControl.cc
+transport/tcp/flavours/TCPTahoeRenoFamily.cc
+transport/tcp/flavours/DumbTCP.cc
+transport/tcp/flavours/TCPTahoe.cc
+transport/tcp/queues/TCPVirtualDataRcvQueue.cc
+transport/tcp/queues/TCPVirtualDataSendQueue.cc
+transport/tcp/queues/TCPMsgBasedSendQueue.cc
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc: In member function ‘virtual std::string TCPMsgBasedRcvQueue::info() const’:
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc:49:47: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::map<unsigned int, cPacket*>::size_type {aka long unsigned int}’ [-Wformat=]
+     sprintf(buf, "%u msgs", payloadList.size());
+                                               ^
+transport/udp/UDP.cc
+util/InlineXmlDoc.cc
+util/opp_utils.cc
+util/NAMTraceWriter.cc
+util/dijktraKShortest.cc
+util/NetAnimTrace.cc
+util/TCPDump.cc
+util/TCPDump.cc: In member function ‘void TCPDumper::sctpDump(const char*, SCTPMessage*, const string&, const string&, const char*)’:
+util/TCPDump.cc:302:34: warning: variable ‘parameterType’ set but not used [-Wunused-but-set-variable]
+                           uint32 parameterType;
+                                  ^
+util/common.cc
+util/PowerControlManager.cc
+util/XMLUtils.cc
+util/ThruputMeteringChannel.cc
+util/headerserializers/IPSerializer.cc
+util/headerserializers/ICMPSerializer.cc
+util/headerserializers/UDPSerializer.cc
+util/headerserializers/TCPIPchecksum.cc
+util/headerserializers/SCTPSerializer.cc
+util/headerserializers/SCTPSerializer.cc: In member function ‘void SCTPSerializer::parse(const uint8_t*, uint32_t, SCTPMessage*)’:
+util/headerserializers/SCTPSerializer.cc:998:43: warning: variable ‘error’ set but not used [-Wunused-but-set-variable]
+                 const struct error_chunk *error;
+                                           ^
+util/headerserializers/TCPSerializer.cc
+world/ChannelControlExtended.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from world/ChannelControlExtended.h:27,
+                 from world/ChannelControlExtended.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ChannelInstaller.cc
+world/ChannelAccess.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from world/ChannelAccess.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ChannelControl.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from world/ChannelControl.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ScenarioManager.cc
+world/NAMTrace.cc
+world/ChannelAccessExtended.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccessExtended.h:26,
+                 from world/ChannelAccessExtended.cc:28:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/annotations/AnnotationDummy.cc
+world/annotations/AnnotationManager.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/annotations/AnnotationManager.h:29,
+                 from world/annotations/AnnotationManager.cc:22:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/obstacles/ObstacleControl.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/obstacles/ObstacleControl.h:29,
+                 from world/obstacles/ObstacleControl.cc:24:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/obstacles/Obstacle.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/obstacles/Obstacle.h:25,
+                 from world/obstacles/Obstacle.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/traci/TraCIScenarioManager.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from ./world/traci/TraCIScenarioManager.h:32,
+                 from world/traci/TraCIScenarioManager.cc:37:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/traci/TraCIScenarioManagerLaunchd.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from ./world/traci/TraCIScenarioManager.h:32,
+                 from ./world/traci/TraCIScenarioManagerLaunchd.h:26,
+                 from world/traci/TraCIScenarioManagerLaunchd.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+applications/dhcp/DHCP_m.cc
+applications/ethernet/EtherApp_m.cc
+applications/mcoa/Video/MCoAVideoStreaming_m.cc
+applications/mcoa/VoIP/MCOAVoIPMsg_m.cc
+applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.cc
+applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.cc
+applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.cc
+applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.cc
+applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc
+applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.cc
+applications/pingapp/PingPayload_m.cc
+applications/tcpapp/GenericAppMsg_m.cc
+applications/udpapp/UDPEchoAppMsg_m.cc
+base/ByteArrayMessage_m.cc
+linklayer/contract/ControlInfoBreakLink_m.cc
+linklayer/contract/MeshControlInfo_m.cc
+linklayer/contract/Ieee802Ctrl_m.cc
+linklayer/contract/PhyControlInfo_m.cc
+linklayer/contract/Radio80211aControlInfo_m.cc
+linklayer/ethernet/EtherFrame_m.cc
+linklayer/ext/ExtFrame_m.cc
+linklayer/ieee80211/mac/Ieee80211Frame_m.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtFrames_m.cc
+linklayer/ieee80211/mgmt/Ieee80211Primitives_m.cc
+linklayer/mf80211/macLayer/MacPkt_m.cc
+linklayer/mf80211/macLayer/Mac80211Pkt_m.cc
+linklayer/mfcore/SnrControlInfo_m.cc
+linklayer/mfcore/TransmComplete_m.cc
+linklayer/mfcore/AirFrame_m.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/AirFrame_m.cc:13:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ppp/PPPFrame_m.cc
+networklayer/arp/ARPPacket_m.cc
+networklayer/contract/IPProtocolId_m.cc
+networklayer/contract/IPControlInfo_m.cc
+networklayer/contract/IPv6ControlInfo_m.cc
+networklayer/icmpv6/ICMPv6Message_m.cc
+networklayer/icmpv6/IPv6NDMessage_m.cc
+networklayer/ipv4/ControlManetRouting_m.cc
+networklayer/ipv4/ICMPMessage_m.cc
+networklayer/ipv4/IPDatagram_m.cc
+networklayer/ipv6/IPv6Datagram_m.cc
+networklayer/ipv6/IPv6ExtensionHeaders_m.cc
+networklayer/ldp/LDPPacket_m.cc
+networklayer/manetrouting/dsdv/DSDVhello_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_Packet_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RM_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_UERR_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_Timeout_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_PacketBBMessage_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RREP_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RERR_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RREQ_m.cc
+networklayer/manetrouting/olsr/OLSRpkt_m.cc
+networklayer/ospfv2/OSPFPacket_m.cc
+networklayer/ospfv2/OSPFTimer_m.cc
+networklayer/rsvp_te/RSVPPathMsg_m.cc
+networklayer/rsvp_te/RSVPHello_m.cc
+networklayer/rsvp_te/SignallingMsg_m.cc
+networklayer/rsvp_te/RSVPResvMsg_m.cc
+networklayer/rsvp_te/RSVPPacket_m.cc
+networklayer/rsvp_te/IntServ_m.cc
+networklayer/ted/LinkStatePacket_m.cc
+networklayer/ted/TED_m.cc
+networklayer/xmipv6/MobilityHeader_m.cc
+transport/contract/SCTPCommand_m.cc
+transport/contract/TCPCommand_m.cc
+transport/contract/UDPControlInfo_m.cc
+transport/rtp/RTPSenderControlMessage_m.cc
+transport/rtp/RTPSenderStatusMessage_m.cc
+transport/rtp/profiles/avprofile/RTPMpegPacket_m.cc
+transport/sctp/SCTPMessage_m.cc
+transport/tcp/TCPSegment_m.cc
+transport/udp/UDPPacket_m.cc
+util/PowerControlMessages_m.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+
+20:53:59 Build Finished (took 1m:14s.728ms)
+

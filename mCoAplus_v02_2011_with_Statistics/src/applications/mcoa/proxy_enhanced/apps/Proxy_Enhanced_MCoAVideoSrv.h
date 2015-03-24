@@ -48,6 +48,7 @@ protected:
 
     // module parameters
     int localPort;
+    cPar *waitInterval;
     cPar *packetLen;
     cPar *videoSize;
 

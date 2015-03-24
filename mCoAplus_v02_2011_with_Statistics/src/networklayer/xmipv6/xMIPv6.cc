@@ -1454,8 +1454,8 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 	  o  The Destination Address of the IPv6 header MUST contain the
 	     address of the correspondent node.*/
 
-	// IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
-	// cout<<"MN0 - after Binding Update:"<<mn0 <<endl;
+	 IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
+	 cout<<"MN0 - after Binding Update:"<<mn0 <<endl;
 
 	sendMobilityMessageToIPv6Module(bu, dest, CoA, ie->getInterfaceId());
 

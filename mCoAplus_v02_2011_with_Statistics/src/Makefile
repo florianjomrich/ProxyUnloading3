@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for libinet
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep --make-so -o inet -O out
+#  opp_makemake -f --deep --make-so -o inet -O out -I../obsolete/rsvp_te
 #
 
 # Name of target to be created (-o option)
@@ -10,6 +10,7 @@ TARGET = libinet$(SHARED_LIB_SUFFIX)
 
 # C++ include paths (with -I)
 INCLUDE_PATH = \
+    -I../obsolete/rsvp_te \
     -I. \
     -Iapplications \
     -Iapplications/dhcp \
@@ -1232,6 +1233,7 @@ $O/applications/rtpapp/RTPApplication.o: applications/rtpapp/RTPApplication.cc \
 	transport/rtp/RTPSenderControlMessage_m.h \
 	transport/rtp/RTPSenderStatusMessage_m.h
 $O/applications/sctpapp/SCTPClient.o: applications/sctpapp/SCTPClient.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	applications/sctpapp/SCTPClient.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1271,6 +1273,7 @@ $O/applications/sctpapp/SCTPClient.o: applications/sctpapp/SCTPClient.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/applications/sctpapp/SCTPPeer.o: applications/sctpapp/SCTPPeer.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	applications/sctpapp/SCTPPeer.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1310,6 +1313,7 @@ $O/applications/sctpapp/SCTPPeer.o: applications/sctpapp/SCTPPeer.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/applications/sctpapp/SCTPServer.o: applications/sctpapp/SCTPServer.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	applications/sctpapp/SCTPServer.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -3889,6 +3893,8 @@ $O/networklayer/ipv6/RoutingTable6.o: networklayer/ipv6/RoutingTable6.cc \
 	networklayer/xmipv6/MobilityHeader_m.h \
 	util/opp_utils.h
 $O/networklayer/ldp/LDP.o: networklayer/ldp/LDP.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/TED.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -6808,6 +6814,7 @@ $O/networklayer/mpls/LIBTable.o: networklayer/mpls/LIBTable.cc \
 	networklayer/mpls/LIBTable.h \
 	util/XMLUtils.h
 $O/networklayer/mpls/MPLS.o: networklayer/mpls/MPLS.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -7849,10 +7856,21 @@ $O/networklayer/queue/WeightedFairQueue.o: networklayer/queue/WeightedFairQueue.
 	networklayer/queue/IQoSClassifier.h \
 	networklayer/queue/WeightedFairQueue.h
 $O/networklayer/rsvp_te/IntServ_m.o: networklayer/rsvp_te/IntServ_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ_m.h
 $O/networklayer/rsvp_te/RSVP.o: networklayer/rsvp_te/RSVP.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/OspfTe.h \
+	../obsolete/rsvp_te/RSVP.h \
+	../obsolete/rsvp_te/RSVPPacket.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
+	../obsolete/rsvp_te/RSVPPathMsg.h \
+	../obsolete/rsvp_te/RSVPPathMsg_m.h \
+	../obsolete/rsvp_te/RSVPResvMsg.h \
+	../obsolete/rsvp_te/RSVPResvMsg_m.h \
+	../obsolete/rsvp_te/TED.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/IScriptable.h \
@@ -7876,6 +7894,7 @@ $O/networklayer/rsvp_te/RSVP.o: networklayer/rsvp_te/RSVP.cc \
 	networklayer/ipv4/IPRoute.h \
 	networklayer/ipv4/IPv4InterfaceData.h \
 	networklayer/ipv4/IRoutingTable.h \
+	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableAccess.h \
 	networklayer/mpls/ConstType.h \
 	networklayer/mpls/IClassifier.h \
@@ -7901,6 +7920,9 @@ $O/networklayer/rsvp_te/RSVP.o: networklayer/rsvp_te/RSVP.cc \
 	util/XMLUtils.h \
 	util/common.h
 $O/networklayer/rsvp_te/RSVPHello_m.o: networklayer/rsvp_te/RSVPHello_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/RSVPPacket.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ_m.h \
@@ -7908,11 +7930,17 @@ $O/networklayer/rsvp_te/RSVPHello_m.o: networklayer/rsvp_te/RSVPHello_m.cc \
 	networklayer/rsvp_te/RSVPPacket.h \
 	networklayer/rsvp_te/RSVPPacket_m.h
 $O/networklayer/rsvp_te/RSVPPacket_m.o: networklayer/rsvp_te/RSVPPacket_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ_m.h \
 	networklayer/rsvp_te/RSVPPacket_m.h
 $O/networklayer/rsvp_te/RSVPPathMsg_m.o: networklayer/rsvp_te/RSVPPathMsg_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/RSVPPacket.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
+	../obsolete/rsvp_te/RSVPPathMsg_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ.h \
@@ -7921,6 +7949,10 @@ $O/networklayer/rsvp_te/RSVPPathMsg_m.o: networklayer/rsvp_te/RSVPPathMsg_m.cc \
 	networklayer/rsvp_te/RSVPPacket_m.h \
 	networklayer/rsvp_te/RSVPPathMsg_m.h
 $O/networklayer/rsvp_te/RSVPResvMsg_m.o: networklayer/rsvp_te/RSVPResvMsg_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/RSVPPacket.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
+	../obsolete/rsvp_te/RSVPResvMsg_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ.h \
@@ -7929,24 +7961,40 @@ $O/networklayer/rsvp_te/RSVPResvMsg_m.o: networklayer/rsvp_te/RSVPResvMsg_m.cc \
 	networklayer/rsvp_te/RSVPPacket_m.h \
 	networklayer/rsvp_te/RSVPResvMsg_m.h
 $O/networklayer/rsvp_te/SignallingMsg_m.o: networklayer/rsvp_te/SignallingMsg_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ.h \
 	networklayer/rsvp_te/IntServ_m.h \
 	networklayer/rsvp_te/SignallingMsg_m.h
 $O/networklayer/rsvp_te/SimpleClassifier.o: networklayer/rsvp_te/SimpleClassifier.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/OspfTe.h \
+	../obsolete/rsvp_te/RSVP.h \
+	../obsolete/rsvp_te/RSVPPacket.h \
+	../obsolete/rsvp_te/RSVPPacket_m.h \
+	../obsolete/rsvp_te/RSVPPathMsg.h \
+	../obsolete/rsvp_te/RSVPPathMsg_m.h \
+	../obsolete/rsvp_te/RSVPResvMsg.h \
+	../obsolete/rsvp_te/RSVPResvMsg_m.h \
+	../obsolete/rsvp_te/TED.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/IScriptable.h \
 	base/ModuleAccess.h \
 	base/NotificationBoard.h \
 	base/NotifierConsts.h \
+	linklayer/contract/MACAddress.h \
+	networklayer/common/IInterfaceTable.h \
+	networklayer/common/InterfaceEntry.h \
+	networklayer/common/InterfaceToken.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/contract/IPProtocolId_m.h \
 	networklayer/ipv4/IPDatagram.h \
 	networklayer/ipv4/IPDatagram_m.h \
 	networklayer/ipv4/IPRoute.h \
 	networklayer/ipv4/IRoutingTable.h \
+	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableAccess.h \
 	networklayer/mpls/ConstType.h \
 	networklayer/mpls/IClassifier.h \
@@ -7967,8 +8015,11 @@ $O/networklayer/rsvp_te/SimpleClassifier.o: networklayer/rsvp_te/SimpleClassifie
 	networklayer/rsvp_te/RSVPResvMsg_m.h \
 	networklayer/rsvp_te/SignallingMsg_m.h \
 	networklayer/rsvp_te/SimpleClassifier.h \
+	networklayer/ted/TED.h \
+	networklayer/ted/TED_m.h \
 	util/XMLUtils.h
 $O/networklayer/rsvp_te/Utils.o: networklayer/rsvp_te/Utils.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/rsvp_te/IntServ.h \
@@ -7980,6 +8031,8 @@ $O/networklayer/ted/LinkStatePacket_m.o: networklayer/ted/LinkStatePacket_m.cc \
 	networklayer/ted/LinkStatePacket_m.h \
 	networklayer/ted/TED_m.h
 $O/networklayer/ted/LinkStateRouting.o: networklayer/ted/LinkStateRouting.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/TED.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8006,6 +8059,8 @@ $O/networklayer/ted/LinkStateRouting.o: networklayer/ted/LinkStateRouting.cc \
 	networklayer/ted/TEDAccess.h \
 	networklayer/ted/TED_m.h
 $O/networklayer/ted/TED.o: networklayer/ted/TED.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
+	../obsolete/rsvp_te/TED.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8432,6 +8487,7 @@ $O/networklayer/xmipv6/xMIPv6.o: networklayer/xmipv6/xMIPv6.cc \
 	networklayer/xmipv6/MobilityHeader_m.h \
 	networklayer/xmipv6/xMIPv6.h
 $O/transport/contract/SCTPCommand_m.o: transport/contract/SCTPCommand_m.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8468,6 +8524,7 @@ $O/transport/contract/SCTPCommand_m.o: transport/contract/SCTPCommand_m.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/contract/SCTPSocket.o: transport/contract/SCTPSocket.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8690,6 +8747,7 @@ $O/transport/rtp/profiles/avprofile/RTPMpegPacket_m.o: transport/rtp/profiles/av
 	base/INETDefs.h \
 	transport/rtp/profiles/avprofile/RTPMpegPacket_m.h
 $O/transport/sctp/SCTP.o: transport/sctp/SCTP.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8733,6 +8791,7 @@ $O/transport/sctp/SCTP.o: transport/sctp/SCTP.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAlg.o: transport/sctp/SCTPAlg.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8769,6 +8828,7 @@ $O/transport/sctp/SCTPAlg.o: transport/sctp/SCTPAlg.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAssociationBase.o: transport/sctp/SCTPAssociationBase.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8807,6 +8867,7 @@ $O/transport/sctp/SCTPAssociationBase.o: transport/sctp/SCTPAssociationBase.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAssociationEventProc.o: transport/sctp/SCTPAssociationEventProc.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8844,6 +8905,7 @@ $O/transport/sctp/SCTPAssociationEventProc.o: transport/sctp/SCTPAssociationEven
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAssociationRcvMessage.o: transport/sctp/SCTPAssociationRcvMessage.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8900,6 +8962,7 @@ $O/transport/sctp/SCTPAssociationRcvMessage.o: transport/sctp/SCTPAssociationRcv
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAssociationSendAll.o: transport/sctp/SCTPAssociationSendAll.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8937,6 +9000,7 @@ $O/transport/sctp/SCTPAssociationSendAll.o: transport/sctp/SCTPAssociationSendAl
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPAssociationUtil.o: transport/sctp/SCTPAssociationUtil.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -8993,6 +9057,7 @@ $O/transport/sctp/SCTPAssociationUtil.o: transport/sctp/SCTPAssociationUtil.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPCCFunctions.o: transport/sctp/SCTPCCFunctions.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9027,6 +9092,7 @@ $O/transport/sctp/SCTPCCFunctions.o: transport/sctp/SCTPCCFunctions.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPMessage.o: transport/sctp/SCTPMessage.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9067,6 +9133,7 @@ $O/transport/sctp/SCTPMessage_m.o: transport/sctp/SCTPMessage_m.cc \
 	networklayer/contract/IPvXAddress.h \
 	transport/sctp/SCTPMessage_m.h
 $O/transport/sctp/SCTPQueue.o: transport/sctp/SCTPQueue.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9101,6 +9168,7 @@ $O/transport/sctp/SCTPQueue.o: transport/sctp/SCTPQueue.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPReceiveStream.o: transport/sctp/SCTPReceiveStream.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9135,6 +9203,7 @@ $O/transport/sctp/SCTPReceiveStream.o: transport/sctp/SCTPReceiveStream.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPSSFunctions.o: transport/sctp/SCTPSSFunctions.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9169,6 +9238,7 @@ $O/transport/sctp/SCTPSSFunctions.o: transport/sctp/SCTPSSFunctions.cc \
 	transport/sctp/SCTPSendStream.h \
 	util/common.h
 $O/transport/sctp/SCTPSendStream.o: transport/sctp/SCTPSendStream.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9504,6 +9574,7 @@ $O/util/PowerControlManager.o: util/PowerControlManager.cc \
 $O/util/PowerControlMessages_m.o: util/PowerControlMessages_m.cc \
 	util/PowerControlMessages_m.h
 $O/util/TCPDump.o: util/TCPDump.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \
@@ -9556,6 +9627,7 @@ $O/util/XMLUtils.o: util/XMLUtils.cc \
 	networklayer/contract/IPvXAddress.h \
 	util/XMLUtils.h
 $O/util/common.o: util/common.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/contract/IPv6Address.h \
@@ -9622,6 +9694,7 @@ $O/util/headerserializers/IPSerializer.o: util/headerserializers/IPSerializer.cc
 	util/headerserializers/headers/ip.h \
 	util/headerserializers/headers/tcp.h
 $O/util/headerserializers/SCTPSerializer.o: util/headerserializers/SCTPSerializer.cc \
+	../obsolete/rsvp_te/IntServ_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/ModuleAccess.h \

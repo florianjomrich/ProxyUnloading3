@@ -39,6 +39,7 @@ simple Proxy_Enhanced_MCoAVideoSrv like MCoAUDPBase
 {
     parameters:
         int destPort; // port to listen on
+        volatile double waitInterval @unit("s"); // interval between sending video stream packets
         volatile int packetLen @unit("B");
         volatile int videoSize @unit("B");
         

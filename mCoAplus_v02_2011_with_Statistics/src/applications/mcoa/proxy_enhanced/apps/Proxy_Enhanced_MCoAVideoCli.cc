@@ -30,7 +30,6 @@
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
-#define REQUEST_FOR_NEXT_VIDEO_PACKET 200
 
 using std::cout;
 
@@ -39,10 +38,7 @@ Define_Module(Proxy_Enhanced_MCoAVideoCli);
 
 void Proxy_Enhanced_MCoAVideoCli::initialize()
 {
-
-
     //PROXY UNLOADING FJ
-    waitInterval = &par("waitInterval");
     cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
     startTime = par("startTime");
     seq_number_counter=0;
@@ -100,6 +96,22 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
     	    VideoMessage* currentVideoMessage = dynamic_cast<VideoMessage*>(msg);
     	    cout<<"MCoAClient: Video Message from Server is bei MN eingegangen mit Sequenz-Nummer: "<<currentVideoMessage->getSequenceNumber()<<endl;
+    	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
+
+    	        IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
+                //cout<<"CNs Adress: "<<cn<<endl;
+                cout<<"MCoAClient: Neuer Video-Request wird gesendet"<<endl;
+                RequestVideoStream* requestVideoStream = new RequestVideoStream();
+                requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
+                requestVideoStream->setSequenceNumber(seq_number_counter);
+                sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten)
+
+                seq_number_counter++;
+                return;
+    	    }
+    	    cout<<"Sequenz Nummer war bereits zu klein"<<endl;
+
+
     	}
 
     	else{
@@ -115,18 +127,8 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
 
     RequestVideoStream* requestVideoStream = new RequestVideoStream();
     requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
-    requestVideoStream->setSequenceNumber(seq_number_counter);
+
     sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
-
-
-    //schedule new request for later now
-    cMessage *requestForNextVideoPacket = new cMessage("Request next Video Packet");
-           //timer->setContextPointer(d);
-            requestForNextVideoPacket->setKind(REQUEST_FOR_NEXT_VIDEO_PACKET);
-
-           simtime_t interval = (*waitInterval);
-           scheduleAt(simTime()+interval, requestForNextVideoPacket);
-
 
 }
 
