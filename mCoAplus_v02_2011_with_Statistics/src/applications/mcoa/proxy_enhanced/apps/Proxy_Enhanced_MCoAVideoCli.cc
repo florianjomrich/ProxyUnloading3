@@ -127,12 +127,14 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
 
     RequestVideoStream* requestVideoStream = new RequestVideoStream();
     requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
+    requestVideoStream->setSequenceNumber(seq_number_counter);
 
     sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
 
     //request next video package
       cMessage *requestForNewVideoPaket = new cMessage("Request for new Video Paket");
                 requestForNewVideoPaket->setKind(REQUEST_FOR_NEW_VIDEO_PAKET);
+
 
       simtime_t interval = (*waitInterval);
       scheduleAt(simTime()+interval, requestForNewVideoPaket);

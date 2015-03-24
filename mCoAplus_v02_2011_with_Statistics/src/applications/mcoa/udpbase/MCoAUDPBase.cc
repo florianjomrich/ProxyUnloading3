@@ -209,10 +209,12 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 						cout << "MCoAUDPBase in Sending node duplicating message for source adr " << it->mSrc << endl;
 							//Please note dup objects need to add controlinfo.
 						if(!isMN){
+						    if(!msg->getControlInfo())//only send when not already control info was attached to the message
 						    sendToUDP(msg, it->mSrc, srcPort, it->mDest, destPort , true);
 						}
 						else{
-						    sendToUDP(msg, it->mSrc, srcPort, destAddr, destPort , true);
+						    if(!msg->getControlInfo())
+						   sendToUDP(msg, it->mSrc, srcPort, destAddr, destPort , true);
 						}
 						    sentMsg= true;
 						}
