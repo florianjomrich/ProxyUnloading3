@@ -30,6 +30,7 @@
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
+#define REQUEST_FOR_NEW_VIDEO_PAKET 147
 
 using std::cout;
 
@@ -42,6 +43,7 @@ void Proxy_Enhanced_MCoAVideoCli::initialize()
     cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
     startTime = par("startTime");
     seq_number_counter=0;
+    waitInterval = &par("waitInterval");
 
 
 	MCoAUDPBase::startMCoAUDPBase();
@@ -83,7 +85,13 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	if(msg->getKind()== PROXY_CONTEXT_START){
     	    cout<<"!! Proxying Context Started !!"<<endl;
     	    sendControlData(msg);
-    	    }
+
+    	      }
+    	if(msg->getKind()== REQUEST_FOR_NEW_VIDEO_PAKET){
+
+    	    sendControlData(msg);
+
+    	}
 
 
 
@@ -98,15 +106,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	    cout<<"MCoAClient: Video Message from Server is bei MN eingegangen mit Sequenz-Nummer: "<<currentVideoMessage->getSequenceNumber()<<endl;
     	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
 
-    	        IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
-                //cout<<"CNs Adress: "<<cn<<endl;
-                cout<<"MCoAClient: Neuer Video-Request wird gesendet"<<endl;
-                RequestVideoStream* requestVideoStream = new RequestVideoStream();
-                requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
-                requestVideoStream->setSequenceNumber(seq_number_counter);
-                sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten)
-
-                seq_number_counter++;
+    	        seq_number_counter++;
                 return;
     	    }
     	    cout<<"Sequenz Nummer war bereits zu klein"<<endl;
@@ -129,6 +129,14 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
 
     sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
+
+    //request next video package
+      cMessage *requestForNewVideoPaket = new cMessage("Request for new Video Paket");
+                requestForNewVideoPaket->setKind(REQUEST_FOR_NEW_VIDEO_PAKET);
+
+      simtime_t interval = (*waitInterval);
+      scheduleAt(simTime()+interval, requestForNewVideoPaket);
+
 
 }
 

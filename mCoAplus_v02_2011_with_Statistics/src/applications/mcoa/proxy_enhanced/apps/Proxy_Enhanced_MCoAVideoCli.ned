@@ -32,6 +32,7 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
         //string serverAddress;
         int destPort;
         //double startTime @unit("s") = default(1s);
+         volatile double waitInterval @unit("s"); // interval between requesting video stream packets
         
         //From interface
         int localPort;

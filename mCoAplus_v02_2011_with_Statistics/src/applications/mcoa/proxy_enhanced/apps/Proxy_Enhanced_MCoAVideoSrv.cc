@@ -117,10 +117,6 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 			return; // and that's it!
 		}
 
-    	//data send timer was finished
-    	 if(dynamic_cast<RequestVideoStream*>(msg)){
-    	     sendStreamData(msg);
-    	 }
 
 
 
@@ -139,11 +135,9 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
             cout<<"MCoASrv received Video-Request from SRC-IP-Adress: "<<srcIPAdresse<<" with sequence number:"<<requestForVideoStream->getSequenceNumber()<<endl;
             //TODO das hier noch mal fixen, das korrekt Daten gesendet werden dann
 
+            sendStreamData(msg);
 
-            cMessage *timer = new cMessage("UDPVideoStart");
-                    //timer->setContextPointer(d);
-            simtime_t interval = (*waitInterval);
-                    scheduleAt(simTime()+interval, msg);
+
 
 
 
