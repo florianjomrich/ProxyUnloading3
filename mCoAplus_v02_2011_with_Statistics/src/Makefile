@@ -139,7 +139,6 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o \
-    $O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.o \
     $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o \
     $O/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o \
     $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o \
@@ -1150,10 +1149,6 @@ $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: appli
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
-$O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.o: applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.cc \
-	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
-	base/INETDefs.h \
-	networklayer/contract/IPv6Address.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.cc \
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.cc \
@@ -1170,6 +1165,7 @@ $O/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o: applications/mco
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h
@@ -3640,8 +3636,8 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
-	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h \

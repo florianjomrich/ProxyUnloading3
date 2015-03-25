@@ -30,7 +30,7 @@
 #include "ProtocolMap.h"
 #include "xMIPv6.h"
 #include "IScriptable.h"
-#include "RequestForConnectionToLegacyServerTable.h"
+
 
 //FOR PROXYUNLOADING
 #include "UDPControlInfo_m.h"
@@ -94,7 +94,6 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     bool isMN;
     bool isHA;
     bool isCN;
-    RequestForConnectionToLegacyServerTable *requestForConnectionToLegacyServerTable;
     const char *myHumanReadableName;
     FlowBindingTable *flowBindingTable;
 

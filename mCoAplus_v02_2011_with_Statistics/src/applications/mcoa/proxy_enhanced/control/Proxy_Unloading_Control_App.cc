@@ -195,14 +195,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
         if (dynamic_cast<FlowBindingUpdate*>(msg)) {
             if (isMN) {                //New Binding Update message
-                cout << "Proxy Unloading Control App of MN sends"
+                cout << "Proxy Unloading Control App of MN sends "
                         << "FlowBindingUpdate to HA" << endl;
                 FlowBindingUpdate* messageFromIPLayer = check_and_cast<
                         FlowBindingUpdate *>(msg);
 
                 FlowBindingUpdate* flowBindingUpdateToHA =
                         new FlowBindingUpdate();
-                flowBindingUpdateToHA->setName("FlowBindingUpdate");
+                flowBindingUpdateToHA->setName("Flow Binding Update");
                 flowBindingUpdateToHA->setHomeAddress(
                         messageFromIPLayer->getHomeAddress());
                 flowBindingUpdateToHA->setNewCoAdress(
@@ -218,13 +218,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             }
             if (isHA) {
                 cout
-                        << "HA hat FlowBindingUpdate vom MN erhalten und leitet dieses jetzt entsprechend an die CNs weiter"
+                        << "HA hat FlowBindingUpdate vom MN erhalten, aktualisiert seine eigene Tabelle und leitet dieses jetzt entsprechend an die CNs weiter"
                         << endl;
 
                 FlowBindingUpdate* messageFromMN = check_and_cast<
                         FlowBindingUpdate *>(msg);
 
                 //UPDATE OWN TABLE
+                send(messageFromMN,"uDPControllAppConnection$o");
 
                 //TODO
 
@@ -241,17 +242,21 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 flowBindingUpdateToCN->setWasSendFromHA(true);
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                IPvXAddress dest = IPvXAddress();
-                       dest.set(messageFromMN->getDestAddress());
-                       IPvXAddress test = IPAddressResolver().resolve("CN[0]");
 
-                cout << "Home Address: " << ha << " Destination Address: "
-                        << dest << endl;
+                //TODO FIXEN !!!
+                IPvXAddress dest = IPvXAddress();
+                dest.set(messageFromMN->getDestAddress());
+                IPvXAddress test = IPAddressResolver().resolve("CN[0]");
+                cout << "Address of MN: " << messageFromMN->getHomeAddress()
+                        << " Home Address des HomeAgents: " << ha
+                        << " FlowBindingt_to_CN Destination Address: " << dest
+                        << endl;
                 if (!messageFromMN->getWasSendFromHA()) { //do not foreward self message --> otherwise infinite loop
                     sendToUDPMCOA(flowBindingUpdateToCN, localPort, test, 2000,
                             true);
-                  }
+                }
 
+                //Confirm the received Flow Binding Update to the sending mobile node, so that he can use this new address as well
                 IPvXAddress *mn = new IPvXAddress(
                         messageFromMN->getNewCoAdress());
                 ACK_FlowBindingUpdate* flowBindingAckToMN =
@@ -270,7 +275,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             }
             if (isCN) {
                 //TODO Flow-Binding-Update-Ergänzen
-                cout<<"CN hat nun auch das Flow-Binding-Update bekommen TODO"<<endl;
+                cout << "CN hat nun auch das Flow-Binding-Update bekommen TODO"
+                        << endl;
                 return;
             }
         }
@@ -279,27 +285,29 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
         if (dynamic_cast<ACK_FlowBindingUpdate*>(msg)) {
             if (isMN) {
+                //TODO
                 cout
-                        << "MN hat BindingUpdate Nachricht bestätigt bekommen - nun kann er den Timer für erneutes Senden löschen"
+                        << "MN hat BindingUpdate Nachricht bestätigt bekommen - nun kann er den Timer für erneutes Senden löschen TODO"
                         << endl;
+
+                return;
             }
         }
 
         //**********************************************************************
 
-
         //Andernfalls ist die Nachricht unbekannt und es wird lediglich der Name ausgegeben zum Debuggen
         if (isHA) {
-            cout << "HA hat folgende unbekannte Nachricht erhalten:" << msg->getName()
-                    << endl;
+            cout << "HA hat folgende unbekannte Nachricht erhalten:"
+                    << msg->getName() << endl;
         }
 
         if (isCN)
-            cout << "CN hat folgende unbekannte Nachricht erhalten:" << msg->getName()
-                    << endl;
+            cout << "CN hat folgende unbekannte Nachricht erhalten:"
+                    << msg->getName() << endl;
         if (isMN)
-            cout << "MN hat folgende unbekannte Nachricht erhalten:" << msg->getName()
-                    << endl;
+            cout << "MN hat folgende unbekannte Nachricht erhalten:"
+                    << msg->getName() << endl;
         return;
 
     }

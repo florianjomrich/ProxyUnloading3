@@ -24,8 +24,7 @@ FlowBindingEntry::~FlowBindingEntry() {
     // TODO Auto-generated destructor stub
 }
 
-FlowBindingEntry::FlowBindingEntry(bool isValidEntry,int srcPort, int destPort,const char* srcAddress,const char* destAddress){
-    this->isValidEntry=isValidEntry;
+FlowBindingEntry::FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress){
     this->srcPort=srcPort;
     this->destPort=destPort;
     this->srcAddress=srcAddress;

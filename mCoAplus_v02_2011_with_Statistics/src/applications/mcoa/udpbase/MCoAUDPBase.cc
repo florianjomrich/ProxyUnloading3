@@ -185,11 +185,11 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 
 			for (it=adrsAvailable.begin(); it < adrsAvailable.end(); it++){
 
-			    cout<<"isMN/isCN"<<isMN<<isCN<<" Dest Adresse: "<<it->mDest<<" Source Adresse: "<<it->mSrc<<endl;//TEST
+			    //cout<<"isMN/isCN"<<isMN<<isCN<<" Dest Adresse: "<<it->mDest<<" Source Adresse: "<<it->mSrc<<endl;//TEST
 
 
 				if (it->deleted) {
-					cout << "MCoAUDPBase Socket id  " << it->sockID << " with pairs (" << it->mSrc  << "," << it->mDest << ") is marked has deleted, deleting message." << endl;
+					//cout << "MCoAUDPBase Socket id  " << it->sockID << " with pairs (" << it->mSrc  << "," << it->mDest << ") is marked has deleted, deleting message." << endl;
 
 				    //cancelAndDelete(msg);
 					//delete(msg);
@@ -197,16 +197,16 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 				}else {
 					if (it->mDest == destAddr){
 						cPacket *msg1 = msg->dup();
-						cout << "MCoAUDPBase duplicating message for adr " << it->mSrc << endl;
+						//cout << "MCoAUDPBase duplicating message for adr " << it->mSrc << endl;
 						//Please note dup objects need to add controlinfo.
 						sendToUDP(msg1, it->mSrc, srcPort, destAddr, destPort , true);
 						sentMsg= true;
 					}else {
-						cout << "MCoAUDPBase destination address differs " << it->mDest << " from conf. destAddress  " << destAddr << endl;
+						//cout << "MCoAUDPBase destination address differs " << it->mDest << " from conf. destAddress  " << destAddr << endl;
 
 						if (!isDestiny){ // Sender can be single-homed
 							cPacket *msg1 = msg->dup();
-						cout << "MCoAUDPBase in Sending node duplicating message for source adr " << it->mSrc << endl;
+						//cout << "MCoAUDPBase in Sending node duplicating message for source adr " << it->mSrc << endl;
 							//Please note dup objects need to add controlinfo.
 						if(!isMN){
 						    if(!msg->getControlInfo())//only send when not already control info was attached to the message

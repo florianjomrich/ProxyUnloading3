@@ -23,6 +23,7 @@
 #include <FlowBindingEntry.h>
 #include <RequetConnectionToLegacyServer_m.h>
 #include <ACK_RequestConnectionToLegacyServer_m.h>
+#include <FlowBindingUpdate_m.h>
 // alternative #include <string.h>
 
 class FlowBindingTable: public cSimpleModule {
@@ -33,6 +34,8 @@ public:
     std::map<const char*, std::set<const char*> > srcAdresses;
     std::map<const char*, std::set<const char*> > destAdresses;
 
+    std::vector<FlowBindingEntry> existingFlowBindingEntries;
+
 
     FlowBindingTable();
     virtual ~FlowBindingTable();
@@ -41,6 +44,8 @@ public:
     virtual void insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry);
     virtual FlowBindingEntry* getFlowBindingEntryFromTable(const char* flowSourceAdress);
     virtual bool entryAlreadyExistsInTable(const char* flowSourceAdress);
+    virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+    virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */
