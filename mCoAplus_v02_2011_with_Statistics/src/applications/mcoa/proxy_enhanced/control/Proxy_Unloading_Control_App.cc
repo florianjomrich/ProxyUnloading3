@@ -286,10 +286,15 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
         if (dynamic_cast<ACK_FlowBindingUpdate*>(msg)) {
             if (isMN) {
                 //TODO
+                ACK_FlowBindingUpdate* messageFromCNorHA = check_and_cast<
+                        ACK_FlowBindingUpdate *>(msg);
+
+
                 cout
                         << "MN hat BindingUpdate Nachricht bestätigt bekommen - nun kann er den Timer für erneutes Senden löschen TODO"
                         << endl;
-
+                cout <<"MN aktualisiert seine eigene Tabelle mit den erhaltenen Informationen"<<endl;
+                send(messageFromCNorHA,"uDPControllAppConnection$o");
                 return;
             }
         }

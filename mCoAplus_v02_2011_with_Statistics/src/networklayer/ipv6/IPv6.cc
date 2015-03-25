@@ -35,6 +35,7 @@
 //PROXY UNLOADING
 #include "RequetConnectionToLegacyServer_m.h"
 #include "FlowBindingUpdate_m.h"
+#include "ACK_FlowBindingUpdate_m.h"
 
 #define FRAGMENT_TIMEOUT 60   // 60 sec, from IPv6 RFC
 #define REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER 145
@@ -144,6 +145,15 @@ void IPv6::endService(cPacket *msg) {
 
         cout<<"HA/CN: "<<isHA<<isCN<<" Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
         flowBindingTable->updateExistingFlowBindingEntry(receivedFlowBindingUpdate);
+        return;
+    }
+
+
+    if(dynamic_cast<ACK_FlowBindingUpdate*>(msg) && (isMN)){
+        ACK_FlowBindingUpdate* ackFlowBindingUpdate = check_and_cast<ACK_FlowBindingUpdate *>(msg);
+
+        cout<<"MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
+        flowBindingTable->updateExistingFlowBindingEntry(ackFlowBindingUpdate);
         return;
     }
 
@@ -904,7 +914,7 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
             if(!flowBindingTable->entryAlreadyExistsInTable(
                     dport, sport, datagram->getDestAddress().str().c_str(),
-                    datagram->getSrcAddress().str().c_str())
+                    datagram->getSrcAddress().str().c_str(),flowSourceAddress->str().c_str())
                     && datagram->getDestAddress()
                             != IPAddressResolver().resolve("HA").get6()
 

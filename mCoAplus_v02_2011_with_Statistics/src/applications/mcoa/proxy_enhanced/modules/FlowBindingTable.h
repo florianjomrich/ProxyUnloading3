@@ -24,6 +24,7 @@
 #include <RequetConnectionToLegacyServer_m.h>
 #include <ACK_RequestConnectionToLegacyServer_m.h>
 #include <FlowBindingUpdate_m.h>
+#include <ACK_FlowBindingUpdate_m.h>
 // alternative #include <string.h>
 
 class FlowBindingTable: public cSimpleModule {
@@ -44,8 +45,9 @@ public:
     virtual void insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry);
     virtual FlowBindingEntry* getFlowBindingEntryFromTable(const char* flowSourceAdress);
     virtual bool entryAlreadyExistsInTable(const char* flowSourceAdress);
-    virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+    virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress, const char* flowSourceAdress);
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
+    virtual void updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* update);
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */

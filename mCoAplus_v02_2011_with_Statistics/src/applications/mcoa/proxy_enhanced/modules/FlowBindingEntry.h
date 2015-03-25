@@ -22,6 +22,7 @@ public:
     int destPort;
     const char* srcAddress;
     const char* destAddress;
+    const char* flowSourceAddress;
 
     FlowBindingEntry();
     FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress);
@@ -50,6 +51,15 @@ public:
     void setSrcAddress(const char* srcAddress) {
         this->srcAddress = srcAddress;
     }
+
+
+    const char* getFlowSourceAddress() const {
+         return flowSourceAddress;
+     }
+
+     void setFlowSourceAddress(const char* flowSourceAddress) {
+         this->flowSourceAddress = flowSourceAddress;
+     }
 
     int getSrcPort() const {
         return srcPort;
