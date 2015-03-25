@@ -137,7 +137,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
 
 
       simtime_t interval = (*waitInterval);
-      scheduleAt(simTime()+interval, requestForNewVideoPaket);
+     // scheduleAt(simTime()+interval, requestForNewVideoPaket);
 
 
 }

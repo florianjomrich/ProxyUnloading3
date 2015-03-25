@@ -109,10 +109,11 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << " und FlowSourceAdresse: "
                         << messageToCN->getFlowSourceAddress() << endl;
 
-                IPvXAddress* cn = new IPvXAddress(
-                        messageToCN->getDestAddress());
+                IPvXAddress cn = IPvXAddress();
+                cn.set(messageToCN->getDestAddress());
+
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
-                sendToUDPMCOA(messageToCN, localPort, *cn, 2000, true);
+                sendToUDPMCOA(messageToCN, localPort, cn, 2000, true);
 
                 //cout << "ProxyUnloadingHA-SimTime: " << simTime() << endl;
                 return;
@@ -240,15 +241,16 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 flowBindingUpdateToCN->setWasSendFromHA(true);
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                IPvXAddress* dest = new IPvXAddress(
-                        messageFromMN->getDestAddress());
+                IPvXAddress dest = IPvXAddress();
+                       dest.set(messageFromMN->getDestAddress());
+                       IPvXAddress test = IPAddressResolver().resolve("CN[0]");
+
                 cout << "Home Address: " << ha << " Destination Address: "
-                        << *dest << endl;
-                if (messageFromMN->getWasSendFromHA()) { //do not foreward self message --> otherwise infinite loop
-                    sendToUDPMCOA(flowBindingUpdateToCN, localPort, *dest, 2000,
+                        << dest << endl;
+                if (!messageFromMN->getWasSendFromHA()) { //do not foreward self message --> otherwise infinite loop
+                    sendToUDPMCOA(flowBindingUpdateToCN, localPort, test, 2000,
                             true);
-                    return;
-                }
+                  }
 
                 IPvXAddress *mn = new IPvXAddress(
                         messageFromMN->getNewCoAdress());
@@ -267,7 +269,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 return;
             }
             if (isCN) {
-
+                //TODO Flow-Binding-Update-Ergänzen
+                cout<<"CN hat nun auch das Flow-Binding-Update bekommen TODO";
                 return;
             }
         }
