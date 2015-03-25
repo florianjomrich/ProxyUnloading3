@@ -270,7 +270,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             }
             if (isCN) {
                 //TODO Flow-Binding-Update-Ergänzen
-                cout<<"CN hat nun auch das Flow-Binding-Update bekommen TODO";
+                cout<<"CN hat nun auch das Flow-Binding-Update bekommen TODO"<<endl;
                 return;
             }
         }
