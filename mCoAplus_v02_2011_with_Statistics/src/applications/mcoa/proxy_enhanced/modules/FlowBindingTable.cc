@@ -117,7 +117,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update)
     std::vector<FlowBindingEntry> updatedEntries;//hier werden die neuen Einträge gespeichert.
 
     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
-           if(update->getHomeAddress()==it->srcAddress){
+           if(!strcmp(update->getHomeAddress(),it->srcAddress)){
                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                    newEntryToInsert.setDestAddress(it->getDestAddress());
                    newEntryToInsert.setSrcAddress(update->getNewCoAdress());
@@ -147,7 +147,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
     std::vector<FlowBindingEntry> updatedEntries;//hier werden die neuen Einträge gespeichert.
 
     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
-           if(update->getHomeAddress()==it->srcAddress){
+           if(!strcmp(update->getHomeAddress(),it->srcAddress)){
                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                    newEntryToInsert.setDestAddress(it->getDestAddress());
                    newEntryToInsert.setSrcAddress(update->getNewCoAdress());
