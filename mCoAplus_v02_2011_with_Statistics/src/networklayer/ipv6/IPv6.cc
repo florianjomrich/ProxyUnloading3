@@ -119,8 +119,6 @@ void IPv6::endService(cPacket *msg) {
                 check_and_cast<RequetConnectionToLegacyServer *>(msg);
 
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
-        flowBindingTable->getFlowBindingEntryFromTable(
-                newFlowBindingEntryMessage->getFlowSourceAddress());
         return;
     }
 
@@ -134,8 +132,7 @@ void IPv6::endService(cPacket *msg) {
         ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage =
                 check_and_cast<ACK_RequestConnectionToLegacyServer *>(msg);
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
-        flowBindingTable->getFlowBindingEntryFromTable(
-                newFlowBindingEntryMessage->getFlowSourceAddress());
+
         return;
 
     }

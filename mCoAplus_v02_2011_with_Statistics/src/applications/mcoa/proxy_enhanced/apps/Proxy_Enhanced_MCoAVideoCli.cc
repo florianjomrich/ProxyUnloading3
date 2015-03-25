@@ -107,10 +107,11 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
 
     	        seq_number_counter++;
+    	        delete msg;
                 return;
     	    }
     	    cout<<"Sequenz Nummer war bereits zu klein"<<endl;
-
+    	    delete msg;
 
     	}
 
@@ -139,7 +140,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
       simtime_t interval = (*waitInterval);
       scheduleAt(simTime()+interval, requestForNewVideoPaket);
 
-
+      delete msg;
 }
 
 void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)

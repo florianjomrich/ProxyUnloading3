@@ -59,7 +59,7 @@ void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer
 
     this->existingFlowBindingEntries.push_back(newEntryToInsert);
 
-
+    delete newFlowBindingEntry;
 }
 
 void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry){
@@ -73,6 +73,7 @@ void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyS
 
     this->existingFlowBindingEntries.push_back(newEntryToInsert);
 
+    delete newFlowBindingEntry;
 
 }
 
@@ -135,6 +136,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update)
         existingFlowBindingEntries.push_back(*it);
     }
 
+    delete update;
 }
 
 
@@ -165,4 +167,5 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
         existingFlowBindingEntries.push_back(*it);
     }
 
+    delete update;
 }

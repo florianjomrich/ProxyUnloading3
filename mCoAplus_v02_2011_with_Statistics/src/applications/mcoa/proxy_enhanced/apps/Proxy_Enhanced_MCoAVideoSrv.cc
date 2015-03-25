@@ -175,5 +175,7 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *msg)
 
 		seq_number_counter++;
 
+		delete msg;
+
 }
 
