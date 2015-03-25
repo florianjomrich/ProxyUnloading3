@@ -44,10 +44,11 @@ public:
     virtual void insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry);
     virtual void insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry);
     virtual FlowBindingEntry* getFlowBindingEntryFromTable(const char* flowSourceAdress);
-    virtual bool entryAlreadyExistsInTable(const char* flowSourceAdress);
     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress, const char* flowSourceAdress);
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
     virtual void updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* update);
+    virtual const char* getFlowSourceAdresse(int dport,int sport,const char* destAddress,const char* srcAddress);
+
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */

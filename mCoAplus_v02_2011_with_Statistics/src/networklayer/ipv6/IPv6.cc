@@ -79,7 +79,6 @@ void IPv6::initialize() {
     myHumanReadableName =
             par("humanReadableNameForAutomaticAdding").stringValue();
 
-
     //get Instance of the FlowBindingTable - but only if MN or CN or HA - not a normal router - they do not have such a module
     // this module could be added in a further investigation
     if (isMN || isHA || isCN) {
@@ -140,19 +139,24 @@ void IPv6::endService(cPacket *msg) {
 
     }
 
-    if(dynamic_cast<FlowBindingUpdate*>(msg) && (isHA || isCN)){
-        FlowBindingUpdate* receivedFlowBindingUpdate = check_and_cast<FlowBindingUpdate *>(msg);
+    if (dynamic_cast<FlowBindingUpdate*>(msg) && (isHA || isCN)) {
+        FlowBindingUpdate* receivedFlowBindingUpdate = check_and_cast<
+                FlowBindingUpdate *>(msg);
 
-        cout<<"HA/CN: "<<isHA<<isCN<<" Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
-        flowBindingTable->updateExistingFlowBindingEntry(receivedFlowBindingUpdate);
+        cout << "HA/CN: " << isHA << isCN
+                << " Netzwerklayer aktualisiert jetzt die FlowBindingTable"
+                << endl;
+        flowBindingTable->updateExistingFlowBindingEntry(
+                receivedFlowBindingUpdate);
         return;
     }
 
+    if (dynamic_cast<ACK_FlowBindingUpdate*>(msg) && (isMN)) {
+        ACK_FlowBindingUpdate* ackFlowBindingUpdate = check_and_cast<
+                ACK_FlowBindingUpdate *>(msg);
 
-    if(dynamic_cast<ACK_FlowBindingUpdate*>(msg) && (isMN)){
-        ACK_FlowBindingUpdate* ackFlowBindingUpdate = check_and_cast<ACK_FlowBindingUpdate *>(msg);
-
-        cout<<"MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
+        cout << "MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"
+                << endl;
         flowBindingTable->updateExistingFlowBindingEntry(ackFlowBindingUpdate);
         return;
     }
@@ -912,9 +916,10 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
             //IF NO MESSAGE WAS ALREADY SENT TO the other HOST - AND the Message is not for the HA itself - SEND ONE CONTROL MESSAGE TO HA
 
-            if(!flowBindingTable->entryAlreadyExistsInTable(
-                    dport, sport, datagram->getDestAddress().str().c_str(),
-                    datagram->getSrcAddress().str().c_str(),flowSourceAddress->str().c_str())
+            if (!flowBindingTable->entryAlreadyExistsInTable(dport, sport,
+                    datagram->getDestAddress().str().c_str(),
+                    datagram->getSrcAddress().str().c_str(),
+                    flowSourceAddress->str().c_str())
                     && datagram->getDestAddress()
                             != IPAddressResolver().resolve("HA").get6()
 
@@ -932,32 +937,33 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                 legacyRequestPacket->setSrcPort(sport);
                 legacyRequestPacket->setDestPort(dport);
 
-                //add entry if not already sent
-                //requestForConnectionToLegacyServerTable->setRequest(dport,
-                 //       sport, datagram->getDestAddress(),
-                 //       datagram->getSrcAddress(), flowSourceAddress);
+                //add entry to own list
+                flowBindingTable->updateExistingFlowBindingEntry(
+                               receivedFlowBindingUpdate);
+
 
                 send(legacyRequestPacket, "uDPControllAppConnection$o");
-            }
-
-            /**
-             * Replace now the Source-IP-Address of the package if there already exists a connection which has been acknowledged
-             */
-            if (flowBindingTable->entryAlreadyExistsInTable(
-                    flowSourceAddress->str().c_str())) {
+            } else if(datagram->getDestAddress()
+                            != IPAddressResolver().resolve("HA").get6()) {
+                /**
+                 * Replace now the Source-IP-Address of the package if there already exists a connection which has been acknowledged
+                 */
                 cout << "IP Adresse wird nun ersetzt durch FlowSourceAdresse"
                         << endl;
 
                 IPv6Address neueSrcAdresse = IPv6Address();
-                neueSrcAdresse.set(flowSourceAddress->str().c_str()); /// ????
+                neueSrcAdresse.set(flowBindingTable->getFlowSourceAdresse(dport, sport,
+                    datagram->getDestAddress().str().c_str(),
+                    datagram->getSrcAddress().str().c_str())); /// ????
+
                 datagram->setSrcAddress(neueSrcAdresse);
 
                 //for the reason when the HomeAgent has to take over the proxying functionality - it should be sent to him not to the CN
-                IPv6Address neueDestAdresse = IPv6Address();
+               /* IPv6Address neueDestAdresse = IPv6Address();
                 neueDestAdresse.set(
                         flowBindingTable->getFlowBindingEntryFromTable(
                                 flowSourceAddress->str().c_str())->getDestAddress());
-                datagram->setDestAddress(neueDestAdresse);
+                datagram->setDestAddress(neueDestAdresse); */
 
             }
             /*

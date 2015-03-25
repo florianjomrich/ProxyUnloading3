@@ -76,24 +76,31 @@ void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyS
 
 }
 
-//check if an entry already exists:
-bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAdress){
-    const bool srcPortFound = this->srcPorts.find(flowSourceAdress) != srcPorts.end();
-    const bool destPortFound = this->destPorts.find(flowSourceAdress) != destPorts.end();
-    const bool srcAddressFound = this->srcAdresses.find(flowSourceAdress) != srcAdresses.end();
-    const bool destAddressFound = this->destAdresses.find(flowSourceAdress) != destAdresses.end();
 
-    cout<<"FlowBinding entry found:"<<(srcPortFound && destPortFound && srcAddressFound && destAddressFound)<<endl;
+const char* FlowBindingTable::getFlowSourceAdresse(int dport,int sport,
+                    const char* destAddress,
+                    const char* sourceAddress){
 
-    return (srcPortFound && destPortFound && srcAddressFound && destAddressFound);
+    std::vector<FlowBindingEntry>::iterator it;
+
+
+    for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
+        if(it->destPort==dport && it->srcPort==sport && it->srcAddress == sourceAddress && it->destAddress==destAddress){
+            return it->flowSourceAddress;
+        }
+    }
+
+    return NULL;
 }
-//reverse check
+
+
 bool FlowBindingTable::entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress,const char* flowSourceAddress){
 
     std::vector<FlowBindingEntry>::iterator it;
 
     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
         if(it->destPort==dport && it->srcPort==sport && it->srcAddress == sourceAddress && it->destAddress==destAddress && it->flowSourceAddress==flowSourceAddress){
+            cout<<it->destPort<<" "<<it->srcPort<<" "<<it->srcAddress<<" "<<it->destAddress<<endl;
             return true;
         }
     }
@@ -110,14 +117,15 @@ FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char* flo
 
 void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update){
     cout<<"FlowBindingTable updatet sich selbst"<<endl;
-    update->getNewCoAdress();
-    update->getHomeAddress();
+
 
     std::vector<FlowBindingEntry>::iterator it;
     std::vector<FlowBindingEntry> updatedEntries;//hier werden die neuen Einträge gespeichert.
 
     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
-           if(update->getHomeAddress()==it->srcAddress){
+        cout<<"EINTRAG: Dest: "<<it->getDestAddress()<<" Src: "<<it->getSrcAddress()<<" zu suchende HomeAddresse: "<<update->getHomeAddress()<<endl;
+           if(!strcmp(update->getHomeAddress(),it->srcAddress)){
+               cout<<"Übereinstimmung gefunden"<<endl;
                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                    newEntryToInsert.setDestAddress(it->getDestAddress());
                    newEntryToInsert.setSrcAddress(update->getNewCoAdress());
@@ -129,7 +137,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update)
            }
        }
 
-
+    cout<<"Anzahl gefunden Werte: "<<updatedEntries.size()<<endl;
 
     for(it = updatedEntries.begin();it< updatedEntries.end();it++){
         existingFlowBindingEntries.push_back(*it);
@@ -147,7 +155,8 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
     std::vector<FlowBindingEntry> updatedEntries;//hier werden die neuen Einträge gespeichert.
 
     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
-           if(update->getHomeAddress()==it->srcAddress){
+        if(!strcmp(update->getHomeAddress(),it->srcAddress)){
+            cout<<"Übereinstimmung gefunden"<<endl;
                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                    newEntryToInsert.setDestAddress(it->getDestAddress());
                    newEntryToInsert.setSrcAddress(update->getNewCoAdress());
@@ -158,7 +167,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
                    updatedEntries.push_back(newEntryToInsert);
            }
        }
-
+    cout<<"Anzahl gefunden Werte: "<<updatedEntries.size()<<endl;
 
 
     for(it = updatedEntries.begin();it< updatedEntries.end();it++){

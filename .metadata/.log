@@ -4558,3 +4558,15 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.omnetpp.main 1 0 2015-03-25 18:24:51.368
 !MESSAGE OMNeT++ IDE 4.4.1.140307-1086eab started.
+
+!ENTRY org.omnetpp.launch 4 133 2015-03-25 20:32:26.664
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.omnetpp.launch 4 133 2015-03-25 20:44:49.441
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.omnetpp.launch 4 133 2015-03-25 20:47:41.778
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.omnetpp.launch 4 133 2015-03-25 20:49:30.253
+!MESSAGE Run #0: Finished with Error
