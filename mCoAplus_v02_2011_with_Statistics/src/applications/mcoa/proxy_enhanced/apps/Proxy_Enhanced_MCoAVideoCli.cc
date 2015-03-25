@@ -108,10 +108,11 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
     	        seq_number_counter++;
     	        delete msg;
-                return;
+    	        return;
     	    }
     	    cout<<"Sequenz Nummer war bereits zu klein"<<endl;
     	    delete msg;
+
 
     	}
 
