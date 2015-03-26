@@ -129,6 +129,10 @@ class INET_API xMIPv6 : public cSimpleModule, protected INotifiable
 	  */
 	 XMIPv6SM* mipv6sm;
 
+	 /*
+	  * PROXY UNLOADING
+	  */
+	std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
 
 
 

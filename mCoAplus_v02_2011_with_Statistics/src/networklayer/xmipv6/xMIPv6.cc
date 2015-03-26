@@ -1472,9 +1472,11 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
 
     //***********************PROXY UNLOADING********************
     //BUL is updated by the MN -> use as entrance point for Flow-Binding-Updates
-    //send only once to the HA - to not increase the traffic over the air gap !!!!
+    //send only ONCE to the HA - to not increase the traffic over the air gap !!!!
     IPvXAddress ha = IPAddressResolver().resolve("HA");
-    if(dest==ha.get6()){
+    cout<<"Flowbinding Vergleich: last:"<<this->lastSendToFlowBindingAddress<<" new:"<<CoA.str().c_str()<<endl;
+
+    if(strcmp(this->lastSendToFlowBindingAddress.c_str(),CoA.str().c_str())){//if it is not the same - send new binding Update message - strcmp returns 0 when the same
         cout<<"FLOW BINDING UPDATE !!!"<<endl;
         cout<<"MN sendet eine einzelne FlowBindingUpdate Nachricht an den HA"<<endl;
 
@@ -1486,7 +1488,14 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
 
         cout<<"Flow-Binding-Update für HomeAdresse:"<<newFlowBindingUpdateToSend->getHomeAddress()<<" neue CoA: "<<newFlowBindingUpdateToSend->getNewCoAdress()<<endl;//<<" mit DestA: "<<dest<<endl;
         newFlowBindingUpdateToSend->setName("Flow Binding Update");
+
+        //update the last transmited flow binding value - so that it is not send again.
+        //has to be done before sending, since otherwise the pointer to the address gets deleted
+        this->lastSendToFlowBindingAddress= CoA.str();
+
+
         send(newFlowBindingUpdateToSend,"bindingUpdateChannelToProxyControlApp$o");
+
 
     }
    cout<<"BINDING UPDATE!!!"<<endl;
