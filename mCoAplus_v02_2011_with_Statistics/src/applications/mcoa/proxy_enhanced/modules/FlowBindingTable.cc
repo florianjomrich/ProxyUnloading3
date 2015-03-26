@@ -59,7 +59,7 @@ void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer
 
     this->existingFlowBindingEntries.push_back(newEntryToInsert);
 
-    delete newFlowBindingEntry;
+
 }
 
 void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry){
@@ -70,12 +70,12 @@ void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyS
     newEntryToInsert.setSrcPort(newFlowBindingEntry->getSrcPort());
     newEntryToInsert.setFlowSourceAddress(newFlowBindingEntry->getFlowSourceAddress());
 
-    cout<<"Flow Entry: "<<newEntryToInsert.srcAddress<<endl;
+    cout<<"Flow Entry: src:"<<newEntryToInsert.srcAddress<<"dest: "<<newEntryToInsert.destAddress<<endl;
 
     existingFlowBindingEntries.push_back(newEntryToInsert);
    cout<<"FRONT ENTRY IN TABLE: "<< existingFlowBindingEntries.front().srcAddress<<endl;
 
-    delete newFlowBindingEntry;
+
 
 }
 
@@ -188,7 +188,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
         existingFlowBindingEntries = updatedEntries;
 
 
-    delete update;
+
 }
 
 void FlowBindingTable::printoutContentOftable(){
