@@ -48,9 +48,11 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     newEntryToInsert.setFlowSourceAddress(
             newFlowBindingEntry->getFlowSourceAddress());
 
+    //to remove duplicates in the table - not updates
     if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
             newEntryToInsert.srcPort, newEntryToInsert.destAddress,
-            newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+            newEntryToInsert.srcAddress)) {
+
         this->existingFlowBindingEntries.push_back(newEntryToInsert);
     }
 
@@ -72,7 +74,8 @@ void FlowBindingTable::insertNewFlowBindingEntry(
 
     if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
             newEntryToInsert.srcPort, newEntryToInsert.destAddress,
-            newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+            newEntryToInsert.srcAddress)) {
+
         this->existingFlowBindingEntries.push_back(newEntryToInsert);
         // cout << "FRONT ENTRY IN TABLE: "
         //          << existingFlowBindingEntries.front().srcAddress << endl;
@@ -81,10 +84,9 @@ void FlowBindingTable::insertNewFlowBindingEntry(
 }
 
 
-//reverse check
+//for deep packet inspection on MN-Side
 bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
-        const char* destAddress, const char* sourceAddress,
-        const char* flowSourceAddress) {
+        const char* destAddress, const char* sourceAddress) {
 
     std::vector<FlowBindingEntry>::iterator it;
 
@@ -92,19 +94,53 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
             it < existingFlowBindingEntries.end(); it++) {
         if (it->destPort == dport && it->srcPort == sport
                 && !strcmp(it->srcAddress, sourceAddress)
-                && !strcmp(it->destAddress, destAddress)
-                && !strcmp(it->flowSourceAddress, flowSourceAddress)) {
+                && !strcmp(it->destAddress, destAddress)) {
             return true;
         }
     }
     return false;
 }
 
+
+//for FlowSourceAddress uplooking by CN
+bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+
+    std::vector<FlowBindingEntry>::iterator it;
+
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if (strcmp(it->flowSourceAddress, flowSourceAddress)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 //it has to be checked first if the entry really exist by calling the above method first !
 FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(
         const char* flowSourceAdress) {
 
 }
+
+//to set the address for further upper layer connections
+const char* FlowBindingTable::getFlowSourceAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress){
+
+    std::vector<FlowBindingEntry>::iterator it;
+
+
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if (it->destPort == dport && it->srcPort == sport
+                && !strcmp(it->srcAddress, sourceAddress)
+                && !strcmp(it->destAddress, destAddress)) {
+            return it->flowSourceAddress;
+        }
+    }
+
+}
+
+
 
 void FlowBindingTable::updateExistingFlowBindingEntry(
         FlowBindingUpdate* update) {
@@ -118,7 +154,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
-                it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                it->destAddress, it->srcAddress)) {
             if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
                 FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                 newEntryToInsert.setDestAddress(it->getDestAddress());
@@ -164,7 +200,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
-                it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                it->destAddress, it->srcAddress)) {
             if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
                 FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                 newEntryToInsert.setDestAddress(it->getDestAddress());

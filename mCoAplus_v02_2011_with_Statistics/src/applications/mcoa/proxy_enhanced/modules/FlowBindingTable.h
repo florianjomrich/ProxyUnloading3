@@ -41,12 +41,19 @@ public:
     FlowBindingTable();
     virtual ~FlowBindingTable();
     virtual void handleMessage(cMessage *msg);
+
     virtual void insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry);
     virtual void insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry);
+
     virtual FlowBindingEntry* getFlowBindingEntryFromTable(const char* flowSourceAdress);
-    virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress, const char* flowSourceAdress);
+    virtual const char* getFlowSourceAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+
+    virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+    virtual bool entryAlreadyExistsInTable(const char* flowSourceAddress);
+
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
     virtual void updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* update);
+
     virtual void printoutContentOftable();
 
 };

@@ -4197,3 +4197,542 @@ cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
 Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:16:06 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:110:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:952:25: error: expected primary-expression before ‘<<’ token
+                         << endl;
+                         ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+16:16:16 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:16:18 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:16:39 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+16:16:55 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:16:56 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:29:57 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: error: extra qualification ‘FlowBindingTable::’ on member ‘entryAlreadyExistsInTable’ [-fpermissive]
+     virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:54:76: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+             newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+                                                                            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:54:76: note: candidates are:
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+     virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:76: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+             newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+                                                                            ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:76: note: candidates are:
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+     virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:124:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+16:29:58 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:29:59 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:30:23 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:54:76: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+             newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+                                                                            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:54:76: note: candidates are:
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+     virtual bool entryAlreadyExistsInTable(const char* flowSourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:76: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+             newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+                                                                            ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:76: note: candidates are:
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:50:18: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+     virtual bool entryAlreadyExistsInTable(const char* flowSourceAddress);
+                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:51:18: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:124:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+16:30:24 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:30:25 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:31:01 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:124:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:138:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: error: no matching function for call to ‘FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*&, const char*&, const char*&)’
+                 it->destAddress, it->srcAddress, it->flowSourceAddress)) {
+                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:184:71: note: candidates are:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(int&, int&, const char*, const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
+      ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:88:6: note:   candidate expects 4 arguments, 5 provided
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note: virtual bool FlowBindingTable::entryAlreadyExistsInTable(const char*)
+ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:106:6: note:   candidate expects 1 argument, 5 provided
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+16:31:02 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:31:02 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:31:39 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:124:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:967:36: error: ‘flowSourceAddress’ was not declared in this scope
+                 neueSrcAdresse.set(flowSourceAddress->str().c_str()); /// ????
+                                    ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+16:31:41 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:31:41 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:39:44 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:124:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual const char* FlowBindingTable::getFlowSourceAddressForConnection(int&, int&, const char*, const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:141:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+16:39:49 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:39:49 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:40:59 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:961:61: error: ‘flowSourceAddress’ was not declared in this scope
+                     datagram->getSrcAddress().str().c_str(),flowSourceAddress->str().c_str())) {
+                                                             ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+16:41:00 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:41:00 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+16:41:24 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+16:41:27 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+16:41:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'

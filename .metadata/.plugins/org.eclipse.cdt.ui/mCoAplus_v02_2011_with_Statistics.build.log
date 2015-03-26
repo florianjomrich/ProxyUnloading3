@@ -1,4 +1,4 @@
-13:22:17 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+16:41:24 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
@@ -15,5 +15,5 @@ networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-W
 Creating shared library: ../out/gcc-debug/src/libinet.so
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
 
-13:22:21 Build Finished (took 3s.483ms)
+16:41:27 Build Finished (took 3s.668ms)
 
