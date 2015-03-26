@@ -39,6 +39,7 @@ void FlowBindingTable::handleMessage(cMessage* msg) {
 
 void FlowBindingTable::insertNewFlowBindingEntry(
         RequetConnectionToLegacyServer *newFlowBindingEntry) {
+
     FlowBindingEntry newEntryToInsert = FlowBindingEntry();
     newEntryToInsert.setDestAddress(newFlowBindingEntry->getDestAddress());
     newEntryToInsert.setSrcAddress(newFlowBindingEntry->getSrcAddress());
@@ -47,17 +48,17 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     newEntryToInsert.setFlowSourceAddress(
             newFlowBindingEntry->getFlowSourceAddress());
 
-    if (!entryAlreadyExistsInTable(newEntryToInsert.destPort, newEntryToInsert.srcPort,
-            newEntryToInsert.destAddress, newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+    if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
+            newEntryToInsert.srcPort, newEntryToInsert.destAddress,
+            newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
         this->existingFlowBindingEntries.push_back(newEntryToInsert);
     }
-
-
 
 }
 
 void FlowBindingTable::insertNewFlowBindingEntry(
         ACK_RequestConnectionToLegacyServer *newFlowBindingEntry) {
+
     FlowBindingEntry newEntryToInsert = FlowBindingEntry();
     newEntryToInsert.setDestAddress(newFlowBindingEntry->getDestAddress());
     newEntryToInsert.setSrcAddress(newFlowBindingEntry->getSrcAddress());
@@ -66,37 +67,20 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     newEntryToInsert.setFlowSourceAddress(
             newFlowBindingEntry->getFlowSourceAddress());
 
-  //  cout << "Flow Entry: src:" << newEntryToInsert.srcAddress << "dest: "
-   //         << newEntryToInsert.destAddress << endl;
+    //  cout << "Flow Entry: src:" << newEntryToInsert.srcAddress << "dest: "
+    //         << newEntryToInsert.destAddress << endl;
 
-    if (!entryAlreadyExistsInTable(newEntryToInsert.destPort, newEntryToInsert.srcPort,
-            newEntryToInsert.destAddress, newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
-        existingFlowBindingEntries.push_back(newEntryToInsert);
-       // cout << "FRONT ENTRY IN TABLE: "
-       //          << existingFlowBindingEntries.front().srcAddress << endl;
+    if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
+            newEntryToInsert.srcPort, newEntryToInsert.destAddress,
+            newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
+        this->existingFlowBindingEntries.push_back(newEntryToInsert);
+        // cout << "FRONT ENTRY IN TABLE: "
+        //          << existingFlowBindingEntries.front().srcAddress << endl;
     }
 
-
-
 }
 
-//check if an entry already exists:
-bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAdress) {
-    const bool srcPortFound = this->srcPorts.find(flowSourceAdress)
-            != srcPorts.end();
-    const bool destPortFound = this->destPorts.find(flowSourceAdress)
-            != destPorts.end();
-    const bool srcAddressFound = this->srcAdresses.find(flowSourceAdress)
-            != srcAdresses.end();
-    const bool destAddressFound = this->destAdresses.find(flowSourceAdress)
-            != destAdresses.end();
 
-    cout << "FlowBinding entry found:"
-            << (srcPortFound && destPortFound && srcAddressFound
-                    && destAddressFound) << endl;
-
-    return (srcPortFound && destPortFound && srcAddressFound && destAddressFound);
-}
 //reverse check
 bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
         const char* destAddress, const char* sourceAddress,
@@ -107,9 +91,9 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (it->destPort == dport && it->srcPort == sport
-                && !strcmp(it->srcAddress,sourceAddress)
-                && !strcmp(it->destAddress,destAddress)
-                && !strcmp(it->flowSourceAddress,flowSourceAddress)) {
+                && !strcmp(it->srcAddress, sourceAddress)
+                && !strcmp(it->destAddress, destAddress)
+                && !strcmp(it->flowSourceAddress, flowSourceAddress)) {
             return true;
         }
     }

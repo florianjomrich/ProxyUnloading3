@@ -946,7 +946,8 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
              * Replace now the Source-IP-Address of the package if there already exists a connection which has been acknowledged
              */
             if (flowBindingTable->entryAlreadyExistsInTable(
-                    flowSourceAddress->str().c_str())) {
+                    dport, sport, datagram->getDestAddress().str().c_str(),
+                    datagram->getSrcAddress().str().c_str(),flowSourceAddress->str().c_str())) {
                 cout << "IP Adresse wird nun ersetzt durch FlowSourceAdresse"
                         << endl;
 
@@ -955,11 +956,11 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                 datagram->setSrcAddress(neueSrcAdresse);
 
                 //for the reason when the HomeAgent has to take over the proxying functionality - it should be sent to him not to the CN
-                IPv6Address neueDestAdresse = IPv6Address();
+              /*  IPv6Address neueDestAdresse = IPv6Address();
                 neueDestAdresse.set(
                         flowBindingTable->getFlowBindingEntryFromTable(
                                 flowSourceAddress->str().c_str())->getDestAddress());
-                datagram->setDestAddress(neueDestAdresse);
+                datagram->setDestAddress(neueDestAdresse);*/
 
             }
             /*
