@@ -157,6 +157,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                     sendToUDPMCOA(acknowledgmentToHA, localPort, ha, 2000,
                             true);
 
+                    //cout<<"ACK MESSAGE: "<<acknowledgmentToHA->getSrcAddress()<<endl;
+
                     ACK_RequestConnectionToLegacyServer* acknowledgmentToMN =
                             new ACK_RequestConnectionToLegacyServer();
                     acknowledgmentToMN->setSrcAddress(

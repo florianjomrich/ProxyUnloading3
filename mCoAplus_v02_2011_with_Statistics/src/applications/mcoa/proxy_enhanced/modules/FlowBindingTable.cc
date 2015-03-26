@@ -70,8 +70,10 @@ void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyS
     newEntryToInsert.setSrcPort(newFlowBindingEntry->getSrcPort());
     newEntryToInsert.setFlowSourceAddress(newFlowBindingEntry->getFlowSourceAddress());
 
+    cout<<"Flow Entry: "<<newEntryToInsert.srcAddress<<endl;
 
-    this->existingFlowBindingEntries.push_back(newEntryToInsert);
+    existingFlowBindingEntries.push_back(newEntryToInsert);
+   cout<<"FRONT ENTRY IN TABLE: "<< existingFlowBindingEntries.front().srcAddress<<endl;
 
     delete newFlowBindingEntry;
 
@@ -110,9 +112,9 @@ FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char* flo
 
 
 void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update){
-    cout<<"FlowBindingTable updatet sich selbst"<<endl;
-    update->getNewCoAdress();
-    update->getHomeAddress();
+    cout<<"FlowBindingTable updatet sich selbst für HomeAddress:"<<update->getHomeAddress()<<" und New Care of Address: "<<update->getNewCoAdress()<<endl;
+
+
 
     std::vector<FlowBindingEntry>::iterator it;
     std::vector<FlowBindingEntry> updatedEntries;//hier werden die neuen Einträge gespeichert.
@@ -128,13 +130,31 @@ void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate* update)
 
                    updatedEntries.push_back(newEntryToInsert);
            }
+           updatedEntries.push_back(*it);
        }
 
 
 
-    for(it = updatedEntries.begin();it< updatedEntries.end();it++){
-        existingFlowBindingEntries.push_back(*it);
-    }
+
+    //TEST AUSGABE WIEDER LÖSCHE
+    int counter = 1;
+    cout<<"updatedEntries Size: "<<updatedEntries.size()<<endl;
+
+      for(it = updatedEntries.begin(); it < updatedEntries.end(); it++){
+          cout<<"updatedEntries: "<<counter<<".Tabelleneintrag  DestAddress:"<<it->destAddress<<" SrcAddress: "<<it->srcAddress<<"  DPort: "<<it->destPort<<" SPort: "<<it->srcPort<<endl;
+          counter++;
+      }
+
+
+
+    //////
+
+      existingFlowBindingEntries = updatedEntries;
+
+
+
+
+
 
     delete update;
 }
@@ -159,13 +179,25 @@ void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* upd
 
                    updatedEntries.push_back(newEntryToInsert);
            }
+           updatedEntries.push_back(*it);
        }
 
 
 
-    for(it = updatedEntries.begin();it< updatedEntries.end();it++){
-        existingFlowBindingEntries.push_back(*it);
-    }
+
+        existingFlowBindingEntries = updatedEntries;
+
 
     delete update;
+}
+
+void FlowBindingTable::printoutContentOftable(){
+
+    std::vector<FlowBindingEntry>::iterator it;
+    int counter = 1;
+
+    for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
+        cout<<counter<<".Tabelleneintrag  DestAddress:"<<it->destAddress<<" SrcAddress: "<<it->srcAddress<<"  DPort: "<<it->destPort<<" SPort: "<<it->srcPort<<endl;
+        counter++;
+    }
 }

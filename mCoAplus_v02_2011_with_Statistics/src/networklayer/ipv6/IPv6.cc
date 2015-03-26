@@ -119,6 +119,7 @@ void IPv6::endService(cPacket *msg) {
                 check_and_cast<RequetConnectionToLegacyServer *>(msg);
 
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+        flowBindingTable->printoutContentOftable();
         return;
     }
 
@@ -132,6 +133,8 @@ void IPv6::endService(cPacket *msg) {
         ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage =
                 check_and_cast<ACK_RequestConnectionToLegacyServer *>(msg);
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+        cout<<"1. Tabellenstand:"<<endl;
+        flowBindingTable->printoutContentOftable();
 
         return;
 
@@ -151,6 +154,8 @@ void IPv6::endService(cPacket *msg) {
 
         cout<<"MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
         flowBindingTable->updateExistingFlowBindingEntry(ackFlowBindingUpdate);
+        //Testausgabe der Tabelle:
+        flowBindingTable->printoutContentOftable();
         return;
     }
 

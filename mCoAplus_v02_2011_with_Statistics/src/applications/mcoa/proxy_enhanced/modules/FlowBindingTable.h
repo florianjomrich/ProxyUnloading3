@@ -48,6 +48,8 @@ public:
     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress, const char* flowSourceAdress);
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
     virtual void updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* update);
+    virtual void printoutContentOftable();
+
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */
