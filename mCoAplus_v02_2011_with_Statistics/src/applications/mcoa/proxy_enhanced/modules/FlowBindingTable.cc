@@ -33,12 +33,7 @@ void FlowBindingTable::handleMessage(cMessage* msg) {
     if (msg->isSelfMessage()) {
 
     } else {
-        /*
-         * A new entry has to be created
-         */
-        if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
 
-        }
     }
 }
 
@@ -71,14 +66,14 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     newEntryToInsert.setFlowSourceAddress(
             newFlowBindingEntry->getFlowSourceAddress());
 
-    cout << "Flow Entry: src:" << newEntryToInsert.srcAddress << "dest: "
-            << newEntryToInsert.destAddress << endl;
+  //  cout << "Flow Entry: src:" << newEntryToInsert.srcAddress << "dest: "
+   //         << newEntryToInsert.destAddress << endl;
 
     if (!entryAlreadyExistsInTable(newEntryToInsert.destPort, newEntryToInsert.srcPort,
             newEntryToInsert.destAddress, newEntryToInsert.srcAddress, newEntryToInsert.flowSourceAddress)) {
         existingFlowBindingEntries.push_back(newEntryToInsert);
-        cout << "FRONT ENTRY IN TABLE: "
-                 << existingFlowBindingEntries.front().srcAddress << endl;
+       // cout << "FRONT ENTRY IN TABLE: "
+       //          << existingFlowBindingEntries.front().srcAddress << endl;
     }
 
 
@@ -112,9 +107,9 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (it->destPort == dport && it->srcPort == sport
-                && it->srcAddress == sourceAddress
-                && it->destAddress == destAddress
-                && it->flowSourceAddress == flowSourceAddress) {
+                && !strcmp(it->srcAddress,sourceAddress)
+                && !strcmp(it->destAddress,destAddress)
+                && !strcmp(it->flowSourceAddress,flowSourceAddress)) {
             return true;
         }
     }
