@@ -2021,3 +2021,2179 @@ cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
 Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:16:48 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::printoutContentOftable()’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:180:9: error: ‘it’ was not declared in this scope
+     for(it = existingFlowBindingEntries.begin(); it < existingFlowBindingEntries.end(); it++){
+         ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+10:16:55 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:16:57 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:18:46 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::printoutContentOftable()’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:113: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘<unresolved overloaded function type>’)
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                 ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:113: note: candidates are:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:108:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+/usr/include/c++/4.8/ostream:108:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/usr/include/c++/4.8/ostream:117:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+/usr/include/c++/4.8/ostream:117:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/usr/include/c++/4.8/ostream:127:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+/usr/include/c++/4.8/ostream:127:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/4.8/ostream:166:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+/usr/include/c++/4.8/ostream:166:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘long int’
+/usr/include/c++/4.8/ostream:170:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+/usr/include/c++/4.8/ostream:170:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘long unsigned int’
+/usr/include/c++/4.8/ostream:174:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+/usr/include/c++/4.8/ostream:174:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘bool’
+In file included from /usr/include/c++/4.8/ostream:609:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘short int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:181:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+/usr/include/c++/4.8/ostream:181:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘short unsigned int’
+In file included from /usr/include/c++/4.8/ostream:609:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘int’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:192:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+/usr/include/c++/4.8/ostream:192:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘unsigned int’
+/usr/include/c++/4.8/ostream:201:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+/usr/include/c++/4.8/ostream:201:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘long long int’
+/usr/include/c++/4.8/ostream:205:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+/usr/include/c++/4.8/ostream:205:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘long long unsigned int’
+/usr/include/c++/4.8/ostream:220:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+/usr/include/c++/4.8/ostream:220:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘double’
+/usr/include/c++/4.8/ostream:224:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+/usr/include/c++/4.8/ostream:224:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘float’
+/usr/include/c++/4.8/ostream:232:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+/usr/include/c++/4.8/ostream:232:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘long double’
+/usr/include/c++/4.8/ostream:245:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+/usr/include/c++/4.8/ostream:245:7: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘const void*’
+In file included from /usr/include/c++/4.8/ostream:609:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘<unresolved overloaded function type>’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /home/ubuntu/omnetpp-4.4.1/include/simtime_t.h:24:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cexception.h:26,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cnamedobject.h:26,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:25,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:394:22: note: std::ostream& operator<<(std::ostream&, const SimTime&)
+ inline std::ostream& operator<<(std::ostream& os, const SimTime& x)
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:394:22: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘const SimTime&’
+In file included from /home/ubuntu/omnetpp-4.4.1/include/cexception.h:28:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cnamedobject.h:26,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:25,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/home/ubuntu/omnetpp-4.4.1/include/opp_string.h:152:22: note: std::ostream& operator<<(std::ostream&, const opp_string&)
+ inline std::ostream& operator<<(std::ostream& out, const opp_string& s)
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/opp_string.h:152:22: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘const opp_string&’
+In file included from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:295:23: note: std::ostream& operator<<(std::ostream&, const cOwnedObject*)
+ SIM_API std::ostream& operator<< (std::ostream& os, const cOwnedObject *p);
+                       ^
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:295:23: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘const cOwnedObject*’
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:296:23: note: std::ostream& operator<<(std::ostream&, const cOwnedObject&)
+ SIM_API std::ostream& operator<< (std::ostream& os, const cOwnedObject& o);
+                       ^
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:296:23: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘const cOwnedObject&’
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:298:22: note: std::ostream& operator<<(std::ostream&, cOwnedObject*)
+ inline std::ostream& operator<< (std::ostream& os, cOwnedObject *p) {
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:298:22: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘cOwnedObject*’
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:302:22: note: std::ostream& operator<<(std::ostream&, cOwnedObject&)
+ inline std::ostream& operator<< (std::ostream& os, cOwnedObject& o) {
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:302:22: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘cOwnedObject&’
+In file included from /home/ubuntu/omnetpp-4.4.1/include/cmersennetwister.h:26:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/omnetpp.h:53,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:20,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/home/ubuntu/omnetpp-4.4.1/include/mersennetwister.h:367:22: note: std::ostream& operator<<(std::ostream&, const MTRand&)
+ inline std::ostream& operator<<( std::ostream& os, const MTRand& mtrand )
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/mersennetwister.h:367:22: note:   no known conversion for argument 2 from ‘<unresolved overloaded function type>’ to ‘const MTRand&’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘const unsigned char*’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘const signed char*’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘const char*’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/ostream:609:0,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘const char*’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   mismatched types ‘const _CharT*’ and ‘int (FlowBindingEntry::*)()const’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   could not resolve address from overloaded function ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘unsigned char’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘signed char’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘char’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   cannot convert ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’ (type ‘<unresolved overloaded function type>’) to type ‘char’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   could not resolve address from overloaded function ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:22,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   ‘int (FlowBindingEntry::*)()const’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+         cout<<counter<<". DestAddress:"<<it->getDestAddress()<<" SrcAddress: "<<it->getSrcAddress()<<"  DPort: "<<it->getDestPort<<" SPort: "<<it->getSrcPort()<<endl;
+                                                                                                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:181:119: note:   could not resolve address from overloaded function ‘it.__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator-><FlowBindingEntry*, std::vector<FlowBindingEntry> >()->FlowBindingEntry::getDestPort’
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+10:18:49 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:18:49 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:21:54 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:678:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:22:13 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:22:13 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:23:37 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:23:41 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:23:41 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:38:51 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:38:52 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:38:52 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:41:07 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:41:11 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:41:11 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:45:39 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:45:43 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:45:44 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+10:57:47 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:680:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+10:57:54 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+10:57:55 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:05:32 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:05:37 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:05:37 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:08:02 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:08:06 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:08:06 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:11:18 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:11:21 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:11:22 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:15:04 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:15:04 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:15:05 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:27:10 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:27:14 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:27:15 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:29:54 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:137:45: error: redeclaration of ‘std::vector<FlowBindingEntry>::iterator it’
+     std::vector<FlowBindingEntry>::iterator it;
+                                             ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:117:45: error: ‘std::vector<FlowBindingEntry>::iterator it’ previously declared here
+     std::vector<FlowBindingEntry>::iterator it;
+                                             ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:29:55 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:29:55 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:30:14 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:30:18 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:30:18 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:31:43 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:31:46 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:31:47 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:34:38 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:34:42 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:34:42 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:38:04 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc: In member function ‘virtual void Proxy_Unloading_Control_App::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:157:33: error: no matching function for call to ‘Proxy_Unloading_Control_App::sendToUDPMCOA(ACK_RequestConnectionToLegacyServer&, int&, IPvXAddress&, int, bool)’
+                             true);
+                                 ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:157:33: note: candidate is:
+In file included from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h:27:0,
+                 from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:22:
+applications/mcoa/udpbase/MCoAUDPBase.h:99:15: note: virtual void MCoAUDPBase::sendToUDPMCOA(cPacket*, int, const IPvXAddress&, int, bool)
+  virtual void sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& destAddr, int destPort, bool appendCtrlInfo=true);
+               ^
+applications/mcoa/udpbase/MCoAUDPBase.h:99:15: note:   no known conversion for argument 1 from ‘ACK_RequestConnectionToLegacyServer’ to ‘cPacket*’
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o] Fehler 1
+make: *** [all] Fehler 2
+11:38:04 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:38:05 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:38:27 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc: In member function ‘virtual void Proxy_Unloading_Control_App::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:156:35: error: no match for ‘operator*’ (operand type is ‘ACK_RequestConnectionToLegacyServer’)
+                     sendToUDPMCOA(*acknowledgmentToHA, localPort, ha, 2000,
+                                   ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:156:35: note: candidates are:
+In file included from /home/ubuntu/omnetpp-4.4.1/include/simtime_t.h:24:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cexception.h:26,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cnamedobject.h:26,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:25,
+                 from /home/ubuntu/omnetpp-4.4.1/include/carray.h:23,
+                 from /home/ubuntu/omnetpp-4.4.1/include/omnetpp.h:21,
+                 from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h:26,
+                 from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:22:
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:374:22: note: const SimTime operator*(double, const SimTime&)
+ inline const SimTime operator*(double d, const SimTime& x)
+                      ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:374:22: note:   candidate expects 2 arguments, 1 provided
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:369:22: note: const SimTime operator*(const SimTime&, double)
+ inline const SimTime operator*(const SimTime& x, double d)
+                      ^
+/home/ubuntu/omnetpp-4.4.1/include/simtime.h:369:22: note:   candidate expects 2 arguments, 1 provided
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o] Fehler 1
+make: *** [all] Fehler 2
+11:38:28 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:38:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:38:38 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:38:41 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:38:42 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:40:13 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc: In member function ‘virtual void Proxy_Unloading_Control_App::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:144:69: error: conversion from ‘ACK_RequestConnectionToLegacyServer*’ to non-scalar type ‘ACK_RequestConnectionToLegacyServer’ requested
+                             new ACK_RequestConnectionToLegacyServer();
+                                                                     ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:145:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setSrcAddress(
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:147:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setDestAddress(
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:149:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setFlowSourceAddress(
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:151:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setDestPort(
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:153:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setSrcPort(messageFromHA->getSrcPort());
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:154:39: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     acknowledgmentToHA->setName(
+                                       ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:158:33: error: no matching function for call to ‘Proxy_Unloading_Control_App::sendToUDPMCOA(ACK_RequestConnectionToLegacyServer&, int&, IPvXAddress&, int, bool)’
+                             true);
+                                 ^
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:158:33: note: candidate is:
+In file included from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h:27:0,
+                 from applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:22:
+applications/mcoa/udpbase/MCoAUDPBase.h:99:15: note: virtual void MCoAUDPBase::sendToUDPMCOA(cPacket*, int, const IPvXAddress&, int, bool)
+  virtual void sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& destAddr, int destPort, bool appendCtrlInfo=true);
+               ^
+applications/mcoa/udpbase/MCoAUDPBase.h:99:15: note:   no known conversion for argument 1 from ‘ACK_RequestConnectionToLegacyServer’ to ‘cPacket*’
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc:160:62: error: base operand of ‘->’ has non-pointer type ‘ACK_RequestConnectionToLegacyServer’
+                     cout<<"ACK MESSAGE: "<<acknowledgmentToHA->getSrcAddress()<<endl;
+                                                              ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o] Fehler 1
+make: *** [all] Fehler 2
+11:40:13 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:40:14 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:40:30 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:40:33 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:40:34 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:43:36 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:110:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:43:40 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:43:40 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:45:15 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:45:18 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:45:18 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:36:59 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:133:39: error: no matching function for call to ‘std::vector<FlowBindingEntry>::push_back(std::vector<FlowBindingEntry>::iterator&)’
+            updatedEntries.push_back(it);
+                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:133:39: note: candidate is:
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:19,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = FlowBindingEntry; _Alloc = std::allocator<FlowBindingEntry>; std::vector<_Tp, _Alloc>::value_type = FlowBindingEntry]
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: note:   no known conversion for argument 1 from ‘std::vector<FlowBindingEntry>::iterator {aka __gnu_cxx::__normal_iterator<FlowBindingEntry*, std::vector<FlowBindingEntry> >}’ to ‘const value_type& {aka const FlowBindingEntry&}’
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:182:39: error: no matching function for call to ‘std::vector<FlowBindingEntry>::push_back(std::vector<FlowBindingEntry>::iterator&)’
+            updatedEntries.push_back(it);
+                                       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:182:39: note: candidate is:
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:19,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = FlowBindingEntry; _Alloc = std::allocator<FlowBindingEntry>; std::vector<_Tp, _Alloc>::value_type = FlowBindingEntry]
+       push_back(const value_type& __x)
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: note:   no known conversion for argument 1 from ‘std::vector<FlowBindingEntry>::iterator {aka __gnu_cxx::__normal_iterator<FlowBindingEntry*, std::vector<FlowBindingEntry> >}’ to ‘const value_type& {aka const FlowBindingEntry&}’
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+12:37:00 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:37:00 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:37:24 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:37:27 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:37:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:42:34 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:67:81: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     newEntryToInsert.setDestAddress(sprintf(newFlowBindingEntry->getDestAddress()));
+                                                                                 ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:67:82: error: too few arguments to function ‘int sprintf(char*, const char*, ...)’
+     newEntryToInsert.setDestAddress(sprintf(newFlowBindingEntry->getDestAddress()));
+                                                                                  ^
+In file included from /home/ubuntu/omnetpp-4.4.1/include/simutil.h:24:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:24,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/stdio.h:364:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+12:42:34 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:42:35 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:43:27 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setDestAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:36:27: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+         this->destAddress = destAddress;
+                           ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setSrcAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:52:26: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+         this->srcAddress = srcAddress;
+                          ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setFlowSourceAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:61:34: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+          this->flowSourceAddress = flowSourceAddress;
+                                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc: In constructor ‘FlowBindingEntry::FlowBindingEntry(int, int, const char*, const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:30:21: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     this->srcAddress=srcAddress;
+                     ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:31:22: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     this->destAddress=destAddress;
+                      ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o] Fehler 1
+make: *** [all] Fehler 2
+12:43:27 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:43:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:43:46 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:16:0:
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setDestAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:36:27: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+         this->destAddress = destAddress;
+                           ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setSrcAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:52:26: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+         this->srcAddress = srcAddress;
+                          ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h: In member function ‘void FlowBindingEntry::setFlowSourceAddress(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:61:34: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+          this->flowSourceAddress = flowSourceAddress;
+                                  ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc: At global scope:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:27:1: error: prototype for ‘FlowBindingEntry::FlowBindingEntry(int, int, char*, char*)’ does not match any in class ‘FlowBindingEntry’
+ FlowBindingEntry::FlowBindingEntry(int srcPort, int destPort,char* srcAddress,char* destAddress){
+ ^
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:19:7: error: candidates are: FlowBindingEntry::FlowBindingEntry(const FlowBindingEntry&)
+ class FlowBindingEntry {
+       ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h:28:5: error:                 FlowBindingEntry::FlowBindingEntry(int, int, const char*, const char*)
+     FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress);
+     ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc:18:1: error:                 FlowBindingEntry::FlowBindingEntry()
+ FlowBindingEntry::FlowBindingEntry() {
+ ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o] Fehler 1
+make: *** [all] Fehler 2
+12:43:47 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:43:47 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:44:12 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:67:81: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     newEntryToInsert.setDestAddress(sprintf(newFlowBindingEntry->getDestAddress()));
+                                                                                 ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:67:82: error: too few arguments to function ‘int sprintf(char*, const char*, ...)’
+     newEntryToInsert.setDestAddress(sprintf(newFlowBindingEntry->getDestAddress()));
+                                                                                  ^
+In file included from /home/ubuntu/omnetpp-4.4.1/include/simutil.h:24:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:24,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/stdio.h:364:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:68:79: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+     newEntryToInsert.setSrcAddress(sprintf(newFlowBindingEntry->getSrcAddress()));
+                                                                               ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:68:80: error: too few arguments to function ‘int sprintf(char*, const char*, ...)’
+     newEntryToInsert.setSrcAddress(sprintf(newFlowBindingEntry->getSrcAddress()));
+                                                                                ^
+In file included from /home/ubuntu/omnetpp-4.4.1/include/simutil.h:24:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:24,
+                 from /home/ubuntu/omnetpp-4.4.1/include/ccomponent.h:21,
+                 from /home/ubuntu/omnetpp-4.4.1/include/cmodule.h:20,
+                 from /home/ubuntu/omnetpp-4.4.1/include/csimplemodule.h:23,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:19,
+                 from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:
+/usr/include/stdio.h:364:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+12:44:12 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:44:13 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:44:32 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:44:36 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:44:36 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:47:52 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:47:55 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+opp_makedep: warning: no input files
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:47:56 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:48:39 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:48:42 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:48:42 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:50:43 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:50:47 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:50:47 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:52:44 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:111:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:52:47 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:52:48 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:01:43 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:118:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:132:38: error: ‘class FlowBindingEntry’ has no member named ‘sourceAddress’
+                 it->destAddress, it->sourceAddress, it->flowSourceAddress)) {
+                                      ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::updateExistingFlowBindingEntry(ACK_FlowBindingUpdate*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:178:38: error: ‘class FlowBindingEntry’ has no member named ‘sourceAddress’
+                 it->destAddress, it->sourceAddress, it->flowSourceAddress)) {
+                                      ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+13:01:43 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:01:44 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:02:14 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:118:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:02:17 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:02:18 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:04:11 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:55:36: error: ‘it’ was not declared in this scope
+     if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
+                                    ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:36: error: ‘it’ was not declared in this scope
+     if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
+                                    ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:128:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+13:04:12 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:04:12 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:04:56 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:77:36: error: ‘it’ was not declared in this scope
+     if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
+                                    ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:128:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make: *** [all] Fehler 2
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:04:57 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:04:57 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:05:31 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:128:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:05:35 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:05:35 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:10:43 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:123:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:10:47 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:10:47 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:19:34 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:19:38 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:19:38 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:20:35 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:20:35 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:20:36 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:22:17 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::isLocalAddress(IPv6Datagram*, bool)’:
+networklayer/ipv6/IPv6.cc:681:26: warning: unused variable ‘neueAdresse’ [-Wunused-variable]
+             IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111"); /// ????
+                          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:22:21 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:22:21 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'

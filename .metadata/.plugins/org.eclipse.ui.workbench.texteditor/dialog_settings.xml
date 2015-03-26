@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="291" key="DIALOG_WIDTH"/>
-		<item value="226" key="DIALOG_Y_ORIGIN"/>
+		<item value="235" key="DIALOG_Y_ORIGIN"/>
 		<item value="433" key="DIALOG_HEIGHT"/>
-		<item value="1181" key="DIALOG_X_ORIGIN"/>
+		<item value="1532" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,12 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="FlowBinding" key="selection"/>
+		<item value="from SRC" key="selection"/>
 		<list key="findhistory">
-			<item value="FlowBinding"/>
-			<item value="updateBUL"/>
-			<item value="sendPeriodic"/>
-			<item value="send"/>
+			<item value="from SRC"/>
+			<item value="FlowBindingTable des MN updatet sich selbst"/>
+			<item value="MN updating"/>
+			<item value="MN"/>
+			<item value="Flow Entry"/>
+			<item value="1.Tabellenstand"/>
+			<item value="1.Tabellen"/>
+			<item value="Tabellenstand"/>
 		</list>
 		<list key="replacehistory">
 		</list>
