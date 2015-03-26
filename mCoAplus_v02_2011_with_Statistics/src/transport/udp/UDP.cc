@@ -207,8 +207,9 @@ void UDP::handleMessage(cMessage *msg)
     }
     else // received from application layer
     {
-        if (msg->getKind()==UDP_C_DATA)
-            processMsgFromApp(PK(msg));
+        if (msg->getKind()==UDP_C_DATA){
+            cout<<"UDP Nachricht empfangen!!!"<<endl;
+            processMsgFromApp(PK(msg));}
         else
             processCommandFromApp(msg);
     }

@@ -179,7 +179,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 		*/
     	TrysendToUDPMCOA(msg,  srcPort, destAddr, destPort , appendCtrlInfo);
     }else{
-    	if (useMode == MCOA_TUN_ALL_ADR_ALL){
+    	//if (useMode == MCOA_TUN_ALL_ADR_ALL){
     	  //  cout<<"ICH WAR HIER !!!"<<endl; //ALL = DIESE OPTION HIER AUSGEWÄHLT
     		std::vector<AdrInfo>::iterator it;
 
@@ -204,7 +204,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 					}else {
 						//cout << "MCoAUDPBase destination address differs " << it->mDest << " from conf. destAddress  " << destAddr << endl;
 
-						if (!isDestiny){ // Sender can be single-homed
+					//	if (!isDestiny){ // Sender can be single-homed
 							cPacket *msg1 = msg->dup();
 						//cout << "MCoAUDPBase in Sending node duplicating message for source adr " << it->mSrc << endl;
 							//Please note dup objects need to add controlinfo.
@@ -217,7 +217,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 						   sendToUDP(msg, it->mSrc, srcPort, destAddr, destPort , true);
 						}
 						    sentMsg= true;
-						}
+					//	}
 					}
 				}
 
@@ -226,11 +226,11 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 				cout << "All the addresses were marked as deleted ! trying a standard send" << endl;
 				TrysendToUDPMCOA(msg,  srcPort, destAddr, destPort , appendCtrlInfo);
 			}
-    	}else {
+    	}/*else {
     		/*
     		 * For each packet to send choose a random path
     		 */
-    		if (useMode == MCOA_TUN_ALL_ADR_SINGLE_RR){
+    		/*if (useMode == MCOA_TUN_ALL_ADR_SINGLE_RR){
     			//if (prefAddress.isUnspecified()){
 				int idx =  (int)intrand(lenAdrs); // start from zero
 				EV << "MCoAUDPBAse chosen index" << idx << " from " << lenAdrs << endl;
@@ -247,18 +247,18 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 					}
 					*/
     			//}
-    		}else {
+    		/*}else {
     			/*
     			 * Use always the first address present in the vector
     			 */
-    			if (useMode == MCOA_TUN_ALL_ADR_SINGLE_FIRST){
+    		/*	if (useMode == MCOA_TUN_ALL_ADR_SINGLE_FIRST){
     				IPvXAddress adrtoSend = adrsAvailable[0].mSrc;
 
     				sendToUDP(msg, adrtoSend, srcPort, destAddr, destPort, appendCtrlInfo );
     			}
     		}
     	}
-    }
+    }*/
 }
 
 
