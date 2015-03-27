@@ -79,7 +79,6 @@ void IPv6::initialize() {
     myHumanReadableName =
             par("humanReadableNameForAutomaticAdding").stringValue();
 
-
     //get Instance of the FlowBindingTable - but only if MN or CN or HA - not a normal router - they do not have such a module
     // this module could be added in a further investigation
     if (isMN || isHA || isCN) {
@@ -119,7 +118,7 @@ void IPv6::endService(cPacket *msg) {
                 check_and_cast<RequetConnectionToLegacyServer *>(msg);
 
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
-        cout<<"1. Tabellenstand:"<<endl;
+        cout << "1. Tabellenstand:" << endl;
         flowBindingTable->printoutContentOftable();
         return;
     }
@@ -134,31 +133,36 @@ void IPv6::endService(cPacket *msg) {
         ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage =
                 check_and_cast<ACK_RequestConnectionToLegacyServer *>(msg);
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
-        cout<<"1. Tabellenstand:"<<endl;
+        cout << "1. Tabellenstand:" << endl;
         flowBindingTable->printoutContentOftable();
 
         return;
 
     }
 
-    if(dynamic_cast<FlowBindingUpdate*>(msg) && (isHA || isCN)){
-        FlowBindingUpdate* receivedFlowBindingUpdate = check_and_cast<FlowBindingUpdate *>(msg);
+    if (dynamic_cast<FlowBindingUpdate*>(msg) && (isHA || isCN)) {
+        FlowBindingUpdate* receivedFlowBindingUpdate = check_and_cast<
+                FlowBindingUpdate *>(msg);
 
-        cout<<"HA/CN: "<<isHA<<isCN<<" Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
-        flowBindingTable->updateExistingFlowBindingEntry(receivedFlowBindingUpdate);
-        cout<<"Aktualisierter Tabellenstand:"<<endl;
+        cout << "HA/CN: " << isHA << isCN
+                << " Netzwerklayer aktualisiert jetzt die FlowBindingTable"
+                << endl;
+        flowBindingTable->updateExistingFlowBindingEntry(
+                receivedFlowBindingUpdate);
+        cout << "Aktualisierter Tabellenstand:" << endl;
         flowBindingTable->printoutContentOftable();
         return;
     }
 
+    if (dynamic_cast<ACK_FlowBindingUpdate*>(msg) && (isMN)) {
+        ACK_FlowBindingUpdate* ackFlowBindingUpdate = check_and_cast<
+                ACK_FlowBindingUpdate *>(msg);
 
-    if(dynamic_cast<ACK_FlowBindingUpdate*>(msg) && (isMN)){
-        ACK_FlowBindingUpdate* ackFlowBindingUpdate = check_and_cast<ACK_FlowBindingUpdate *>(msg);
-
-        cout<<"MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
+        cout << "MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"
+                << endl;
         flowBindingTable->updateExistingFlowBindingEntry(ackFlowBindingUpdate);
         //Testausgabe der Tabelle:
-        cout<<"Aktualisierter Tabellenstand:"<<endl;
+        cout << "Aktualisierter Tabellenstand:" << endl;
         flowBindingTable->printoutContentOftable();
         return;
     }
@@ -845,6 +849,64 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
 }
 
 //PROXY UNLOADING EXTENSION
+IPv6Datagram* IPv6::replaceFlowSourceAddress(IPv6Datagram *datagram) {
+
+    //check first if the src and destination ip adresses are set properly otherwise return and do nothing here
+    if (datagram->getDestAddress().isUnspecified()) {
+        cout
+                << "@@DEST-ADRESSE WAR UNSPEZIFIZIERT FlowSourceAdresse konnte nicht berechnet werden"
+                << endl;
+        return datagram;
+    }
+
+    if (datagram->getSrcAddress().isUnspecified()
+            && datagram->getTransportProtocol() == IP_PROT_UDP) {
+        cout
+                << "@@SRC-ADRESSE  DES UDP-PAKETS WAR UNSPEZIFIZIERT und wurde automatisch ergänzt"
+                << endl;
+        IPvXAddress newSourceAdress = IPAddressResolver().resolve(
+                myHumanReadableName);
+
+        datagram->setSrcAddress(newSourceAdress.get6());
+    }
+
+
+    //If the message was send from a CN replace the flow-Source Address with the correct Destination Address
+    int protocol = datagram->getTransportProtocol();
+    int sport = -1;
+    int dport = -1;
+    if (protocol == IP_PROT_UDP) { //only UDP-Protocol is checked currently
+        sport =
+                dynamic_cast<UDPPacket*>(datagram->getEncapsulatedPacket())->getSourcePort();
+        dport =
+                dynamic_cast<UDPPacket*>(datagram->getEncapsulatedPacket())->getDestinationPort();
+
+        if (dport != -1 && sport != -1) {
+            cout<<"CN Transport Daten vor der Ersetzung: dport: "<<dport<<" sport: "<<sport<<" SrcAdresse: "<<datagram->getSrcAddress()<<" DesAdresse: "<<datagram->getDestAddress()<<endl;
+
+            if (flowBindingTable->flowSourceAdressAlreadyExistsInTable(dport,
+                    sport, datagram->getDestAddress().str().c_str(),
+                    datagram->getSrcAddress().str().c_str())) {
+                IPv6Address neueDestAdresse = IPv6Address();
+                neueDestAdresse.set(
+                        flowBindingTable->getCorrectDestinationAddressForConnection(
+                                dport, sport,
+                                datagram->getDestAddress().str().c_str(),
+                                datagram->getSrcAddress().str().c_str())); /// ????
+                datagram->setDestAddress(neueDestAdresse);
+                cout
+                        << "CN Transport Layer ersetzt nun Flow Source Adresse durch normale Destination Addresse"
+                        << endl;
+               }
+
+            cout<<"CN Transport Daten nach der Ersetzung: dport: "<<dport<<" sport: "<<sport<<" SrcAdresse: "<<datagram->getSrcAddress()<<" DesAdresse: "<<datagram->getDestAddress()<<endl;
+
+        }
+    }
+    return datagram;
+}
+
+//PROXY UNLOADING EXTENSION
 IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
     //check first if the src and destination ip adresses are set properly otherwise return and do nothing here
@@ -883,57 +945,51 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
             cout << "DEST ADDR: " << datagram->getDestAddress()
                     << " und SRC ADDR: " << datagram->getSrcAddress() << endl;
 
-
-
             //cout << "FLOW SOURCE ADDRESS: " << flowSourceAddress << endl;
 
             //IF NO MESSAGE WAS ALREADY SENT TO the other HOST - AND the Message is not for the HA itself - SEND ONE CONTROL MESSAGE TO HA
 
-            if(!flowBindingTable->entryAlreadyExistsInTable(
-                    dport, sport, datagram->getDestAddress().str().c_str(),
+            if (!flowBindingTable->entryAlreadyExistsInTable(dport, sport,
+                    datagram->getDestAddress().str().c_str(),
                     datagram->getSrcAddress().str().c_str())
                     && datagram->getDestAddress()
                             != IPAddressResolver().resolve("HA").get6()
 
                             ) {
 
-
                 //calculate the new flow source address
 
                 uint32_t srcAdressPart0 =
-                                    datagram->getSrcAddress().getIPAdressAsIntegerPart0(); //4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
-                            uint32_t srcAdressPart1 =
-                                    datagram->getSrcAddress().getIPAdressAsIntegerPart1();
-                            uint32_t srcAdressPart2 =
-                                    datagram->getSrcAddress().getIPAdressAsIntegerPart2();
-                            uint32_t srcAdressPart3 =
-                                    datagram->getSrcAddress().getIPAdressAsIntegerPart3();
+                        datagram->getSrcAddress().getIPAdressAsIntegerPart0(); //4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
+                uint32_t srcAdressPart1 =
+                        datagram->getSrcAddress().getIPAdressAsIntegerPart1();
+                uint32_t srcAdressPart2 =
+                        datagram->getSrcAddress().getIPAdressAsIntegerPart2();
+                uint32_t srcAdressPart3 =
+                        datagram->getSrcAddress().getIPAdressAsIntegerPart3();
 
-                            uint32_t destAdressPart0 =
-                                    datagram->getDestAddress().getIPAdressAsIntegerPart0(); //4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
-                            uint32_t destAdressPart1 =
-                                    datagram->getDestAddress().getIPAdressAsIntegerPart1();
-                            uint32_t destAdressPart2 =
-                                    datagram->getDestAddress().getIPAdressAsIntegerPart2();
-                            uint32_t destAdressPart3 =
-                                    datagram->getDestAddress().getIPAdressAsIntegerPart3();
+                uint32_t destAdressPart0 =
+                        datagram->getDestAddress().getIPAdressAsIntegerPart0(); //4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
+                uint32_t destAdressPart1 =
+                        datagram->getDestAddress().getIPAdressAsIntegerPart1();
+                uint32_t destAdressPart2 =
+                        datagram->getDestAddress().getIPAdressAsIntegerPart2();
+                uint32_t destAdressPart3 =
+                        datagram->getDestAddress().getIPAdressAsIntegerPart3();
 
-                            //hahsFunction now! - Knuths Multiplicativ Method - siehe http://stackoverflow.com/questions/664014/what-integer-hash-function-are-good-that-accepts-an-integer-hash-key
-                            uint32_t flowSourceAddress0 = srcAdressPart0 + sport + dport
-                                    + destAdressPart0;
-                            uint32_t flowSourceAddress1 = srcAdressPart1 + sport + dport
-                                    + destAdressPart1;
-                            uint32_t flowSourceAddress2 = srcAdressPart2 + sport + dport
-                                    + destAdressPart2;
-                            uint32_t flowSourceAddress3 = srcAdressPart3 + sport + dport
-                                    + destAdressPart3;
+                //hahsFunction now! - Knuths Multiplicativ Method - siehe http://stackoverflow.com/questions/664014/what-integer-hash-function-are-good-that-accepts-an-integer-hash-key
+                uint32_t flowSourceAddress0 = srcAdressPart0 + sport + dport
+                        + destAdressPart0;
+                uint32_t flowSourceAddress1 = srcAdressPart1 + sport + dport
+                        + destAdressPart1;
+                uint32_t flowSourceAddress2 = srcAdressPart2 + sport + dport
+                        + destAdressPart2;
+                uint32_t flowSourceAddress3 = srcAdressPart3 + sport + dport
+                        + destAdressPart3;
 
-                            IPv6Address* flowSourceAddress = new IPv6Address(flowSourceAddress0,
-                                    flowSourceAddress1, flowSourceAddress2, flowSourceAddress3);
-
-
-
-
+                IPv6Address* flowSourceAddress = new IPv6Address(
+                        flowSourceAddress0, flowSourceAddress1,
+                        flowSourceAddress2, flowSourceAddress3);
 
                 RequetConnectionToLegacyServer* legacyRequestPacket =
                         new RequetConnectionToLegacyServer();
@@ -950,36 +1006,40 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
                 //add entry if not already sent
                 //requestForConnectionToLegacyServerTable->setRequest(dport,
-                 //       sport, datagram->getDestAddress(),
-                 //       datagram->getSrcAddress(), flowSourceAddress);
+                //       sport, datagram->getDestAddress(),
+                //       datagram->getSrcAddress(), flowSourceAddress);
 
                 send(legacyRequestPacket, "uDPControllAppConnection$o");
             }
-           /**
+            /**
              * Replace now the Source-IP-Address of the package if there already exists a connection which has been acknowledged
              * it could also be the HA, so to the homeAgent there will be no change of ip address
              */
-
-           if (flowBindingTable->entryAlreadyExistsInTable(
-                    dport, sport, datagram->getDestAddress().str().c_str(),
+            if (flowBindingTable->entryAlreadyExistsInTable(dport, sport,
+                    datagram->getDestAddress().str().c_str(),
                     datagram->getSrcAddress().str().c_str())) {
 
-                cout << "IP Adresse wird nun ersetzt durch FlowSourceAdresse"
+                cout
+                        << "MN Transport Layer ersetzt nun SRC-IP Adresse durch FlowSourceAdresse"
                         << endl;
 
                 IPv6Address neueSrcAdresse = IPv6Address();
-                neueSrcAdresse.set(flowBindingTable->getFlowSourceAddressForConnection(dport, sport, datagram->getDestAddress().str().c_str(),
-                        datagram->getSrcAddress().str().c_str())); /// ????
+                neueSrcAdresse.set(
+                        flowBindingTable->getFlowSourceAddressForConnection(
+                                dport, sport,
+                                datagram->getDestAddress().str().c_str(),
+                                datagram->getSrcAddress().str().c_str())); /// ????
                 datagram->setSrcAddress(neueSrcAdresse);
 
                 //for the reason when the HomeAgent has to take over the proxying functionality - it should be sent to him not to the CN
-              /*  IPv6Address neueDestAdresse = IPv6Address();
-                neueDestAdresse.set(
-                        flowBindingTable->getFlowBindingEntryFromTable(
-                                flowSourceAddress->str().c_str())->getDestAddress());
-                datagram->setDestAddress(neueDestAdresse);*/
+                /*  IPv6Address neueDestAdresse = IPv6Address();
+                 neueDestAdresse.set(
+                 flowBindingTable->getFlowBindingEntryFromTable(
+                 flowSourceAddress->str().c_str())->getDestAddress());
+                 datagram->setDestAddress(neueDestAdresse);*/
 
             }
+
             /*
              * IP ADRESSE SO ERSETZEN
              *
@@ -1070,6 +1130,13 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket,
         cout << "Name des durch den MN zu sendenden Datagrams: "
                 << datagram->getName() << endl;
         calculateFlowSourceAddress(datagram);
+    }
+
+    if (isCN) {
+        cout << "Name des durch den CN zu sendenden Datagrams: "
+                << datagram->getName() << endl;
+        replaceFlowSourceAddress(datagram);
+
     }
 
     //PROXY UNLOADING XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

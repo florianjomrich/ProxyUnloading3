@@ -100,24 +100,40 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
     return false;
 }
 
-//for FlowSourceAddress uplooking by CN
-bool FlowBindingTable::entryAlreadyExistsInTable(
-        const char* flowSourceAddress) {
 
+
+
+//for the Replacement of Flow Source Address through CN
+//Tabelle speichert Verbindungen vom MN (Src Adresse) zum CN (Destination Addresse)
+bool FlowBindingTable::flowSourceAdressAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress){
     std::vector<FlowBindingEntry>::iterator it;
 
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
-        if (strcmp(it->flowSourceAddress, flowSourceAddress)) {
+        if (it->destPort = dport && it->srcPort == sport && !strcmp(it->destAddress,sourceAddress) && !strcmp(it->flowSourceAddress, destAddress)) {
             return true;
         }
     }
     return false;
 }
 
+
+
 //it has to be checked first if the entry really exist by calling the above method first !
-FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(
-        const char* flowSourceAdress) {
+const char* FlowBindingTable::getCorrectDestinationAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress) {
+
+    std::vector<FlowBindingEntry>::iterator it;
+
+       for (it = existingFlowBindingEntries.begin();
+               it < existingFlowBindingEntries.end(); it++) {
+           if (it->destPort = dport && it->srcPort == sport && !strcmp(it->destAddress,sourceAddress) && !strcmp(it->flowSourceAddress, destAddress)) {
+               cout << "GetCorrectDestination-Function:\n  DestinationAddress:"<< it->destAddress
+                              << " SRC_ADDRESS: " << it->srcAddress << "FlowSourceAddress: "<<it->flowSourceAddress<<"  DPort: "
+                              << it->destPort << " SPort: " << it->srcPort <<"\n\n"<< endl;
+               return it->srcAddress;
+           }
+       }
+
 
 }
 

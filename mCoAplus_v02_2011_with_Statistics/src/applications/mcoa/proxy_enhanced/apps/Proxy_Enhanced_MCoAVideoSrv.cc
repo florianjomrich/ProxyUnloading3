@@ -166,13 +166,13 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *msg)
                 IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
 
 		cout<<"Src Adresse, an die Video geschickt wird: "<<myControllInfo->getSrcAddr()<<endl;
-		IPvXAddress adresse = IPAddressResolver().resolve("MN[0]");
+
 		VideoMessage* newVideoData = new VideoMessage();
 		newVideoData->setName("Video Datei vom VideoSrv");
 		newVideoData->setSequenceNumber(requestForVideoStream->getSequenceNumber()+1);
 
 		cout<<"MCoASrv-SimTime: "<<simTime()<<endl;
-		sendToUDPMCOA(newVideoData, localPort,  adresse ,1000, true); //HIER GIBT ES PROBLEME !!!
+		sendToUDPMCOA(newVideoData, localPort,  myControllInfo->getSrcAddr() ,1000, true); //HIER GIBT ES PROBLEME !!!
 
 
 
