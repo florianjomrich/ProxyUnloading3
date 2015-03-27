@@ -212,7 +212,10 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
                 updatedEntries.push_back(newEntryToInsert);
             }
-            updatedEntries.push_back(*it);
+            else{
+                updatedEntries.push_back(*it);
+            }
+
         }
     }
 

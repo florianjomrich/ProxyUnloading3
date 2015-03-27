@@ -119,6 +119,7 @@ void IPv6::endService(cPacket *msg) {
                 check_and_cast<RequetConnectionToLegacyServer *>(msg);
 
         flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+        cout<<"1. Tabellenstand:"<<endl;
         flowBindingTable->printoutContentOftable();
         return;
     }
@@ -145,6 +146,8 @@ void IPv6::endService(cPacket *msg) {
 
         cout<<"HA/CN: "<<isHA<<isCN<<" Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
         flowBindingTable->updateExistingFlowBindingEntry(receivedFlowBindingUpdate);
+        cout<<"Aktualisierter Tabellenstand:"<<endl;
+        flowBindingTable->printoutContentOftable();
         return;
     }
 

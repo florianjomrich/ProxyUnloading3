@@ -258,6 +258,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 }
 
                 //Confirm the received Flow Binding Update to the sending mobile node, so that he can use this new address as well
+                //TODO - get the confirmation from the CN first !!! Than acknowledge it !!
                 IPvXAddress *mn = new IPvXAddress(
                         messageFromMN->getNewCoAdress());
                 ACK_FlowBindingUpdate* flowBindingAckToMN =
@@ -278,8 +279,31 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             }
             if (isCN) {
                 //TODO Flow-Binding-Update-Ergänzen
-                cout << "CN hat nun auch das Flow-Binding-Update bekommen TODO"
+                FlowBindingUpdate* messageFromHA = check_and_cast<
+                                    FlowBindingUpdate *>(msg);
+                cout << "CN hat nun auch das Flow-Binding-Update bekommen und bestätigt es an den HA"
                         << endl;
+
+                //update of the own table
+                send(messageFromHA,"uDPControllAppConnection$o");
+
+
+                //Confirm the received Flow Binding Update to the Home Agent, so that he can inform the Mobile Node as well
+                    IPvXAddress ha = IPAddressResolver().resolve("HA");
+                    ACK_FlowBindingUpdate* flowBindingAckToHA =
+                            new ACK_FlowBindingUpdate();
+                    flowBindingAckToHA->setName("ACK_FlowBindingUpdate");
+                    flowBindingAckToHA->setHomeAddress(
+                            messageFromHA->getHomeAddress());
+                    flowBindingAckToHA->setNewCoAdress(
+                            messageFromHA->getNewCoAdress());
+                    flowBindingAckToHA->setDestAddress(
+                            messageFromHA->getDestAddress());
+                    flowBindingAckToHA->setWasSendFromHA(false);
+                    sendToUDPMCOA(flowBindingAckToHA, localPort, ha, 2000, true);
+
+
+
                 return;
             }
         }
@@ -289,7 +313,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
         if (dynamic_cast<ACK_FlowBindingUpdate*>(msg)) {
             if (isMN) {
                 //TODO
-                ACK_FlowBindingUpdate* messageFromCNorHA = check_and_cast<
+                ACK_FlowBindingUpdate* messageFromHA = check_and_cast<
                         ACK_FlowBindingUpdate *>(msg);
 
 
@@ -297,8 +321,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << "MN hat BindingUpdate Nachricht bestätigt bekommen - nun kann er den Timer für erneutes Senden löschen TODO"
                         << endl;
                 cout <<"MN aktualisiert seine eigene Tabelle mit den erhaltenen Informationen"<<endl;
-                send(messageFromCNorHA,"uDPControllAppConnection$o");
+                send(messageFromHA,"uDPControllAppConnection$o");
                 return;
+            }
+            if(isHA){
+                ACK_FlowBindingUpdate* messageFromCN = check_and_cast<
+                              ACK_FlowBindingUpdate *>(msg);
+
+                cout<< "HA hat eine ACK_FlowBindingUpdate Nachricht vom CN empfangen."<<endl;
             }
         }
 
