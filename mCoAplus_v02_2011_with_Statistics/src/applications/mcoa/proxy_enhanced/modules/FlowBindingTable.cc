@@ -83,7 +83,6 @@ void FlowBindingTable::insertNewFlowBindingEntry(
 
 }
 
-
 //for deep packet inspection on MN-Side
 bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
         const char* destAddress, const char* sourceAddress) {
@@ -101,9 +100,9 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
     return false;
 }
 
-
 //for FlowSourceAddress uplooking by CN
-bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) {
+bool FlowBindingTable::entryAlreadyExistsInTable(
+        const char* flowSourceAddress) {
 
     std::vector<FlowBindingEntry>::iterator it;
 
@@ -116,7 +115,6 @@ bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAddress) 
     return false;
 }
 
-
 //it has to be checked first if the entry really exist by calling the above method first !
 FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(
         const char* flowSourceAdress) {
@@ -124,10 +122,10 @@ FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(
 }
 
 //to set the address for further upper layer connections
-const char* FlowBindingTable::getFlowSourceAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress){
+const char* FlowBindingTable::getFlowSourceAddressForConnection(int& dport,
+        int& sport, const char* destAddress, const char* sourceAddress) {
 
     std::vector<FlowBindingEntry>::iterator it;
-
 
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
@@ -140,11 +138,9 @@ const char* FlowBindingTable::getFlowSourceAddressForConnection(int& dport,int& 
 
 }
 
-
-
 void FlowBindingTable::updateExistingFlowBindingEntry(
         FlowBindingUpdate* update) {
-    cout << "FlowBindingTable updatet sich selbst für HomeAddress:"
+    cout << "FlowBindingTable des CN/HA updatet sich selbst für HomeAddress:"
             << update->getHomeAddress() << " und New Care of Address: "
             << update->getNewCoAdress() << endl;
 
@@ -153,34 +149,33 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
-        if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
-                it->destAddress, it->srcAddress)) {
-            if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
-                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
-                newEntryToInsert.setDestAddress(it->getDestAddress());
-                newEntryToInsert.setSrcAddress(update->getNewCoAdress());
-                newEntryToInsert.setDestPort(it->getDestPort());
-                newEntryToInsert.setSrcPort(it->getSrcPort());
-                newEntryToInsert.setFlowSourceAddress(
-                        it->getFlowSourceAddress());
+        if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
+            cout << "Übereinstimmung gefunden"<<endl;
+            FlowBindingEntry newEntryToInsert = FlowBindingEntry();
+            newEntryToInsert.setDestAddress(it->getDestAddress());
+            newEntryToInsert.setSrcAddress(update->getNewCoAdress());
+            newEntryToInsert.setDestPort(it->getDestPort());
+            newEntryToInsert.setSrcPort(it->getSrcPort());
+            newEntryToInsert.setFlowSourceAddress(it->getFlowSourceAddress());
 
-                updatedEntries.push_back(newEntryToInsert);
-            }
-            updatedEntries.push_back(*it);
+            updatedEntries.push_back(newEntryToInsert);
         }
+        //add all the others and also the old entry again.
+        updatedEntries.push_back(*it);
+
     }
 
     //TEST AUSGABE WIEDER LÖSCHE
-    int counter = 1;
+  //  int counter = 1;
     cout << "updatedEntries Size: " << updatedEntries.size() << endl;
 
-    for (it = updatedEntries.begin(); it < updatedEntries.end(); it++) {
+  /*  for (it = updatedEntries.begin(); it < updatedEntries.end(); it++) {
         cout << "updatedEntries: " << counter
                 << ".Tabelleneintrag  DestAddress:" << it->destAddress
                 << " SrcAddress: " << it->srcAddress << "  DPort: "
                 << it->destPort << " SPort: " << it->srcPort << endl;
         counter++;
-    }
+    }*/
 
     //////
 
@@ -190,18 +185,17 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
 void FlowBindingTable::updateExistingFlowBindingEntry(
         ACK_FlowBindingUpdate* update) {
-    cout << "FlowBindingTable des MN updatet sich selbst" << endl;
-    update->getNewCoAdress();
-    update->getHomeAddress();
+    cout << "FlowBindingTable des MN updatet sich selbst für HomeAddress:"
+            << update->getHomeAddress() << " und New Care of Address: "
+            << update->getNewCoAdress() << endl;
 
     std::vector<FlowBindingEntry>::iterator it;
     std::vector<FlowBindingEntry> updatedEntries; //hier werden die neuen Einträge gespeichert.
 
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
-        if (!entryAlreadyExistsInTable(it->destPort, it->srcPort,
-                it->destAddress, it->srcAddress)) {
-            if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
+         if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
+             cout << "Übereinstimmung gefunden"<<endl;
                 FlowBindingEntry newEntryToInsert = FlowBindingEntry();
                 newEntryToInsert.setDestAddress(it->getDestAddress());
                 newEntryToInsert.setSrcAddress(update->getNewCoAdress());
@@ -212,11 +206,8 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
                 updatedEntries.push_back(newEntryToInsert);
             }
-            else{
-                updatedEntries.push_back(*it);
-            }
-
-        }
+            //add all the others and also the old entry again.
+            updatedEntries.push_back(*it);
     }
 
     existingFlowBindingEntries = updatedEntries;

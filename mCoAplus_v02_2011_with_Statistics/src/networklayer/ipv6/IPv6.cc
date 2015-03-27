@@ -158,6 +158,7 @@ void IPv6::endService(cPacket *msg) {
         cout<<"MN Netzwerklayer aktualisiert jetzt die FlowBindingTable"<<endl;
         flowBindingTable->updateExistingFlowBindingEntry(ackFlowBindingUpdate);
         //Testausgabe der Tabelle:
+        cout<<"Aktualisierter Tabellenstand:"<<endl;
         flowBindingTable->printoutContentOftable();
         return;
     }
