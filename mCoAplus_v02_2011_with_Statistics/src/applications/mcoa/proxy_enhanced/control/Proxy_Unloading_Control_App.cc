@@ -23,6 +23,9 @@
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
 
+#include "RoutingTable6.h"
+#include "RoutingTable6Access.h"
+
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
@@ -103,17 +106,18 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 RequetConnectionToLegacyServer* messageToCN = check_and_cast<
                         RequetConnectionToLegacyServer *>(msg);
                 cout
-                        << "HA hat folgende Anfrage erhalten von einem MN erhalten:"
-                        << messageToCN->getName() << " mit Destination: "
+                        << "HA hat eine RequestForConnectionToLegacyServer-Anfrage vom MN:"
+                        << messageToCN->getSrcAddress() << " mit Destination: "
                         << messageToCN->getDestAddress()
                         << " und FlowSourceAdresse: "
-                        << messageToCN->getFlowSourceAddress() << endl;
+                        << messageToCN->getFlowSourceAddress() <<" erhalten"<< endl;
 
                 IPvXAddress cn = IPvXAddress();
                 cn.set(messageToCN->getDestAddress());
 
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
                 sendToUDPMCOA(messageToCN, localPort, cn, 2000, true);
+
 
                 //cout << "ProxyUnloadingHA-SimTime: " << simTime() << endl;
                 return;
@@ -211,8 +215,15 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 flowBindingUpdateToHA->setDestAddress(
                         messageFromIPLayer->getDestAddress());
                 flowBindingUpdateToHA->setWasSendFromHA(false); //for avoiding infinite loop at HomeAgent
+
+
+                //get Home Agents correct address:
+                RoutingTable6* rt6 = RoutingTable6Access().get();
+              //  rt6->getHomeNetHA_adr()
+
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                sendToUDPMCOA(flowBindingUpdateToHA, localPort, ha, 2000, true);
+              //  sendToUDPMCOA(flowBindingUpdateToHA, localPort,  ha, 2000, true);
+                sendToUDPMCOA(flowBindingUpdateToHA, localPort,  rt6->getHomeNetHA_adr(), 2000, true);
                 //Timer anwerfen, wenn der HA ggf. die Nachricht nicht erhalten hat.
 
                 return;

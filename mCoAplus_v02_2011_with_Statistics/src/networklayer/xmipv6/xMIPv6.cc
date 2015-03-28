@@ -852,11 +852,26 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 
 	// send BU now, 14.9.07 - CB
 	//scheduleAt(buIfEntry->initScheduledBUTime, buTriggerMsg); //Scheduling a message which will trigger a BU towards buIfEntry->dest
+
+
+
+
+    //PROXY UNLOADING ####### - FJ
+    //if it is a flow source address don't create a Binding Update Message Timer
+	//this should be not used on this IP Address than!!!
+	RoutingTable6* rt6 = RoutingTable6Access().get();
+	if (rt6->getInterfaceByAddress(keyMCoA.getAddr()) != NULL) {
+
 	scheduleAt(simTime(), buTriggerMsg); //Scheduling a message which will trigger a BU towards buIfEntry->dest
+
+
 
 	cout << "DBGTimer BU Timer created for " << keyMCoA.getDestBID() << " , " << buIfEntry->BID << " dest " << buIfEntry->dest << "  with CoA " << keyMCoA.getAddr()
 	   << " at simtime " << simTime() << " with lifetime " << lifeTime  << " and in BuIfEntry " << buIfEntry->lifeTime
 	   << " with sequenceNumber " << buIfEntry->buSequenceNumber << endl;
+
+    }
+	// PROXY UNLOADING###########
 
 }
 
@@ -1471,6 +1486,10 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
 {
 
     //***********************PROXY UNLOADING********************
+
+    // if interface parameter does not match existing interface, do not send datagram
+          if (rt6->getInterfaceByAddress(CoA) != NULL) {
+
     //BUL is updated by the MN -> use as entrance point for Flow-Binding-Updates
     //send only ONCE to the HA - to not increase the traffic over the air gap !!!!
     cout<<"Adresse des Home Agents laut rt6: "<< rt6->getHomeNetHA_adr().str().c_str()<<endl;
@@ -1478,7 +1497,7 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
     IPvXAddress ha = IPAddressResolver().resolve("HA");
     cout<<"Flowbinding Vergleich: last:"<<this->lastSendToFlowBindingAddress<<" new:"<<CoA.str().c_str()<<endl;
 
-    if(strcmp(this->lastSendToFlowBindingAddress.c_str(),CoA.str().c_str())){//if it is not the same - send new binding Update message - strcmp returns 0 when the same
+   // if(strcmp(this->lastSendToFlowBindingAddress.c_str(),CoA.str().c_str())){//if it is not the same - send new binding Update message - strcmp returns 0 when the same
     //if(!strcmp(ha.str().c_str(),dest.str().c_str())){
         cout<<"FLOW BINDING UPDATE !!!"<<endl;
         cout<<"MN sendet eine einzelne FlowBindingUpdate Nachricht an den HA"<<endl;
@@ -1500,7 +1519,7 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
         send(newFlowBindingUpdateToSend,"bindingUpdateChannelToProxyControlApp$o");
 
 
-    }
+   }
    cout<<"BINDING UPDATE!!!"<<endl;
 
    // **********************************************************

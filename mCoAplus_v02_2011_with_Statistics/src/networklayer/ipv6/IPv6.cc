@@ -946,14 +946,16 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                     << " und SRC ADDR: " << datagram->getSrcAddress() << endl;
 
             //cout << "FLOW SOURCE ADDRESS: " << flowSourceAddress << endl;
-
-            //IF NO MESSAGE WAS ALREADY SENT TO the other HOST - AND the Message is not for the HA itself - SEND ONE CONTROL MESSAGE TO HA
+            RoutingTable6* rt6 = RoutingTable6Access().get();
+            //IF NO MESSAGE WAS ALREADY SENT TO the other HOST - AND the Message is not for the HA itself  OR the Home Address of Mobile Node- SEND ONE CONTROL MESSAGE TO HA
 
             if (!flowBindingTable->entryAlreadyExistsInTable(dport, sport,
                     datagram->getDestAddress().str().c_str(),
                     datagram->getSrcAddress().str().c_str())
                     && datagram->getDestAddress()
                             != IPAddressResolver().resolve("HA").get6()
+                            && datagram->getDestAddress()
+                                                       != rt6->getHomeNetHA_adr()
 
                             ) {
 

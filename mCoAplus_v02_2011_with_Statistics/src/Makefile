@@ -1137,6 +1137,10 @@ $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: appli
 	base/ModuleAccess.h \
 	base/NotificationBoard.h \
 	base/NotifierConsts.h \
+	linklayer/contract/MACAddress.h \
+	networklayer/common/IInterfaceTable.h \
+	networklayer/common/InterfaceEntry.h \
+	networklayer/common/InterfaceToken.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/contract/IPAddressResolver.h \
 	networklayer/contract/IPProtocolId_m.h \
@@ -1146,9 +1150,14 @@ $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: appli
 	networklayer/contract/IPvXAddress.h \
 	networklayer/ipv6/IPv6Datagram.h \
 	networklayer/ipv6/IPv6Datagram_m.h \
+	networklayer/ipv6/IPv6ExtensionHeaders.h \
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
+	networklayer/ipv6/RoutingTable6.h \
+	networklayer/ipv6/RoutingTable6Access.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h
+	networklayer/mcoa/IPv6TunAdr.h \
+	networklayer/mcoa/KeyMCoABind.h \
+	networklayer/xmipv6/MobilityHeader_m.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.cc \
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.cc \
