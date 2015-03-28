@@ -169,7 +169,7 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *msg)
 
 		VideoMessage* newVideoData = new VideoMessage();
 		newVideoData->setName("Video Datei vom VideoSrv");
-		newVideoData->setSequenceNumber(requestForVideoStream->getSequenceNumber()+1);
+		newVideoData->setSequenceNumber(requestForVideoStream->getSequenceNumber());
 
 		cout<<"MCoASrv-SimTime: "<<simTime()<<endl;
 		sendToUDPMCOA(newVideoData, localPort,  myControllInfo->getSrcAddr() ,1000, true); //HIER GIBT ES PROBLEME !!!

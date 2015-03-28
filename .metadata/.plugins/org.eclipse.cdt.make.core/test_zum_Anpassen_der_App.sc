@@ -116,7 +116,7 @@
 <includePath path="/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/simulations"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/simulations/testMCoAv2"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/simulations/testMCoAv2/rtg"/>
-<includePath path="/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/simulations/testMCoAv2/results"/>
+<includePath path="/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/simulations/testMCoAv2/results" removed="true"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/tests"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/tests/newtcp"/>

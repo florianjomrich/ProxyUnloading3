@@ -863,7 +863,7 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 
 void xMIPv6::sendPeriodicBU(cMessage *msg)
 {
-	/*cout*/EV <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
+	cout <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
 	BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) msg->getContextPointer(); //detaching the corresponding buIfEntry pointer
 	/*cout*/ EV << "### lifetime of buIfEntry=" << buIfEntry->lifeTime << " and seq#= " << buIfEntry->buSequenceNumber << endl;
 
@@ -1473,10 +1473,13 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
     //***********************PROXY UNLOADING********************
     //BUL is updated by the MN -> use as entrance point for Flow-Binding-Updates
     //send only ONCE to the HA - to not increase the traffic over the air gap !!!!
+    cout<<"Adresse des Home Agents laut rt6: "<< rt6->getHomeNetHA_adr().str().c_str()<<endl;
+
     IPvXAddress ha = IPAddressResolver().resolve("HA");
     cout<<"Flowbinding Vergleich: last:"<<this->lastSendToFlowBindingAddress<<" new:"<<CoA.str().c_str()<<endl;
 
     if(strcmp(this->lastSendToFlowBindingAddress.c_str(),CoA.str().c_str())){//if it is not the same - send new binding Update message - strcmp returns 0 when the same
+    //if(!strcmp(ha.str().c_str(),dest.str().c_str())){
         cout<<"FLOW BINDING UPDATE !!!"<<endl;
         cout<<"MN sendet eine einzelne FlowBindingUpdate Nachricht an den HA"<<endl;
 
