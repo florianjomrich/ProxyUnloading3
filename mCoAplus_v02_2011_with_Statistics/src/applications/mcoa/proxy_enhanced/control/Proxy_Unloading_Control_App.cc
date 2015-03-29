@@ -31,6 +31,7 @@
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
 #define REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER 145
 #define REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER_CONTROL_APP 146
+#define REQUEST_CONNECTION_HA_TIMEOUT 149
 
 using std::cout;
 
@@ -44,7 +45,7 @@ void Proxy_Unloading_Control_App::initialize() {
     isCN = par("isCN");
     isCapableCN = par("isCapableCN");
     humanReadableName = par("humanReadableName");
-
+    proxyRequestForConnectionTimeOut = &par("proxyRequestForConnectionTimeOut");
     startTime = par("startTime");
     //cout << "START ZEIT: " << startTime << endl;
 
@@ -59,13 +60,6 @@ void Proxy_Unloading_Control_App::initialize() {
     int localPort = par("localPort");
     bindToPort(localPort);
 
-    if (startTime >= 0 && isMN) {
-        cMessage *start_proxying_context = new cMessage(
-                "Starting_Proxying_Context through the Mobile Node");
-        //timer->setContextPointer(d);
-        start_proxying_context->setKind(PROXY_CONTEXT_START);
-        scheduleAt(startTime, start_proxying_context);
-    }
 
 }
 
@@ -85,6 +79,10 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             return; // and that's it!
         }
+        if(msg->getKind()== REQUEST_CONNECTION_HA_TIMEOUT){
+            cout<<"HA Time Out Timer kicked in"<<endl;
+        }
+
 
     } else {
 
@@ -119,6 +117,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
                 sendToUDPMCOA(messageToCN, localPort, cn, 2000, true);
 
+
+                //Now Start the Timer for Time-Out - if the CN does not respond !!!
+                         simtime_t timeOutDelay = (*proxyRequestForConnectionTimeOut);
+                         timeOutMessage = new cMessage(
+                                         "TimeOut - CN did not respond");
+                                 //timer->setContextPointer(d);
+                         timeOutMessage->setKind(REQUEST_CONNECTION_HA_TIMEOUT);
+                         scheduleAt(simTime()+timeOutDelay, timeOutMessage);
 
                 //cout << "ProxyUnloadingHA-SimTime: " << simTime() << endl;
                 return;
@@ -191,6 +197,10 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
         if (dynamic_cast<ACK_RequestConnectionToLegacyServer*>(msg)) {
             if (isHA || isMN) {
+                if(isHA){//cancel the Timeout-Timer first
+                    cout<<"Time Out Timer des HA cancelt, da ACK_RequestConnectionToLegacyServer durch CN erhalten"<<endl;
+                    cancelEvent(timeOutMessage);
+                }
                 //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
                 send(msg, "uDPControllAppConnection$o");
             }

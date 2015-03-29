@@ -63,7 +63,10 @@ protected:
     bool isCapableCN;
     const char* humanReadableName;
 
+    cPar *proxyRequestForConnectionTimeOut;
     simtime_t startTime;
+
+    cMessage* timeOutMessage;
 
 protected:
     ///@name Overridden cSimpleModule functions
