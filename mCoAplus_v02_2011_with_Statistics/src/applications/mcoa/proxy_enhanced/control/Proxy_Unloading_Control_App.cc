@@ -80,7 +80,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             return; // and that's it!
         }
         if(msg->getKind()== REQUEST_CONNECTION_HA_TIMEOUT){
-            cout<<"HA Time Out Timer kicked in"<<endl;
+            cout<<"HA Time Out Timer timed out - correspondent CN does not seem to support the protocol."<<endl;
+
         }
 
 
