@@ -997,6 +997,7 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                         new RequetConnectionToLegacyServer();
                 legacyRequestPacket->setKind(
                 REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER);
+                legacyRequestPacket->setName("REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER");
                 legacyRequestPacket->setSrcAddress(
                         datagram->getSrcAddress().str().c_str());
                 legacyRequestPacket->setDestAddress(

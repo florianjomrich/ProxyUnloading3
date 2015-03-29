@@ -81,7 +81,10 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
         }
         if(msg->getKind()== REQUEST_CONNECTION_HA_TIMEOUT){
             cout<<"HA Time Out Timer timed out - correspondent CN does not seem to support the protocol."<<endl;
+            RequetConnectionToLegacyServer* messageFromMN = check_and_cast<
+                                 RequetConnectionToLegacyServer *> (msg->getObject("REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER"));
 
+            cout<<"Daten des Timers waren: "<<messageFromMN->getFlowSourceAddress()<<endl;
         }
 
 
@@ -115,6 +118,9 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 IPvXAddress cn = IPvXAddress();
                 cn.set(messageToCN->getDestAddress());
 
+                //create a copy for the timeout if necessary
+                RequetConnectionToLegacyServer* messageForTimeOut = messageToCN->dup();
+
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
                 sendToUDPMCOA(messageToCN, localPort, cn, 2000, true);
 
@@ -125,6 +131,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                                          "TimeOut - CN did not respond");
                                  //timer->setContextPointer(d);
                          timeOutMessage->setKind(REQUEST_CONNECTION_HA_TIMEOUT);
+                         timeOutMessage->addObject(messageForTimeOut);
                          scheduleAt(simTime()+timeOutDelay, timeOutMessage);
 
                 //cout << "ProxyUnloadingHA-SimTime: " << simTime() << endl;
