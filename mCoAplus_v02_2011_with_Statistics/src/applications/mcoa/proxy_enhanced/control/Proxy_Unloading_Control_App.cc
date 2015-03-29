@@ -43,6 +43,7 @@ void Proxy_Unloading_Control_App::initialize() {
     isHA = par("isHA");
     isCN = par("isCN");
     isCapableCN = par("isCapableCN");
+    humanReadableName = par("humanReadableName");
 
     startTime = par("startTime");
     //cout << "START ZEIT: " << startTime << endl;

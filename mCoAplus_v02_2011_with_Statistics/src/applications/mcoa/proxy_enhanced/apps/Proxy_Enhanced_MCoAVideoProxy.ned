@@ -46,6 +46,8 @@ simple Proxy_Enhanced_MCoAVideoProxy like MCoAUDPBase
     	bool isCN;
     	bool isMN;
     	bool isHA;
+    	
+    	string humanReadableName;
     
     	
     gates:

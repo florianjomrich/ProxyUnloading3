@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 //
 // based on the video streaming app of the similar name by Johnny Lai
 //
@@ -39,17 +38,16 @@
  * Basic video stream application. Clients receive streams from server.
  * video back.
  */
-class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
-{
-  protected:
+class INET_API Proxy_Unloading_Control_App: public MCoAUDPBase {
+protected:
 
-	struct statPacketVIDEO{
-		long seq;
-		bool treated;
-		long delay;
-	};
-	typedef std::map<long , statPacketVIDEO> SPkt;
-	SPkt StatsPkt;
+    struct statPacketVIDEO {
+        long seq;
+        bool treated;
+        long delay;
+    };
+    typedef std::map<long, statPacketVIDEO> SPkt;
+    SPkt StatsPkt;
 
     // statistics
     cOutVector PktRcv;
@@ -63,13 +61,11 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     bool isHA;
     bool isCN;
     bool isCapableCN;
+    const char* humanReadableName;
 
+    simtime_t startTime;
 
-
-     simtime_t startTime;
-
-
-  protected:
+protected:
     ///@name Overridden cSimpleModule functions
     //@{
     virtual void initialize();
@@ -77,11 +73,7 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     virtual void handleMessage(cMessage *msg);
     //@}
 
-
 };
 
-
 #endif
-
-
 

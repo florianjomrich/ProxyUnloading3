@@ -61,6 +61,8 @@ void MCoAUDPBase::startMCoAUDPBase()
 	isMN = par("isMN");
 	isHA = par("isHA");
 
+	humanReadableName = par("humanReadableName");
+
 
 	setUseMode(par("useMode"));
 
@@ -452,4 +454,8 @@ void MCoAUDPBase::treatMessage(cMessage *msg)
 
 		delete msg;
 	}
+}
+
+const char* MCoAUDPBase::getHumanReadabelName(){
+    return this->humanReadableName;
 }

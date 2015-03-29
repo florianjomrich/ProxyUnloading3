@@ -64,6 +64,9 @@ protected:
 	bool isHA;
 	bool isMN;
 
+	const char* humanReadableName;
+
+
   public:
 	MCoAUDPBase();
 	~MCoAUDPBase();
@@ -80,6 +83,11 @@ protected:
 
 
 	MCoAUDPBase::AdrInfo initRecAdr(IPvXAddress Src, IPvXAddress Dest );
+	/**
+	 * Proxy Unloading
+	 */
+	virtual const char* getHumanReadabelName();
+
 
     /**
      * Tells UDP we want to get all packets arriving on the given port

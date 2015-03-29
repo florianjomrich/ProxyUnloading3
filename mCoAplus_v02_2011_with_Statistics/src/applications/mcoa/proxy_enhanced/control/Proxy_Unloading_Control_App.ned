@@ -28,25 +28,27 @@ package inet.applications.mcoa.proxy_enhanced.control;
 simple Proxy_Unloading_Control_App like MCoAUDPBase
 {
     parameters:
-        
+
         //string serverAddress;
         int destPort;
         //double startTime @unit("s") = default(1s);
-        
+
         //From interface
         int localPort;
         string useMode;// = default("SINGLERANDOM"); //Should have values in MCoADefs.h
-    	bool useMCoA ;// to use MCoA?
-    	string destAddresses = default(""); // list of \IP addresses, separated by spaces
-    	bool isDestiny = default(true); //If it is destiny (ony replies to messages).
-    	
-    	//FOR PROXY_UNLOADING FJ
-    	double startTime = default(10);//start Proxying Process at StartTime
-    	bool isMN; //is Mobile Node
+        bool useMCoA;// to use MCoA?
+        string destAddresses = default(""); // list of \IP addresses, separated by spaces
+        bool isDestiny = default(true); //If it is destiny (ony replies to messages).
+
+        //FOR PROXY_UNLOADING FJ
+        double startTime = default(10);//start Proxying Process at StartTime
+        bool isMN; //is Mobile Node
         bool isHA; //is Home Agent
         bool isCN;//is Correspondent Node
         bool isCapableCN;//to set whether the current CN is capable of dealing with the protocol or not
-    	
+        string humanReadableName;
+
+
     gates:
         input udpIn;
         output udpOut;
@@ -54,6 +56,6 @@ simple Proxy_Unloading_Control_App like MCoAUDPBase
         input fromBindingUpdateList;
         inout uDPControllAppConnection;
         inout bindingUpdateChannelToProxyControlApp;
-       
+
 }
 

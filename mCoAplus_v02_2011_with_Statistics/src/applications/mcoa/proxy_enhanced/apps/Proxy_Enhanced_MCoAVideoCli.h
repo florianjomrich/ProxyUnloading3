@@ -64,6 +64,7 @@ class INET_API Proxy_Enhanced_MCoAVideoCli : public MCoAUDPBase
 
 
 
+
   protected:
     ///@name Overridden cSimpleModule functions
     //@{

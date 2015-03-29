@@ -42,25 +42,27 @@ simple Proxy_Enhanced_MCoAVideoSrv like MCoAUDPBase
         volatile double waitInterval @unit("s"); // interval between sending video stream packets
         volatile int packetLen @unit("B");
         volatile int videoSize @unit("B");
-        
+
         //From interface
         int localPort;
         string useMode;// = default("SINGLERANDOM"); //Should have values in MCoADefs.h
-    	bool useMCoA ;// to use MCoA?
-    	string destAddresses = default(""); // list of \IP addresses, separated by spaces
-    	bool isDestiny = default(true); //If it is destiny (ony replies to messages).
-    	
-    	double startTime @unit("s") = default(0s);
-    	
-    	//PROXY UNLOADING 
-    	  	bool isCN;
-    	bool isMN;
-    	bool isHA;
-    	
+        bool useMCoA;// to use MCoA?
+        string destAddresses = default(""); // list of \IP addresses, separated by spaces
+        bool isDestiny = default(true); //If it is destiny (ony replies to messages).
+
+        double startTime @unit("s") = default(0s);
+
+        //PROXY UNLOADING 
+        bool isCN;
+        bool isMN;
+        bool isHA;
+
+        string humanReadableName;
+
     gates:
         input udpIn;
         output udpOut;
-        
+
         inout APP_proxy_Enhanced_Control_Channel_CN;
 }
 

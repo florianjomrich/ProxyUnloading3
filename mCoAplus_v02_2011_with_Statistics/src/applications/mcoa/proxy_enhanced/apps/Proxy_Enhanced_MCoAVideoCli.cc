@@ -103,7 +103,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	if(dynamic_cast<VideoMessage*>(msg)){
 
     	    VideoMessage* currentVideoMessage = dynamic_cast<VideoMessage*>(msg);
-    	    cout<<"MCoAClient: Video Message from Server is bei MN eingegangen mit sequence number: "<<currentVideoMessage->getSequenceNumber()<<endl;
+    	    cout<<"MCoAClient "<<MCoAUDPBase::getHumanReadabelName()<<": Video Message from Server is bei MN eingegangen mit sequence number: "<<currentVideoMessage->getSequenceNumber()<<endl;
     	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
 
     	        seq_number_counter++;
