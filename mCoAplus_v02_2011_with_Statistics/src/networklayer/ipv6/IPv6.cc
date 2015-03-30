@@ -127,8 +127,8 @@ void IPv6::endService(cPacket *msg) {
             && (isHA || isMN)) {
 
         //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
-        cout << "MN/HA" << isMN << isHA
-                << " haben Bestätigung vom CN erhalten und aktualisieren jetzt ebenfalls ihre FlowBindingTable"
+        cout << myHumanReadableName
+                << " hat Bestätigung vom CN erhalten und aktualisiert jetzt ebenfalls ihre FlowBindingTable"
                 << endl;
         ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage =
                 check_and_cast<ACK_RequestConnectionToLegacyServer *>(msg);
@@ -1007,11 +1007,6 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                 legacyRequestPacket->setSrcPort(sport);
                 legacyRequestPacket->setDestPort(dport);
 
-                //add entry if not already sent
-                //requestForConnectionToLegacyServerTable->setRequest(dport,
-                //       sport, datagram->getDestAddress(),
-                //       datagram->getSrcAddress(), flowSourceAddress);
-
                 send(legacyRequestPacket, "uDPControllAppConnection$o");
             }
             /**
@@ -1033,6 +1028,7 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
                                 datagram->getDestAddress().str().c_str(),
                                 datagram->getSrcAddress().str().c_str())); /// ????
                 datagram->setSrcAddress(neueSrcAdresse);
+
 
                 //for the reason when the HomeAgent has to take over the proxying functionality - it should be sent to him not to the CN
                 /*  IPv6Address neueDestAdresse = IPv6Address();
