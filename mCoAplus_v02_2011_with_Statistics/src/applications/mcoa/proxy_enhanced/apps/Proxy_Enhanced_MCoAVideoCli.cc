@@ -25,6 +25,7 @@
 #include "IPv6ControlInfo.h"
 #include "RequestVideoStream_m.h"
 #include "VideoMessage_m.h"
+#include "UDPControlInfo_m.h"
 
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
@@ -103,7 +104,14 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	if(dynamic_cast<VideoMessage*>(msg)){
 
     	    VideoMessage* currentVideoMessage = dynamic_cast<VideoMessage*>(msg);
-    	    cout<<"MCoAClient "<<MCoAUDPBase::getHumanReadabelName()<<": Video Message from Server is bei MN eingegangen mit sequence number: "<<currentVideoMessage->getSequenceNumber()<<endl;
+    	    cout<<"MCoAClient "<<MCoAUDPBase::getHumanReadabelName()<<": Video Message from Server ist eingegangen mit sequence number: "<<currentVideoMessage->getSequenceNumber()<<endl;
+
+
+    	    UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
+    	              IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
+    	     cout<<"MCoAClient: Absender des Pakets war: "<<srcIPAdresse<<endl;
+
+
     	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
 
     	        seq_number_counter++;
@@ -117,7 +125,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	}
 
     	else{
-    	    cout<<"MCoAClient received unkown message: "<<msg->getName()<<endl;
+    	    cout<<"MCoAClient of "<<MCoAUDPBase::getHumanReadabelName()<<" received unkown message: "<<msg->getName()<<endl;
 
 
     	}
@@ -144,60 +152,5 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
       delete msg;
 }
 
-void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
-{
-	MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *)(msg);
-    cout << "Video stream packet vom Mobile Node empfangen\n";
-    int nLost;
 
-    nLost = (pkt_video->getCurSeq() - lastSeq);
-    nLost < 0 ? nLost * (-1) : nLost;
-
-    long auxseqRx = pkt_video->getCurSeq();
-    SPkt::iterator pos = StatsPkt.find(auxseqRx);
-	if (pos != StatsPkt.end()) {
-		bool pktTreated;
-		pktTreated = (pos->second).treated;
-
-		if (!pktTreated){
-			(pos->second).treated = true;
-			(pos->second).delay = pkt_video->getCurTime();
-			PktRcv.record(auxseqRx);
-			//pktRcvDelay.record(packet->getCurTime());
-			PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-		}
-	}else{//Insert packet into structure
-		EV << "MCOA Video Inserting packet into Stats structure" << endl;
-		statPacketVIDEO auxS;
-		auxS.seq = auxseqRx;
-		auxS.treated = true;
-		auxS.delay = pkt_video->getCurTime();
-		StatsPkt.insert( std::make_pair(auxseqRx, auxS));
-
-		PktRcv.record(auxseqRx);
-		//pktRcvDelay.record(packet->getCurTime());
-		PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-	}
-
-
-
-    /*
-     * May not be always true, since it can arrive unordered,
-     * just to have a notation when happens the worst packet loss
-     *
-     * to determine packet loss do: sent - Rcv
-     */
-    if ((nLost) > 1){
-    	// There is packet loss
-    	PktLost.record(nLost);
-    	EV << "There was packet loss " << nLost << " at Sim time " << simTime() <<  endl;
-    }
-    //PktRcv.record(pkt_video->getCurSeq());
-    //PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-    lastSeq = pkt_video->getCurSeq();
-
-
-
-    delete msg;
-}
 

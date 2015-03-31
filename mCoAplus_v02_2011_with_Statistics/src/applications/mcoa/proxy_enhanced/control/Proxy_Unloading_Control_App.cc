@@ -72,8 +72,7 @@ void Proxy_Unloading_Control_App::finish() {
 }
 
 void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
-    cout << "PROXY CONTROL APP of: MN:" << isMN << " HA:" << isHA << " CN:"
-            << isCN << " received a message" << endl;
+    cout << "PROXY CONTROL APP of "<<humanReadableName<< "received a message" << endl;
 
     if (msg->isSelfMessage()) {
         if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR) {
@@ -81,70 +80,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             return; // and that's it!
         }
-        if (msg->getKind() == REQUEST_CONNECTION_HA_TIMEOUT) {
-            cout
-                    << "HA Time Out Timer timed out - correspondent CN does not seem to support the protocol."
-                    << endl;
-            RequetConnectionToLegacyServer* messageFromMN = check_and_cast<
-                    RequetConnectionToLegacyServer *>(
-                    msg->getObject("REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER"));
 
-            cout << "Daten des Timers waren: DestinationAddress:"
-                    << messageFromMN->getDestAddress() << " Source Addresse: "
-                    << messageFromMN->getSrcAddress() << endl;
-
-            //bindToPort to identify new connection
-            bindToPort (nextFreeProxyingPort);
-
-            //   UDPPacket * payload = check_and_cast<UDPPacket *>(messageFromMN->getObject("MCoACli (MN) requests Video Stream from MCoASrv (CN)."));
-
-            /*     if (dynamic_cast<UDPPacket *>(messageFromMN->getObject("MCoACli (MN) requests Video Stream from MCoASrv (CN)."))) {
-             UDPPacket * payload = check_and_cast<UDPPacket *>(messageFromMN->getObject("MCoACli (MN) requests Video Stream from MCoASrv (CN).")->dup());
-
-             IPvXAddress destionationAddress = IPvXAddress();
-             destionationAddress.set(messageFromMN->getDestAddress());
-
-             sendToUDPMCOA(payload, nextFreeProxyingPort,
-             destionationAddress, 2000, true);
-             nextFreeProxyingPort++;
-             }*/
-
-            //UPDATE OWN TABLE for the new proxying Address
-            ACK_RequestConnectionToLegacyServer* acknowledgmentToHaHimself =
-                               new ACK_RequestConnectionToLegacyServer();
-            acknowledgmentToHaHimself->setSrcAddress(
-                    messageFromMN->getSrcAddress());
-            acknowledgmentToHaHimself->setDestAddress(
-                    messageFromMN->getDestAddress());
-            acknowledgmentToHaHimself->setFlowSourceAddress(
-                    messageFromMN->getFlowSourceAddress());
-            acknowledgmentToHaHimself->setDestPort(
-                    messageFromMN->getSrcPort());
-            acknowledgmentToHaHimself->setSrcPort(messageFromMN->getSrcPort());
-            acknowledgmentToHaHimself->setName(
-                               "ACK_RequestConnectionToLegacyServer");
-
-
-            send(acknowledgmentToHaHimself, "uDPControllAppConnection$o");
-
-            //Respond to MN that HA is now the Proxy Server
-            IPvXAddress ha = IPAddressResolver().resolve("HA");
-
-            ACK_RequestConnectionToLegacyServer* acknowledgmentToMN =
-                    new ACK_RequestConnectionToLegacyServer();
-            acknowledgmentToMN->setSrcAddress(messageFromMN->getSrcAddress());
-            acknowledgmentToMN->setDestAddress(ha.str().c_str());
-            acknowledgmentToMN->setFlowSourceAddress(
-                    messageFromMN->getFlowSourceAddress());
-            acknowledgmentToMN->setDestPort(nextFreeProxyingPort);
-            acknowledgmentToMN->setSrcPort(messageFromMN->getSrcPort());
-            acknowledgmentToMN->setName("ACK_RequestConnectionToLegacyServer");
-            IPvXAddress mn = IPvXAddress();
-            mn.set(messageFromMN->getSrcAddress());
-            sendToUDPMCOA(acknowledgmentToMN, nextFreeProxyingPort, mn, 2000,
-                    true);
-
-        }
 
     } else {
 
@@ -153,7 +89,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             if (isMN) {
 
                 cout
-                        << "Netzwerkschicht des MN meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
+                        << "Netzwerkschicht des "<<humanReadableName<<" meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
                         << endl;
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
@@ -167,44 +103,34 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 RequetConnectionToLegacyServer* messageToCN = check_and_cast<
                         RequetConnectionToLegacyServer *>(msg);
                 cout
-                        << "HA hat eine RequestForConnectionToLegacyServer-Anfrage vom MN:"
+                        << "HA hat eine RequestForConnectionToLegacyServer-Anfrage vom MN: "
                         << messageToCN->getSrcAddress() << " mit Destination: "
-                        << messageToCN->getDestAddress()
-                        << " und FlowSourceAdresse: "
-                        << messageToCN->getFlowSourceAddress() << " erhalten"
+                        << messageToCN->getDestAddress()<<" erhalten"
                         << endl;
 
+                //message to the network layer - to update the FlowBindingTable of HA
+                send(messageToCN->dup(), "uDPControllAppConnection$o");
+
+
+                //foreward the message to the CN - if he is capable - he will update his flowBinding-Table as well
                 IPvXAddress cn = IPvXAddress();
                 cn.set(messageToCN->getDestAddress());
 
-                //create a copy for the timeout if necessary
-                RequetConnectionToLegacyServer* messageForTimeOut =
-                        messageToCN->dup();
 
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
                 sendToUDPMCOA(messageToCN, localPort, cn, 2000, true);
 
-                //Now Start the Timer for Time-Out - if the CN does not respond !!!
-                simtime_t timeOutDelay = (*proxyRequestForConnectionTimeOut);
-                timeOutMessage = new cMessage("TimeOut - CN did not respond");
-                //timer->setContextPointer(d);
-                timeOutMessage->setKind(REQUEST_CONNECTION_HA_TIMEOUT);
-                timeOutMessage->addObject(messageForTimeOut);
-                scheduleAt(simTime() + timeOutDelay, timeOutMessage);
-
-                //cout << "ProxyUnloadingHA-SimTime: " << simTime() << endl;
                 return;
             }
             if (isCN) {
-                // cout << "ProxyUnloadingCN-SimTime: " << simTime() << endl;
 
                 RequetConnectionToLegacyServer* messageFromHA = check_and_cast<
                         RequetConnectionToLegacyServer *>(msg);
-                cout << "Nun hat auch der CN mit der Adresse:"
+                cout << "Nun hat auch"<<humanReadableName<<" mit der Adresse: "
                         << messageFromHA->getDestAddress()
-                        << " die RequetConnectionToLegacyServer-Nachricht erhalten"
+                        << " die RequestConnectionToLegacyServer-Nachricht erhalten"
                         << endl;
-                cout << "Absender war: " << messageFromHA->getSrcAddress()
+                cout << "Ursprünglicher Absender war: " << messageFromHA->getSrcAddress()
                         << endl;
 
                 //update the FlowBindingTable with this Information now for later Processing - If CN is capable of dealing with the ProxyUnloading-Protocol
@@ -216,69 +142,20 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                     //message to the network layer - to update there the FlowBindingTable
                     send(messageFromHA, "uDPControllAppConnection$o");
 
-                    //send back a binding Acknowledgment to the HomeAgent and the MN who requested the call
-                    ACK_RequestConnectionToLegacyServer* acknowledgmentToHA =
-                            new ACK_RequestConnectionToLegacyServer();
-                    acknowledgmentToHA->setSrcAddress(
-                            messageFromHA->getSrcAddress());
-                    acknowledgmentToHA->setDestAddress(
-                            messageFromHA->getDestAddress());
-                    acknowledgmentToHA->setFlowSourceAddress(
-                            messageFromHA->getFlowSourceAddress());
-                    acknowledgmentToHA->setDestPort(
-                            messageFromHA->getDestPort());
-                    acknowledgmentToHA->setSrcPort(messageFromHA->getSrcPort());
-                    acknowledgmentToHA->setName(
-                            "ACK_RequestConnectionToLegacyServer");
-                    IPvXAddress ha = IPAddressResolver().resolve("HA");
-                    sendToUDPMCOA(acknowledgmentToHA, localPort, ha, 2000,
-                            true);
-
-                    ACK_RequestConnectionToLegacyServer* acknowledgmentToMN =
-                            new ACK_RequestConnectionToLegacyServer();
-                    acknowledgmentToMN->setSrcAddress(
-                            messageFromHA->getSrcAddress());
-                    acknowledgmentToMN->setDestAddress(
-                            messageFromHA->getDestAddress());
-                    acknowledgmentToMN->setFlowSourceAddress(
-                            messageFromHA->getFlowSourceAddress());
-                    acknowledgmentToMN->setDestPort(
-                            messageFromHA->getDestPort());
-                    acknowledgmentToMN->setSrcPort(messageFromHA->getSrcPort());
-                    acknowledgmentToMN->setName(
-                            "ACK_RequestConnectionToLegacyServer");
-                    IPvXAddress mn = IPvXAddress();
-                    mn.set(messageFromHA->getSrcAddress());
-                    sendToUDPMCOA(acknowledgmentToMN, localPort, mn, 2000,
-                            true);
-
                 }
                 return;
             }
 
         }
 
-        //**********************************************************************
-
-        if (dynamic_cast<ACK_RequestConnectionToLegacyServer*>(msg)) {
-            if (isHA || isMN) {
-                if (isHA) { //cancel the Timeout-Timer first
-                    cout
-                            << "Time Out Timer des HA cancelt, da ACK_RequestConnectionToLegacyServer durch CN erhalten"
-                            << endl;
-                    cancelEvent (timeOutMessage);
-                }
-                //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
-                send(msg, "uDPControllAppConnection$o");
-            }
-            return;
-        }
 
         //**********************************************************************
 
         if (dynamic_cast<FlowBindingUpdate*>(msg)) {
-            if (isMN) {                //New Binding Update message
-                cout << "Proxy Unloading Control App of MN sends "
+            if (isMN) {
+
+                //New Binding Update message
+                cout << "Proxy Unloading Control App of "<<humanReadableName<<" sends "
                         << "FlowBindingUpdate to HA" << endl;
                 FlowBindingUpdate* messageFromIPLayer = check_and_cast<
                         FlowBindingUpdate *>(msg);
@@ -302,7 +179,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 //  sendToUDPMCOA(flowBindingUpdateToHA, localPort,  ha, 2000, true);
                 sendToUDPMCOA(flowBindingUpdateToHA, localPort,
                         rt6->getHomeNetHA_adr(), 2000, true);
-                //Timer anwerfen, wenn der HA ggf. die Nachricht nicht erhalten hat.
+
 
                 return;
             }
@@ -314,12 +191,12 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 FlowBindingUpdate* messageFromMN = check_and_cast<
                         FlowBindingUpdate *>(msg);
 
-                //UPDATE OWN TABLE
-                send(messageFromMN, "uDPControllAppConnection$o");
-
-                //TODO
+                //Update own table of the HA
+                send(messageFromMN->dup(), "uDPControllAppConnection$o");
 
                 //INFORM The CNs in the list of the update
+                //!!! TODO FIXEN !!! --> es müssen entsprechend nur die CNs mit der passenden Policy aktualisiert werden !!!
+
                 FlowBindingUpdate* flowBindingUpdateToCN =
                         new FlowBindingUpdate();
                 flowBindingUpdateToCN->setName("FlowBindingUpdate");
@@ -333,9 +210,10 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
 
-                //TODO FIXEN !!!
                 IPvXAddress dest = IPvXAddress();
                 dest.set(messageFromMN->getDestAddress());
+
+                //!!! TODO FIXEN !!! - hier müsste auf die Tabelle zugegriffen werden, die dem HA zur Verfügung steht !!!
                 IPvXAddress test = IPAddressResolver().resolve("CN[0]");
                 cout << "Address of MN: " << messageFromMN->getHomeAddress()
                         << " Home Address des HomeAgents: " << ha
@@ -346,83 +224,27 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                             true);
                 }
 
-                //Confirm the received Flow Binding Update to the sending mobile node, so that he can use this new address as well
-                //TODO - get the confirmation from the CN first !!! Than acknowledge it !!
-                IPvXAddress *mn = new IPvXAddress(
-                        messageFromMN->getNewCoAdress());
-                ACK_FlowBindingUpdate* flowBindingAckToMN =
-                        new ACK_FlowBindingUpdate();
-                flowBindingAckToMN->setName("ACK_FlowBindingUpdate");
-                flowBindingAckToMN->setHomeAddress(
-                        messageFromMN->getHomeAddress());
-                flowBindingAckToMN->setNewCoAdress(
-                        messageFromMN->getNewCoAdress());
-                flowBindingAckToMN->setDestAddress(
-                        messageFromMN->getDestAddress());
-                flowBindingAckToMN->setWasSendFromHA(true);
-                sendToUDPMCOA(flowBindingAckToMN, localPort, *mn, 2000, true);
-
-                return;
+               return;
             }
             if (isCN) {
-                //TODO Flow-Binding-Update-Ergänzen
+
                 FlowBindingUpdate* messageFromHA = check_and_cast<
                         FlowBindingUpdate *>(msg);
                 cout
-                        << "CN hat nun auch das Flow-Binding-Update bekommen und bestätigt es an den HA"
+                        << "CN hat nun auch das Flow-Binding-Update bekommen und aktualisiert damit seine Tabelle"
                         << endl;
 
-                //update of the own table
+                //update of the own table of CN
                 send(messageFromHA, "uDPControllAppConnection$o");
 
-                //Confirm the received Flow Binding Update to the Home Agent, so that he can inform the Mobile Node as well
-                IPvXAddress ha = IPAddressResolver().resolve("HA");
-                ACK_FlowBindingUpdate* flowBindingAckToHA =
-                        new ACK_FlowBindingUpdate();
-                flowBindingAckToHA->setName("ACK_FlowBindingUpdate");
-                flowBindingAckToHA->setHomeAddress(
-                        messageFromHA->getHomeAddress());
-                flowBindingAckToHA->setNewCoAdress(
-                        messageFromHA->getNewCoAdress());
-                flowBindingAckToHA->setDestAddress(
-                        messageFromHA->getDestAddress());
-                flowBindingAckToHA->setWasSendFromHA(false);
-                sendToUDPMCOA(flowBindingAckToHA, localPort, ha, 2000, true);
-
-                return;
+               return;
             }
         }
 
-        //**********************************************************************
-
-        if (dynamic_cast<ACK_FlowBindingUpdate*>(msg)) {
-            if (isMN) {
-                //TODO
-                ACK_FlowBindingUpdate* messageFromHA = check_and_cast<
-                        ACK_FlowBindingUpdate *>(msg);
-
-                cout
-                        << "MN hat BindingUpdate Nachricht bestätigt bekommen - nun kann er den Timer für erneutes Senden löschen TODO"
-                        << endl;
-                cout
-                        << "MN aktualisiert seine eigene Tabelle mit den erhaltenen Informationen"
-                        << endl;
-                send(messageFromHA, "uDPControllAppConnection$o");
-                return;
-            }
-            if (isHA) {
-                ACK_FlowBindingUpdate* messageFromCN = check_and_cast<
-                        ACK_FlowBindingUpdate *>(msg);
-
-                cout
-                        << "HA hat eine ACK_FlowBindingUpdate Nachricht vom CN empfangen."
-                        << endl;
-            }
-        }
 
         //**********************************************************************
 
-        //Andernfalls ist die Nachricht unbekannt und es wird lediglich der Name ausgegeben zum Debuggen
+        //otherwise the message is unkown and will only be outputed for debugging reasons
         if (isHA) {
             cout << "HA hat folgende unbekannte Nachricht erhalten:"
                     << msg->getName() << endl;

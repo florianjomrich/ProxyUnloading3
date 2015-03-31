@@ -20,9 +20,7 @@
 packet RequetConnectionToLegacyServer {
     int SrcPort;
     int DestPort;
-    string FlowSourceAddress;
     string SrcAddress;
     string DestAddress;
-   // double arrayField1[];
-   // double arrayField2[10];
+
 }

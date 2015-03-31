@@ -28,9 +28,7 @@
 
 //Messages for Proxy Unloading inculded:
 #include "RequetConnectionToLegacyServer_m.h"
-#include "ACK_RequestConnectionToLegacyServer_m.h"
 #include "FlowBindingUpdate_m.h"
-#include "ACK_FlowBindingUpdate_m.h"
 
 /**
  * A "Realtime" VideoStream client application.

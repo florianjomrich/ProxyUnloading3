@@ -37,53 +37,58 @@ void FlowBindingTable::handleMessage(cMessage* msg) {
     }
 }
 
+//#############################################################
+
 void FlowBindingTable::insertNewFlowBindingEntry(
-        RequetConnectionToLegacyServer *newFlowBindingEntry) {
+        RequetConnectionToLegacyServer *newRequest) {
 
     FlowBindingEntry newEntryToInsert = FlowBindingEntry();
-    newEntryToInsert.setDestAddress(newFlowBindingEntry->getDestAddress());
-    newEntryToInsert.setSrcAddress(newFlowBindingEntry->getSrcAddress());
-    newEntryToInsert.setDestPort(newFlowBindingEntry->getDestPort());
-    newEntryToInsert.setSrcPort(newFlowBindingEntry->getSrcPort());
-    newEntryToInsert.setFlowSourceAddress(
-            newFlowBindingEntry->getFlowSourceAddress());
 
-    //to remove duplicates in the table - not updates
+    newEntryToInsert.setDestAddress(newRequest->getDestAddress());
+    newEntryToInsert.setSrcAddress(newRequest->getSrcAddress());
+    newEntryToInsert.setDestPort(newRequest->getDestPort());
+    newEntryToInsert.setSrcPort(newRequest->getSrcPort());
+    cout<<"war noch hier"<<endl;
+
+    newEntryToInsert.setLocalHostIdentifier(localHostCounter);
+
+
+
+    //to remove duplicates in the table - because of duplicate message sending - not updates
     if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
             newEntryToInsert.srcPort, newEntryToInsert.destAddress,
             newEntryToInsert.srcAddress)) {
 
         this->existingFlowBindingEntries.push_back(newEntryToInsert);
+
+        //update the counter for the next mobile node who wants to register himself as well
+        localHostCounter++;
     }
 
 }
 
-void FlowBindingTable::insertNewFlowBindingEntry(
-        ACK_RequestConnectionToLegacyServer *newFlowBindingEntry) {
 
-    FlowBindingEntry newEntryToInsert = FlowBindingEntry();
-    newEntryToInsert.setDestAddress(newFlowBindingEntry->getDestAddress());
-    newEntryToInsert.setSrcAddress(newFlowBindingEntry->getSrcAddress());
-    newEntryToInsert.setDestPort(newFlowBindingEntry->getDestPort());
-    newEntryToInsert.setSrcPort(newFlowBindingEntry->getSrcPort());
-    newEntryToInsert.setFlowSourceAddress(
-            newFlowBindingEntry->getFlowSourceAddress());
+//#############################################################
 
-    //  cout << "Flow Entry: src:" << newEntryToInsert.srcAddress << "dest: "
-    //         << newEntryToInsert.destAddress << endl;
 
-    if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
-            newEntryToInsert.srcPort, newEntryToInsert.destAddress,
-            newEntryToInsert.srcAddress)) {
+//check fo the MN if he has to send a new legacy_server_request or not
+bool FlowBindingTable::entryAlreadyExistsInTableForMobileNode(int& dport,int& sport, const char* destAddress){
+    std::vector<FlowBindingEntry>::iterator it;
 
-        this->existingFlowBindingEntries.push_back(newEntryToInsert);
-        // cout << "FRONT ENTRY IN TABLE: "
-        //          << existingFlowBindingEntries.front().srcAddress << endl;
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if (it->destPort == dport && it->srcPort == sport
+                    && !strcmp(it->destAddress, destAddress)) {
+            return true;
+        }
     }
-
+    return false;
 }
 
-//for deep packet inspection on MN-Side
+
+//#############################################################
+
+//for deep packet inspection on CN-Side
 bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
         const char* destAddress, const char* sourceAddress) {
 
@@ -100,63 +105,55 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
     return false;
 }
 
+//#############################################################
 
-
-
-//for the Replacement of Flow Source Address through CN
-//Tabelle speichert Verbindungen vom MN (Src Adresse) zum CN (Destination Addresse)
-bool FlowBindingTable::flowSourceAdressAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress){
-    std::vector<FlowBindingEntry>::iterator it;
-
-    for (it = existingFlowBindingEntries.begin();
-            it < existingFlowBindingEntries.end(); it++) {
-        if (it->destPort = dport && it->srcPort == sport && !strcmp(it->destAddress,sourceAddress) && !strcmp(it->flowSourceAddress, destAddress)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-
+//CN or HA should replace the destination address - relating to their own rules !!!
 //it has to be checked first if the entry really exist by calling the above method first !
 const char* FlowBindingTable::getCorrectDestinationAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress) {
 
     std::vector<FlowBindingEntry>::iterator it;
 
+    int localHostIdentifier;
+
        for (it = existingFlowBindingEntries.begin();
                it < existingFlowBindingEntries.end(); it++) {
-           if (it->destPort = dport && it->srcPort == sport && !strcmp(it->destAddress,sourceAddress) && !strcmp(it->flowSourceAddress, destAddress)) {
-               cout << "GetCorrectDestination-Function:\n  DestinationAddress:"<< it->destAddress
-                              << " SRC_ADDRESS: " << it->srcAddress << "FlowSourceAddress: "<<it->flowSourceAddress<<"  DPort: "
+
+           if (it->destPort = dport && it->srcPort == sport && !strcmp(it->destAddress,sourceAddress) && !strcmp(it->srcAddress, destAddress)) {
+               cout << "GetCorrectDestination-Function:\n  DestinationAddress: "<< it->destAddress
+                              << " SourceAddress: " << it->srcAddress << "Local Host Identifier: "<<it->localHostIdentifier<<"  DPort: "
                               << it->destPort << " SPort: " << it->srcPort <<"\n\n"<< endl;
-               return it->srcAddress;
+
+               localHostIdentifier = it->localHostIdentifier;
+
+               //now get the active source Address of the Mobile Node for the connection:
+               for (it = existingFlowBindingEntries.begin();
+                          it < existingFlowBindingEntries.end(); it++) {
+
+                   if ( (localHostIdentifier== it->localHostIdentifier) && it->isActive) {
+
+                       return it->srcAddress;
+
+                   }
+
+
+               }
+
+
+
            }
+
        }
 
-
-}
-
-//to set the address for further upper layer connections
-const char* FlowBindingTable::getFlowSourceAddressForConnection(int& dport,
-        int& sport, const char* destAddress, const char* sourceAddress) {
-
-    std::vector<FlowBindingEntry>::iterator it;
-
-    for (it = existingFlowBindingEntries.begin();
-            it < existingFlowBindingEntries.end(); it++) {
-        if (it->destPort == dport && it->srcPort == sport
-                && !strcmp(it->srcAddress, sourceAddress)
-                && !strcmp(it->destAddress, destAddress)) {
-            return it->flowSourceAddress;
-        }
-    }
-
+       cout<<"Eintrag mit den Werten: Dport:"<<dport<<" Sport:"<<sport<<" DestAddress:"<<destAddress<<" SourceAddress: "<<sourceAddress<<" wurde nicht gefunden.";
+       return NULL;
 }
 
 void FlowBindingTable::updateExistingFlowBindingEntry(
         FlowBindingUpdate* update) {
-    cout << "FlowBindingTable des CN/HA updatet sich selbst für HomeAddress:"
+
+
+
+    cout << "FlowBindingTable des "<< "CN/HA updatet sich selbst für HomeAddress:"
             << update->getHomeAddress() << " und New Care of Address: "
             << update->getNewCoAdress() << endl;
 
@@ -172,9 +169,17 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             newEntryToInsert.setSrcAddress(update->getNewCoAdress());
             newEntryToInsert.setDestPort(it->getDestPort());
             newEntryToInsert.setSrcPort(it->getSrcPort());
-            newEntryToInsert.setFlowSourceAddress(it->getFlowSourceAddress());
+            newEntryToInsert.setLocalHostIdentifier(it->getLocalHostIdentifier());
 
-            updatedEntries.push_back(newEntryToInsert);
+
+            //no duplicates are handeld
+            if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
+                      newEntryToInsert.srcPort, newEntryToInsert.destAddress,
+                      newEntryToInsert.srcAddress)) {
+                updatedEntries.push_back(newEntryToInsert);
+            }
+
+
         }
         //add all the others and also the old entry again.
         updatedEntries.push_back(*it);
@@ -199,36 +204,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
 }
 
-void FlowBindingTable::updateExistingFlowBindingEntry(
-        ACK_FlowBindingUpdate* update) {
-    cout << "FlowBindingTable des MN updatet sich selbst für HomeAddress:"
-            << update->getHomeAddress() << " und New Care of Address: "
-            << update->getNewCoAdress() << endl;
 
-    std::vector<FlowBindingEntry>::iterator it;
-    std::vector<FlowBindingEntry> updatedEntries; //hier werden die neuen Einträge gespeichert.
-
-    for (it = existingFlowBindingEntries.begin();
-            it < existingFlowBindingEntries.end(); it++) {
-         if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
-             cout << "Übereinstimmung gefunden"<<endl;
-                FlowBindingEntry newEntryToInsert = FlowBindingEntry();
-                newEntryToInsert.setDestAddress(it->getDestAddress());
-                newEntryToInsert.setSrcAddress(update->getNewCoAdress());
-                newEntryToInsert.setDestPort(it->getDestPort());
-                newEntryToInsert.setSrcPort(it->getSrcPort());
-                newEntryToInsert.setFlowSourceAddress(
-                        it->getFlowSourceAddress());
-
-                updatedEntries.push_back(newEntryToInsert);
-            }
-            //add all the others and also the old entry again.
-            updatedEntries.push_back(*it);
-    }
-
-    existingFlowBindingEntries = updatedEntries;
-
-}
 
 void FlowBindingTable::printoutContentOftable() {
 

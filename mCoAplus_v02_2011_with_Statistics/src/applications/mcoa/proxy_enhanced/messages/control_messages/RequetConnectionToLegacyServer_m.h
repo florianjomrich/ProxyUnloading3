@@ -21,11 +21,9 @@
  * packet RequetConnectionToLegacyServer {
  *     int SrcPort;
  *     int DestPort;
- *     string FlowSourceAddress;
  *     string SrcAddress;
  *     string DestAddress;
- *    
- *    
+ * 
  * }
  * </pre>
  */
@@ -34,7 +32,6 @@ class RequetConnectionToLegacyServer : public ::cPacket
   protected:
     int SrcPort_var;
     int DestPort_var;
-    opp_string FlowSourceAddress_var;
     opp_string SrcAddress_var;
     opp_string DestAddress_var;
 
@@ -59,8 +56,6 @@ class RequetConnectionToLegacyServer : public ::cPacket
     virtual void setSrcPort(int SrcPort);
     virtual int getDestPort() const;
     virtual void setDestPort(int DestPort);
-    virtual const char * getFlowSourceAddress() const;
-    virtual void setFlowSourceAddress(const char * FlowSourceAddress);
     virtual const char * getSrcAddress() const;
     virtual void setSrcAddress(const char * SrcAddress);
     virtual const char * getDestAddress() const;

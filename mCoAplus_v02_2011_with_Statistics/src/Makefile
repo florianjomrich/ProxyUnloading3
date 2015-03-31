@@ -535,10 +535,7 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o \
-    $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.o \
-    $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequestForConnectionToLegacyServer_HA_Timeout_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
-    $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
     $O/applications/udpapp/UDPEchoAppMsg_m.o \
@@ -612,10 +609,7 @@ MSGFILES = \
     applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg \
     applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg \
-    applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate.msg \
-    applications/mcoa/proxy_enhanced/messages/control_messages/RequestForConnectionToLegacyServer_HA_Timeout.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
-    applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
     applications/udpapp/UDPEchoAppMsg.msg \
@@ -1082,7 +1076,8 @@ $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.o: applicat
 	networklayer/ipv6/IPv6Datagram_m.h \
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h
+	networklayer/mcoa/IPv6TunAdr.h \
+	transport/contract/UDPControlInfo_m.h
 $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.h \
@@ -1128,8 +1123,6 @@ $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o: applicat
 $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.h \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
@@ -1166,21 +1159,13 @@ $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.cc \
 	applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.h
-$O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.cc \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.h
-$O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.cc \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h
-$O/applications/mcoa/proxy_enhanced/messages/control_messages/RequestForConnectionToLegacyServer_HA_Timeout_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequestForConnectionToLegacyServer_HA_Timeout_m.cc \
-	applications/mcoa/proxy_enhanced/messages/control_messages/RequestForConnectionToLegacyServer_HA_Timeout_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o: applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.h \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h \
@@ -3652,8 +3637,6 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_FlowBindingUpdate_m.h \
-	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h \

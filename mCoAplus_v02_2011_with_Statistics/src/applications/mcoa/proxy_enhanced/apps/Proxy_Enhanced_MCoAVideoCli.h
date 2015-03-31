@@ -74,9 +74,6 @@ class INET_API Proxy_Enhanced_MCoAVideoCli : public MCoAUDPBase
     virtual void sendControlData(cMessage *msg);
     //@}
 
-  protected:
-
-    virtual void receiveStream(cPacket *msg);
 };
 
 

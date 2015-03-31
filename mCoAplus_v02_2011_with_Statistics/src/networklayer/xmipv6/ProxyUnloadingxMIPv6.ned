@@ -34,6 +34,8 @@ simple ProxyUnloadingxMIPv6
 		bool isHomeAgent;
 		bool isMobileNode;
 		bool isCorrespondentNode;
+		string humanReadableName;
+		
 	gates:
 		input fromIPv6;
 		output toIPv6;

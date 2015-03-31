@@ -22,9 +22,7 @@
 #include <set>
 #include <FlowBindingEntry.h>
 #include <RequetConnectionToLegacyServer_m.h>
-#include <ACK_RequestConnectionToLegacyServer_m.h>
 #include <FlowBindingUpdate_m.h>
-#include <ACK_FlowBindingUpdate_m.h>
 // alternative #include <string.h>
 
 class FlowBindingTable: public cSimpleModule {
@@ -37,23 +35,23 @@ public:
 
     std::vector<FlowBindingEntry> existingFlowBindingEntries;
 
+    int localHostCounter = 0;
+
 
     FlowBindingTable();
     virtual ~FlowBindingTable();
     virtual void handleMessage(cMessage *msg);
 
     virtual void insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry);
-    virtual void insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry);
 
     virtual const char* getCorrectDestinationAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
-    virtual const char* getFlowSourceAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
 
     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+    virtual bool entryAlreadyExistsInTableForMobileNode(int& dport,int& sport, const char* destAddress);//since the source address my have variation ->
 
-    virtual bool flowSourceAdressAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
 
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
-    virtual void updateExistingFlowBindingEntry(ACK_FlowBindingUpdate* update);
+
 
     virtual void printoutContentOftable();
 

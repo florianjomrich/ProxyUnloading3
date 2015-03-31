@@ -22,7 +22,8 @@ public:
     int destPort;
     const char* srcAddress;
     const char* destAddress;
-    const char* flowSourceAddress;
+    int localHostIdentifier;
+    bool isActive;
 
     FlowBindingEntry();
     FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress);
@@ -53,21 +54,29 @@ public:
     }
 
 
-    const char* getFlowSourceAddress() const {
-         return flowSourceAddress;
-     }
-
-     void setFlowSourceAddress(const char* flowSourceAddress) {
-         this->flowSourceAddress = flowSourceAddress;
-     }
-
-    int getSrcPort() const {
+   int getSrcPort() const {
         return srcPort;
     }
 
     void setSrcPort(int srcPort) {
         this->srcPort = srcPort;
     }
+
+    void setLocalHostIdentifier(int localHostIdentifier){
+        this->localHostIdentifier = localHostIdentifier;
+    }
+
+   int getLocalHostIdentifier() const {
+        return localHostIdentifier;
+    }
+
+    int getIsActive() const {
+         return srcPort;
+     }
+
+     void setIsActive(int srcPort) {
+         this->srcPort = srcPort;
+     }
 };
 
 #endif /* FLOWBINDINGENTRY_H_ */

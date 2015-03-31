@@ -99,6 +99,11 @@ xMIPv6::~xMIPv6()
 
 void xMIPv6::initialize(int stage)
 {
+    //PROXY UNLOADING #################
+    humanReadableName = par("humanReadableName");
+    //#################################
+
+
 	if (stage == 0)
 	{
     	EV << "Initializing xMIPv6 module" << endl;
@@ -857,10 +862,7 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 
 
     //PROXY UNLOADING ####### - FJ
-    //if it is a flow source address don't create a Binding Update Message Timer
-	//this should be not used on this IP Address than!!!
-	RoutingTable6* rt6 = RoutingTable6Access().get();
-	if (rt6->getInterfaceByAddress(keyMCoA.getAddr()) != NULL) {
+
 
 	scheduleAt(simTime(), buTriggerMsg); //Scheduling a message which will trigger a BU towards buIfEntry->dest
 
@@ -870,8 +872,7 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 	   << " at simtime " << simTime() << " with lifetime " << lifeTime  << " and in BuIfEntry " << buIfEntry->lifeTime
 	   << " with sequenceNumber " << buIfEntry->buSequenceNumber << endl;
 
-    }
-	// PROXY UNLOADING###########
+
 
 }
 
@@ -1487,8 +1488,7 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
 
     //***********************PROXY UNLOADING********************
 
-    // if interface parameter does not match existing interface, do not send datagram
-          if (rt6->getInterfaceByAddress(CoA) != NULL) {
+
 
     //BUL is updated by the MN -> use as entrance point for Flow-Binding-Updates
     //send only ONCE to the HA - to not increase the traffic over the air gap !!!!
@@ -1519,7 +1519,7 @@ void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Addre
         send(newFlowBindingUpdateToSend,"bindingUpdateChannelToProxyControlApp$o");
 
 
-   }
+
    cout<<"BINDING UPDATE!!!"<<endl;
 
    // **********************************************************
