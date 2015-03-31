@@ -70,12 +70,12 @@ public:
         return localHostIdentifier;
     }
 
-    int getIsActive() const {
-         return srcPort;
+    bool getIsActive() const {
+         return isActive;
      }
 
-     void setIsActive(int srcPort) {
-         this->srcPort = srcPort;
+     void setIsActive(bool isActive) {
+         this->isActive = isActive;
      }
 };
 

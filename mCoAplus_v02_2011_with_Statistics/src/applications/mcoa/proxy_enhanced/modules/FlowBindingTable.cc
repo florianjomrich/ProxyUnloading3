@@ -52,6 +52,8 @@ void FlowBindingTable::insertNewFlowBindingEntry(
 
     newEntryToInsert.setLocalHostIdentifier(localHostCounter);
 
+    newEntryToInsert.setIsActive(true);
+
 
 
     //to remove duplicates in the table - because of duplicate message sending - not updates
@@ -160,6 +162,8 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
     std::vector<FlowBindingEntry>::iterator it;
     std::vector<FlowBindingEntry> updatedEntries; //hier werden die neuen Einträge gespeichert.
 
+    int localHostidentifierWhoHasToBeUpdated = -1; //initially not set
+
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
@@ -170,35 +174,33 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             newEntryToInsert.setDestPort(it->getDestPort());
             newEntryToInsert.setSrcPort(it->getSrcPort());
             newEntryToInsert.setLocalHostIdentifier(it->getLocalHostIdentifier());
+            newEntryToInsert.setIsActive(true);
 
 
-            //no duplicates are handeld
+            localHostidentifierWhoHasToBeUpdated= it->getLocalHostIdentifier();
+
+
+            //no duplicates are handled
             if (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
                       newEntryToInsert.srcPort, newEntryToInsert.destAddress,
                       newEntryToInsert.srcAddress)) {
+
                 updatedEntries.push_back(newEntryToInsert);
+
             }
 
 
+        }
+
+        //set all other entries not active - who have the same localHostIdentifier-ID
+        if(it->getLocalHostIdentifier() == localHostidentifierWhoHasToBeUpdated){
+            it->isActive=false;
         }
         //add all the others and also the old entry again.
         updatedEntries.push_back(*it);
 
     }
 
-    //TEST AUSGABE WIEDER LÖSCHE
-  //  int counter = 1;
-    cout << "updatedEntries Size: " << updatedEntries.size() << endl;
-
-  /*  for (it = updatedEntries.begin(); it < updatedEntries.end(); it++) {
-        cout << "updatedEntries: " << counter
-                << ".Tabelleneintrag  DestAddress:" << it->destAddress
-                << " SrcAddress: " << it->srcAddress << "  DPort: "
-                << it->destPort << " SPort: " << it->srcPort << endl;
-        counter++;
-    }*/
-
-    //////
 
     existingFlowBindingEntries = updatedEntries;
 
@@ -209,13 +211,13 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 void FlowBindingTable::printoutContentOftable() {
 
     std::vector<FlowBindingEntry>::iterator it;
-    int counter = 1;
+
 
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
-        cout << counter << ".Tabelleneintrag  DestAddress:" << it->destAddress
+        cout << "MN["<<it->localHostIdentifier << "] Tabelleneintrag  DestAddress:" << it->destAddress
                 << " SrcAddress: " << it->srcAddress << "  DPort: "
-                << it->destPort << " SPort: " << it->srcPort << endl;
-        counter++;
+                << it->destPort << " SPort: " << it->srcPort <<" isActive: "<<it->isActive<< endl;
+
     }
 }
