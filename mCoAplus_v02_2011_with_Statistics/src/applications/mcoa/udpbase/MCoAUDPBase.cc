@@ -162,7 +162,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
     // send message to UDP, with the appropriate control info attached
     msg->setKind(UDP_C_DATA);
 
-    EV << "MCoAUDPBase sending UDPMCOA method useMCoA?" <<useMCoA << "  with len=" << lenAdrs << " for dest " << destAddr <<endl;
+    cout << "MCoAUDPBase sending UDPMCOA method useMCoA?" <<useMCoA << "  with len=" << lenAdrs << " for dest " << destAddr <<endl;
 
     AdrInfo auxadr;
 

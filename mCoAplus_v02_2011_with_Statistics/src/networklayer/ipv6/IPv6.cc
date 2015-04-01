@@ -864,9 +864,10 @@ IPv6Datagram* IPv6::replaceFlowSourceAddress(IPv6Datagram *datagram) {
 
             cout<<myHumanReadableName<<" Transport Daten vor der Ersetzung: dport: "<<dport<<" sport: "<<sport<<" SrcAdresse: "<<datagram->getSrcAddress()<<" DesAdresse: "<<datagram->getDestAddress()<<endl;
 
+            //src and dest address are now switched here in this check, since it is the traffic back to MN handling
             if (flowBindingTable->entryAlreadyExistsInTable(dport,
-                    sport, datagram->getDestAddress().str().c_str(),
-                    datagram->getSrcAddress().str().c_str())) {
+                    sport, datagram->getSrcAddress().str().c_str(),
+                    datagram->getDestAddress().str().c_str())) {
 
                 IPv6Address neueDestAdresse = IPv6Address();
 
@@ -926,8 +927,7 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
         if (dport != -1 && sport != -1) { //only if the ports are set go further
 
-            cout << "Flow-Controlle des "<< myHumanReadableName<<" für das Datagram mit Namen: "
-                          << datagram->getName() <<"wird durchgeführt. "<< endl;
+
 
             cout << "DEST PORT: " << dport << " und SRC PORT: " << sport<< endl;
             cout << "DEST ADDR: " << datagram->getDestAddress()<< " und SRC ADDR: " << datagram->getSrcAddress() << endl;
@@ -946,6 +946,8 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
                             ) {
 
+                cout << "Flow-Src Vermerk für neue Verbindung des "<< myHumanReadableName<<" für das Datagram mit Namen: "
+                                << datagram->getName() <<"wird eingetragen und ein entsprechender Request gesendet. "<< endl;
 
 
                 RequetConnectionToLegacyServer* legacyRequestPacket =
@@ -964,13 +966,12 @@ IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram) {
 
                 send(legacyRequestPacket, "uDPControllAppConnection$o");
 
-                cout<<"ENtry does not exists"<<endl;
 
                 //Update own Table, so that no further requests for this connection are send
 
                 flowBindingTable->insertNewFlowBindingEntry(legacyRequestPacket->dup());
 
-                cout<<"ENtry does not exists 2 wird nicht mehr angezeigt"<<endl;
+
 
             }
 

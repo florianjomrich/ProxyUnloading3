@@ -1898,7 +1898,7 @@ void xMIPv6::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
 						else // CN, update 18.9.07 - CB
 						{
 
-						    cout<< "CN received it" << endl; //FJ
+						   // cout<< "CN received it" << endl; //FJ
 
 							// we first destroy the already existing RH2 path if
 							// there exists one

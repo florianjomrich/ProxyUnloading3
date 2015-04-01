@@ -72,7 +72,7 @@ void Proxy_Unloading_Control_App::finish() {
 }
 
 void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
-    cout << "PROXY CONTROL APP of "<<humanReadableName<< "received a message" << endl;
+    cout << "PROXY CONTROL APP of "<<humanReadableName<< " received a message" << endl;
 
     if (msg->isSelfMessage()) {
         if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR) {
@@ -175,10 +175,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 RoutingTable6* rt6 = RoutingTable6Access().get();
                 //  rt6->getHomeNetHA_adr()
 
-                IPvXAddress ha = IPAddressResolver().resolve("HA");
-                //  sendToUDPMCOA(flowBindingUpdateToHA, localPort,  ha, 2000, true);
-                sendToUDPMCOA(flowBindingUpdateToHA, localPort,
-                        rt6->getHomeNetHA_adr(), 2000, true);
+               // IPvXAddress ha = IPAddressResolver().resolve("HA");
+              //    sendToUDPMCOA(flowBindingUpdateToHA->dup(), localPort,  ha, 2000, true); //for MN[1] ????
+               IPvXAddress testAddresse = IPvXAddress();
+               testAddresse.set("2001:db8::2aa:1a2");
+               sendToUDPMCOA(flowBindingUpdateToHA, localPort,
+                        testAddresse, 2000, true);
+              //  sendToUDPMCOA(flowBindingUpdateToHA, localPort,
+                  //      rt6->getHomeNetHA_adr(), 2000, true);
 
 
                 return;
@@ -198,14 +202,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 //!!! TODO FIXEN !!! --> es müssen entsprechend nur die CNs mit der passenden Policy aktualisiert werden !!!
 
                 FlowBindingUpdate* flowBindingUpdateToCN =
-                        new FlowBindingUpdate();
-                flowBindingUpdateToCN->setName("FlowBindingUpdate");
-                flowBindingUpdateToCN->setHomeAddress(
-                        messageFromMN->getHomeAddress());
-                flowBindingUpdateToCN->setNewCoAdress(
-                        messageFromMN->getNewCoAdress());
-                flowBindingUpdateToCN->setDestAddress(
-                        messageFromMN->getDestAddress());
+                        messageFromMN->dup();
+
                 flowBindingUpdateToCN->setWasSendFromHA(true);
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
