@@ -49,6 +49,7 @@ module Proxy_Enhanced_Correspondent_Node6
         double numUdpApps;
         string tcpAppType;
         string udpAppType;
+       
         @display("bgb=895,397;i=device/pc2");
     gates:
            //in: in[];
@@ -73,7 +74,7 @@ module Proxy_Enhanced_Correspondent_Node6
         }
         flowBindingTable: FlowBindingTable {
             parameters:
-                @display("p=392,149;i=old/floppy1");
+                 @display("p=392,149;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:

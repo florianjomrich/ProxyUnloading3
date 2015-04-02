@@ -24,6 +24,7 @@ public:
     const char* destAddress;
     int localHostIdentifier;
     bool isActive;
+    bool isHomeAddressOfMobileNode;
 
     FlowBindingEntry();
     FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress);
@@ -77,6 +78,14 @@ public:
      void setIsActive(bool isActive) {
          this->isActive = isActive;
      }
+
+     bool getIsHomeAddress() const {
+          return isHomeAddressOfMobileNode;
+      }
+
+      void setIsHomeAddress(bool status) {
+          this->isHomeAddressOfMobileNode = status;
+      }
 };
 
 #endif /* FLOWBINDINGENTRY_H_ */
