@@ -94,6 +94,7 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     bool isMN;
     bool isHA;
     bool isCN;
+    bool isCapableCN;
     const char *myHumanReadableName;
     FlowBindingTable *flowBindingTable;
 

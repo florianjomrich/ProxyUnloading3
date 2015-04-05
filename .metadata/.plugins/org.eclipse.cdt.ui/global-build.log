@@ -1255,3 +1255,1548 @@ cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
 Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:16:50 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:16:50 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:16:51 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:26:07 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:26:08 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:26:09 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:36:10 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1676:55: error: ‘dest’ was not declared in this scope
+            newFlowBindingUpdateToSend->setDestAddress(dest.str().c_str());
+                                                       ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2376:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2454:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2490:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3171:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4303:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4801:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4806:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4797:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5127:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6155:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+make[1]: *** [../out/gcc-debug/src/networklayer/xmipv6/xMIPv6.o] Fehler 1
+make: *** [all] Fehler 2
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:36:11 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:36:12 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:36:36 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1698:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2376:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2454:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2490:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3170:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3171:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4303:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4801:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4806:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4795:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4797:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5127:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6155:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:36:41 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:36:41 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+11:39:54 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+11:39:54 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+11:39:55 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:50:36 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:50:41 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:50:42 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:51:22 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:51:22 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:51:22 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:56:17 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:56:22 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+opp_makedep: warning: no input files
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:56:22 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:30:23 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:30:27 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:30:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:41:33 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:41:33 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:41:33 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:50:13 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:50:13 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:50:13 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:51:15 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:51:15 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:51:16 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:53:29 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:53:34 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:53:34 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:55:12 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:55:12 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:55:13 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+14:47:11 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+14:47:26 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+opp_makedep: warning: no input files
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+14:47:28 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+22:32:45 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+22:32:50 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+22:32:52 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:36:27 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:988:34: error: ‘class FlowBindingTable’ has no member named ‘cnOfConnectionIsNotCapable’
+             if(flowBindingTable->cnOfConnectionIsNotCapable(dport,
+                                  ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
+make: *** [all] Fehler 2
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:36:36 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:36:38 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:48:19 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::replaceFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:883:87: error: no matching function for call to ‘FlowBindingTable::getCorrectDestinationAddressForConnection(int&, int&, const char*, const char*, bool&, bool&, bool&)’
+                                 datagram->getSrcAddress().str().c_str(),isMN,isHA,isCN)); /// ????
+                                                                                       ^
+networklayer/ipv6/IPv6.cc:883:87: note: candidate is:
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:49:25: note: virtual const char* FlowBindingTable::getCorrectDestinationAddressForConnection(int&, int&, const char*, const char*)
+     virtual const char* getCorrectDestinationAddressForConnection(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
+                         ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:49:25: note:   candidate expects 4 arguments, 7 provided
+networklayer/ipv6/IPv6.cc: In member function ‘virtual IPv6Datagram* IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:989:34: error: ‘class FlowBindingTable’ has no member named ‘cnOfConnectionIsNotCapable’
+             if(flowBindingTable->cnOfConnectionIsNotCapable(dport,
+                                  ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
+make: *** [all] Fehler 2
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:48:20 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:48:21 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:57:18 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:114:74: error: no ‘bool FlowBindingTable::cnOfConnectionIsNotCapable(const char*)’ member function declared in class ‘FlowBindingTable’
+ bool FlowBindingTable::cnOfConnectionIsNotCapable(const char* destAddress){
+                                                                          ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+12:57:18 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:57:19 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+12:57:50 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/xmipv6/xMIPv6.cc
+In file included from networklayer/xmipv6/xMIPv6.cc:23:0:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘virtual void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1703:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2381:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2459:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2495:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3175:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3176:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4308:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4806:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4811:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4800:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4802:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5132:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6160:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+12:57:56 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+12:57:57 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:00:54 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:00:54 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:00:55 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:01:48 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:01:49 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:01:49 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:07:13 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:07:17 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:07:18 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:08:17 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:08:17 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:08:17 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:11:25 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:11:29 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:11:30 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:12:08 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:12:11 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:12:12 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:15:07 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:15:10 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:15:11 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:25:36 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:25:36 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:25:37 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:28:25 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc: In member function ‘virtual void FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer*)’:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:58:22: error: ‘class FlowBindingEntry’ has no member named ‘setIsHomeAddress’
+     newEntryToInsert.setIsHomeAddress(true);
+                      ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o] Fehler 1
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
+13:28:27 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:28:27 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+13:28:43 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc
+In file included from applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc:16:0:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+networklayer/ipv6/IPv6.cc
+In file included from networklayer/ipv6/IPv6.h:38:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h:23:16: warning: extra tokens at end of #ifndef directive [enabled by default]
+ #ifndef __FLOW BINDING TABLE ACCESS_H__
+                ^
+In file included from networklayer/ipv6/IPv6.h:31:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+networklayer/xmipv6/xMIPv6.h:136:45: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  std::string lastSendToFlowBindingAddress = "0:0:0:0:0:0:0:0";//just for the beginning
+                                             ^
+In file included from networklayer/ipv6/IPv6.h:37:0,
+                 from networklayer/ipv6/IPv6.cc:20:
+applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h:38:28: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     int localHostCounter = 0;
+                            ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src'
+13:28:47 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/testMCoA_v2_2011/src'
+13:28:48 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading3/test_zum_Anpassen_der_App/src'

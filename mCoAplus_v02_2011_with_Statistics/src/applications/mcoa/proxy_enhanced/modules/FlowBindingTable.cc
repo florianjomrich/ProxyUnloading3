@@ -23,17 +23,14 @@ using std::cout;
 FlowBindingTable::FlowBindingTable() {
     // TODO Auto-generated constructor stub
 
-
 }
 
 FlowBindingTable::~FlowBindingTable() {
     // TODO Auto-generated destructor stub
 }
 
-
-void FlowBindingTable::initialize()
-{
-    isCNandNotCapable = par("isCNandNotCapable");
+void FlowBindingTable::initialize() {
+    // isCNandNotCapable = par("isCNandNotCapable");
 }
 
 void FlowBindingTable::handleMessage(cMessage* msg) {
@@ -58,8 +55,7 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     cout << "war noch hier" << endl;
 
     newEntryToInsert.setLocalHostIdentifier(localHostCounter);
-    newEntryToInsert.setIsHomeAddress(true);
-
+    newEntryToInsert.setForThisConncectionCNisCapable(false);
     newEntryToInsert.setIsActive(true);
 
     //to remove duplicates in the table - because of duplicate message sending - not updates
@@ -77,7 +73,7 @@ void FlowBindingTable::insertNewFlowBindingEntry(
 
 //#############################################################
 
-//check fo the MN if he has to send a new legacy_server_request or not
+//check for the MN if he has to send a new legacy_server_request or not
 bool FlowBindingTable::entryAlreadyExistsInTableForMobileNode(int& dport,
         int& sport, const char* destAddress) {
     std::vector<FlowBindingEntry>::iterator it;
@@ -113,86 +109,58 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
 
 //#############################################################
 
+
+bool FlowBindingTable::cnOfConnectionIsNotCapable(const char* destAddress){
+
+    std::vector<FlowBindingEntry>::iterator it;
+
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if (!strcmp(it->destAddress, destAddress)) {
+            return !it->forThisConncectionCNisCapable;
+        }
+    }
+    return false;
+
+}
+
+//#############################################################
+
 //CN or HA should replace the destination address - relating to their own rules !!!
 //it has to be checked first if the entry really exist by calling the above method first !
 const char* FlowBindingTable::getCorrectDestinationAddressForConnection(
         int& dport, int& sport, const char* destAddress,
         const char* sourceAddress) {
 
-    //if the CN is not capable to send - use the home address forced to send
-    //so get the homeAddress of the current to sent to Mobile Node
-    if (isCNandNotCapable) {
-        cout<<"isCNandNotCapable: "<<isCNandNotCapable<<endl;
+    cout
+            << "Home Agent or capable CN is replacing the Dest-Address with the current set CoA Address of the MN"<<endl;
 
-        std::vector<FlowBindingEntry>::iterator it;
+    std::vector<FlowBindingEntry>::iterator it;
 
-           int localHostIdentifier;
+    int localHostIdentifier;
 
-           for (it = existingFlowBindingEntries.begin();
-                   it < existingFlowBindingEntries.end(); it++) {
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
 
-               if (it->destPort == dport && it->srcPort == sport
-                       && !strcmp(it->destAddress, sourceAddress)
-                       && !strcmp(it->srcAddress, destAddress)) {
-                   cout
-                           << "GetCorrectDestination-Function:\n  DestinationAddress: "
-                           << it->destAddress << " SourceAddress: "
-                           << it->srcAddress << "Local Host Identifier: "
-                           << it->localHostIdentifier << "  DPort: "
-                           << it->destPort << " SPort: " << it->srcPort << "\n\n"
-                           << endl;
+        if (it->destPort == dport && it->srcPort == sport
+                && !strcmp(it->destAddress, sourceAddress)
+                && !strcmp(it->srcAddress, destAddress)) {
+            cout << "GetCorrectDestination-Function:\n  DestinationAddress: "
+                    << it->destAddress << " SourceAddress: " << it->srcAddress
+                    << "Local Host Identifier: " << it->localHostIdentifier
+                    << "  DPort: " << it->destPort << " SPort: " << it->srcPort
+                    << "\n\n" << endl;
 
-                   localHostIdentifier = it->localHostIdentifier;
-                   for (it = existingFlowBindingEntries.begin();
-                                       it < existingFlowBindingEntries.end(); it++) {
+            localHostIdentifier = it->localHostIdentifier;
 
-                                   if (localHostIdentifier == it->localHostIdentifier && it->isHomeAddressOfMobileNode){
-                                       return it->srcAddress;
-                                   }
+            //now get the active source Address of the Mobile Node for the connection:
+            for (it = existingFlowBindingEntries.begin();
+                    it < existingFlowBindingEntries.end(); it++) {
 
+                if ((localHostIdentifier == it->localHostIdentifier)
+                        && it->isActive) {
 
-                   }
-
-               }
-
-           }
-
-    }
-
-    else {
-
-        cout<<"isCNandNotCapable: "<<isCNandNotCapable<<endl;
-
-        std::vector<FlowBindingEntry>::iterator it;
-
-        int localHostIdentifier;
-
-        for (it = existingFlowBindingEntries.begin();
-                it < existingFlowBindingEntries.end(); it++) {
-
-            if (it->destPort == dport && it->srcPort == sport
-                    && !strcmp(it->destAddress, sourceAddress)
-                    && !strcmp(it->srcAddress, destAddress)) {
-                cout
-                        << "GetCorrectDestination-Function:\n  DestinationAddress: "
-                        << it->destAddress << " SourceAddress: "
-                        << it->srcAddress << "Local Host Identifier: "
-                        << it->localHostIdentifier << "  DPort: "
-                        << it->destPort << " SPort: " << it->srcPort << "\n\n"
-                        << endl;
-
-                localHostIdentifier = it->localHostIdentifier;
-
-                //now get the active source Address of the Mobile Node for the connection:
-                for (it = existingFlowBindingEntries.begin();
-                        it < existingFlowBindingEntries.end(); it++) {
-
-                    if ((localHostIdentifier == it->localHostIdentifier)
-                            && it->isActive) {
-
-                        return it->srcAddress;
-
-                    }
+                    return it->srcAddress;
 
                 }
 
@@ -245,6 +213,8 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             newEntryToInsert.setSrcPort(it->getSrcPort());
             newEntryToInsert.setLocalHostIdentifier(
                     it->getLocalHostIdentifier());
+            newEntryToInsert.setForThisConncectionCNisCapable(
+                    it->getForThisConncectionCNisCapable());
             newEntryToInsert.setIsActive(true);
 
             //no duplicates are handled
@@ -292,7 +262,9 @@ void FlowBindingTable::printoutContentOftable() {
                 << "] Tabelleneintrag  DestAddress:" << it->destAddress
                 << " SrcAddress: " << it->srcAddress << "  DPort: "
                 << it->destPort << " SPort: " << it->srcPort << " isActive: "
-                << it->isActive <<" isHomeAddress of MN:"<<it->isHomeAddressOfMobileNode << endl;
+                << it->isActive
+                << " CN is capable: "
+                << it->forThisConncectionCNisCapable << endl;
 
     }
 }

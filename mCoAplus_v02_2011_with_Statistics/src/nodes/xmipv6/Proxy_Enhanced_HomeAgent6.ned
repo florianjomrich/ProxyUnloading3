@@ -157,5 +157,6 @@ module Proxy_Enhanced_HomeAgent6
         proxyUnloadingControlApp.udpOut --> udp.appIn++;
         proxyUnloadingControlApp.udpIn <-- udp.appOut++;
         proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
+        proxyUnloadingControlApp.bindingUpdateChannelToProxyControlApp<-->networkLayer.bindingUpdateChannelToProxyControlApp;
 }
 

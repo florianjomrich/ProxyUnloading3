@@ -24,7 +24,7 @@ public:
     const char* destAddress;
     int localHostIdentifier;
     bool isActive;
-    bool isHomeAddressOfMobileNode;
+    bool forThisConncectionCNisCapable;
 
     FlowBindingEntry();
     FlowBindingEntry(int srcPort, int destPort,const char* srcAddress,const char* destAddress);
@@ -79,12 +79,13 @@ public:
          this->isActive = isActive;
      }
 
-     bool getIsHomeAddress() const {
-          return isHomeAddressOfMobileNode;
+
+      bool getForThisConncectionCNisCapable(){
+          return forThisConncectionCNisCapable;
       }
 
-      void setIsHomeAddress(bool status) {
-          this->isHomeAddressOfMobileNode = status;
+      void setForThisConncectionCNisCapable(bool status){
+          this->forThisConncectionCNisCapable = status;
       }
 };
 

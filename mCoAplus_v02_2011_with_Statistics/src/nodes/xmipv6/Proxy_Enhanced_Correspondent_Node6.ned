@@ -163,5 +163,6 @@ module Proxy_Enhanced_Correspondent_Node6
         proxyUnloadingControlApp.udpOut --> udp.appIn++;
         proxyUnloadingControlApp.udpIn <-- udp.appOut++;
         proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
+        proxyUnloadingControlApp.bindingUpdateChannelToProxyControlApp<-->networkLayer.bindingUpdateChannelToProxyControlApp;
 }
 

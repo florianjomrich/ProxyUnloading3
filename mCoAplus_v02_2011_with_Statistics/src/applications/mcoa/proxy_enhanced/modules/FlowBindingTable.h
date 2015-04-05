@@ -36,7 +36,7 @@ public:
     std::vector<FlowBindingEntry> existingFlowBindingEntries;
 
     int localHostCounter = 0;
-    bool isCNandNotCapable;
+   // bool isCNandNotCapable;
 
 
     FlowBindingTable();
@@ -50,6 +50,8 @@ public:
 
     virtual bool entryAlreadyExistsInTable(int& dport,int& sport, const char* destAddress,const char* sourceAddress);
     virtual bool entryAlreadyExistsInTableForMobileNode(int& dport,int& sport, const char* destAddress);//since the source address my have variation ->
+
+    virtual bool cnOfConnectionIsNotCapable(const char* destAddress);
 
 
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
