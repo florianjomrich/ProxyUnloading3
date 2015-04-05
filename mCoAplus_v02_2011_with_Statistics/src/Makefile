@@ -535,6 +535,7 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o \
+    $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
@@ -609,6 +610,7 @@ MSGFILES = \
     applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg \
     applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg \
+    applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
@@ -1123,6 +1125,7 @@ $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o: applicat
 $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
@@ -1159,6 +1162,8 @@ $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.cc \
 	applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage_m.h
+$O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
@@ -3637,6 +3642,7 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.h \

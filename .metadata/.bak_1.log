@@ -1,4 +1,4 @@
-!SESSION 2015-04-02 08:59:06.178 -----------------------------------------------
+!SESSION 2015-04-05 11:29:41.808 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=1.7.0_75
 java.vendor=Oracle Corporation
@@ -6,9 +6,58 @@ BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
 Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 This is a continuation of log file /home/ubuntu/ProxyUnloading3/.metadata/.bak_0.log
-Created Time: 2015-04-02 09:01:43.797
+Created Time: 2015-04-05 12:36:34.628
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:43.797
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:34.628
+!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPv6ControlInfo.msg
+!STACK 0
+java.lang.Exception
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
+	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
+	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
+	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
+	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
+	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
+	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
+	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
+	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
+	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
+	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
+	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
+	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
+	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:34.636
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPProtocolId.msg
 !STACK 0
 java.lang.Exception
@@ -57,7 +106,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:43.798
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:34.637
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -106,7 +155,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:43.855
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:34.706
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/arp/ARPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -155,7 +204,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.072
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.101
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ppp/PPPFrame.msg
 !STACK 0
 java.lang.Exception
@@ -204,7 +253,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.092
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.132
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/TransmComplete.msg
 !STACK 0
 java.lang.Exception
@@ -253,7 +302,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.094
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.133
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/SnrControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -302,7 +351,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.107
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.151
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/AirFrame.msg
 !STACK 0
 java.lang.Exception
@@ -351,7 +400,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.126
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.225
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/MacPkt.msg
 !STACK 0
 java.lang.Exception
@@ -401,7 +450,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.127
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.225
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/Mac80211Pkt.msg
 !STACK 0
 java.lang.Exception
@@ -451,7 +500,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.144
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.251
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211Primitives.msg
 !STACK 0
 java.lang.Exception
@@ -501,7 +550,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.162
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.270
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211MgmtFrames.msg
 !STACK 0
 java.lang.Exception
@@ -551,7 +600,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.265
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.388
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mac/Ieee80211Frame.msg
 !STACK 0
 java.lang.Exception
@@ -601,7 +650,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.301
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.435
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ext/ExtFrame.msg
 !STACK 0
 java.lang.Exception
@@ -650,7 +699,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.345
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.496
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ethernet/EtherFrame.msg
 !STACK 0
 java.lang.Exception
@@ -699,7 +748,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.361
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.512
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Radio80211aControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -748,7 +797,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.362
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.513
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/PhyControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -797,7 +846,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.363
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.514
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/MeshControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -846,7 +895,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.366
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.518
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Ieee802Ctrl.msg
 !STACK 0
 java.lang.Exception
@@ -895,7 +944,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.367
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.518
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/ControlInfoBreakLink.msg
 !STACK 0
 java.lang.Exception
@@ -944,7 +993,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.460
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.589
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/base/ByteArrayMessage.msg
 !STACK 0
 java.lang.Exception
@@ -992,7 +1041,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.500
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.633
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/udpapp/UDPEchoAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -1041,7 +1090,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.571
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.738
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/tcpapp/GenericAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -1090,7 +1139,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.595
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.782
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/pingapp/PingPayload.msg
 !STACK 0
 java.lang.Exception
@@ -1139,7 +1188,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.611
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.811
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg
 !STACK 0
 java.lang.Exception
@@ -1191,7 +1240,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.612
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.812
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg
 !STACK 0
 java.lang.Exception
@@ -1243,7 +1292,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.614
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.812
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage.msg
 !STACK 0
 java.lang.Exception
@@ -1295,7 +1344,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.614
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.813
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg
 !STACK 0
 java.lang.Exception
@@ -1347,7 +1396,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.640
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.898
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/VoIP/MCOAVoIPMsg.msg
 !STACK 0
 java.lang.Exception
@@ -1397,7 +1446,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.641
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.900
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/Video/MCoAVideoStreaming.msg
 !STACK 0
 java.lang.Exception
@@ -1447,7 +1496,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.675
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:35.989
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/ethernet/EtherApp.msg
 !STACK 0
 java.lang.Exception
@@ -1496,7 +1545,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.693
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.012
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/dhcp/DHCP.msg
 !STACK 0
 java.lang.Exception
@@ -1545,7 +1594,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.720
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.026
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TransportPacket.msg
 !STACK 0
 java.lang.Exception
@@ -1593,7 +1642,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.739
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.035
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TCPInterfacePacket.msg
 !STACK 0
 java.lang.Exception
@@ -1641,7 +1690,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.766
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.078
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -1689,7 +1738,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.771
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.082
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -1737,7 +1786,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.775
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.087
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -1785,7 +1834,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:44.794
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 12:36:36.112
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -1833,7 +1882,96 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.510
+!ENTRY org.omnetpp.launch 4 133 2015-04-05 13:01:07.866
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.omnetpp.launch 4 133 2015-04-05 13:08:01.934
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.eclipse.jface 2 0 2015-04-05 13:11:48.268
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-04-05 13:11:48.268
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f83a79a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4c70983e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.omnetpp.launch 4 133 2015-04-05 13:26:04.897
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.eclipse.core.expressions 4 201 2015-04-05 13:41:01.940
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.cdt.internal.core.model.CContainer
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.cdt.internal.core.model.CContainer
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:311)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:251)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:218)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:237)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:147)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:62)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:343)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:475)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:470)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:500)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1392)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1416)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1397)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:198)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:3784)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3353)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-04-05 13:41:01.941
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.cdt.internal.core.model.CContainer
+
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.437
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/util/PowerControlMessages.msg
 !STACK 0
 java.lang.Exception
@@ -1881,7 +2019,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.539
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.465
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/udp/UDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -1930,7 +2068,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.648
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.563
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/tcp/TCPSegment.msg
 !STACK 0
 java.lang.Exception
@@ -1979,7 +2117,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.693
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.611
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/sctp/SCTPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -2028,7 +2166,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.765
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.671
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/profiles/avprofile/RTPMpegPacket.msg
 !STACK 0
 java.lang.Exception
@@ -2079,7 +2217,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.794
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.696
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderStatusMessage.msg
 !STACK 0
 java.lang.Exception
@@ -2128,7 +2266,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.807
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.704
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderControlMessage.msg
 !STACK 0
 java.lang.Exception
@@ -2177,7 +2315,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.870
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.769
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/UDPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -2226,7 +2364,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.883
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.780
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/TCPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -2275,7 +2413,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.894
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.793
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/SCTPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -2324,7 +2462,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.964
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.856
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/xmipv6/MobilityHeader.msg
 !STACK 0
 java.lang.Exception
@@ -2373,7 +2511,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:46.991
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.882
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/TED.msg
 !STACK 0
 java.lang.Exception
@@ -2422,7 +2560,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.007
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.896
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/LinkStatePacket.msg
 !STACK 0
 java.lang.Exception
@@ -2471,7 +2609,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.028
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.920
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/SignallingMsg.msg
 !STACK 0
 java.lang.Exception
@@ -2520,7 +2658,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.029
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.921
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -2569,7 +2707,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.030
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.922
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -2618,7 +2756,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.031
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.924
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -2667,7 +2805,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.049
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.925
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPHello.msg
 !STACK 0
 java.lang.Exception
@@ -2716,7 +2854,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.056
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:58.931
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -2765,7 +2903,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.283
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.154
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFTimer.msg
 !STACK 0
 java.lang.Exception
@@ -2814,7 +2952,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.295
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.164
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFPacket.msg
 !STACK 0
 java.lang.Exception
@@ -2863,7 +3001,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.339
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.209
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/olsr/OLSRpkt.msg
 !STACK 0
 java.lang.Exception
@@ -2913,7 +3051,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.409
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.283
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_UERR.msg
 !STACK 0
 java.lang.Exception
@@ -2963,7 +3101,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.427
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.300
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Timeout.msg
 !STACK 0
 java.lang.Exception
@@ -3013,7 +3151,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.436
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.311
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREQ.msg
 !STACK 0
 java.lang.Exception
@@ -3063,7 +3201,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.438
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.312
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREP.msg
 !STACK 0
 java.lang.Exception
@@ -3113,7 +3251,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.439
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.313
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RM.msg
 !STACK 0
 java.lang.Exception
@@ -3163,7 +3301,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.440
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.314
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RERR.msg
 !STACK 0
 java.lang.Exception
@@ -3213,7 +3351,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.441
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.315
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_PacketBBMessage.msg
 !STACK 0
 java.lang.Exception
@@ -3263,7 +3401,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:47.441
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.315
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Packet.msg
 !STACK 0
 java.lang.Exception
@@ -3313,7 +3451,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.008
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.746
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dsdv/DSDVhello.msg
 !STACK 0
 java.lang.Exception
@@ -3363,7 +3501,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.222
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.925
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ldp/LDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -3412,7 +3550,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.252
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.956
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6ExtensionHeaders.msg
 !STACK 0
 java.lang.Exception
@@ -3461,7 +3599,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.265
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:44:59.969
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6Datagram.msg
 !STACK 0
 java.lang.Exception
@@ -3510,7 +3648,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.314
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.022
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/IPDatagram.msg
 !STACK 0
 java.lang.Exception
@@ -3559,7 +3697,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.321
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.029
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ICMPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -3608,7 +3746,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.334
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.043
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ControlManetRouting.msg
 !STACK 0
 java.lang.Exception
@@ -3657,7 +3795,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.343
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.052
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/IPv6NDMessage.msg
 !STACK 0
 java.lang.Exception
@@ -3706,7 +3844,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.344
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.053
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/ICMPv6Message.msg
 !STACK 0
 java.lang.Exception
@@ -3755,7 +3893,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.369
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.080
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPv6ControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -3804,7 +3942,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.377
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.090
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPProtocolId.msg
 !STACK 0
 java.lang.Exception
@@ -3853,7 +3991,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.378
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.090
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -3902,7 +4040,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.455
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.158
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/arp/ARPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -3951,7 +4089,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.903
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.542
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ppp/PPPFrame.msg
 !STACK 0
 java.lang.Exception
@@ -4000,7 +4138,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.941
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.574
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/TransmComplete.msg
 !STACK 0
 java.lang.Exception
@@ -4049,7 +4187,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.942
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.575
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/SnrControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -4098,7 +4236,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:48.965
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.592
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/AirFrame.msg
 !STACK 0
 java.lang.Exception
@@ -4147,7 +4285,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.031
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.647
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/MacPkt.msg
 !STACK 0
 java.lang.Exception
@@ -4197,7 +4335,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.032
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.648
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/Mac80211Pkt.msg
 !STACK 0
 java.lang.Exception
@@ -4247,7 +4385,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.060
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.673
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211Primitives.msg
 !STACK 0
 java.lang.Exception
@@ -4297,7 +4435,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.082
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.692
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211MgmtFrames.msg
 !STACK 0
 java.lang.Exception
@@ -4347,7 +4485,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.273
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.818
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mac/Ieee80211Frame.msg
 !STACK 0
 java.lang.Exception
@@ -4397,7 +4535,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.346
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.865
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ext/ExtFrame.msg
 !STACK 0
 java.lang.Exception
@@ -4446,7 +4584,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.432
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.929
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ethernet/EtherFrame.msg
 !STACK 0
 java.lang.Exception
@@ -4495,7 +4633,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.446
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.946
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Radio80211aControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -4544,7 +4682,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.447
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.947
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/PhyControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -4593,7 +4731,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.448
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.948
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/MeshControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -4642,7 +4780,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.452
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.952
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Ieee802Ctrl.msg
 !STACK 0
 java.lang.Exception
@@ -4691,7 +4829,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.453
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:00.953
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/ControlInfoBreakLink.msg
 !STACK 0
 java.lang.Exception
@@ -4740,7 +4878,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.518
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.021
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/base/ByteArrayMessage.msg
 !STACK 0
 java.lang.Exception
@@ -4788,7 +4926,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.559
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.066
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/udpapp/UDPEchoAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -4837,7 +4975,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.659
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.177
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/tcpapp/GenericAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -4886,7 +5024,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.699
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.219
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/pingapp/PingPayload.msg
 !STACK 0
 java.lang.Exception
@@ -4935,7 +5073,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.717
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.240
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg
 !STACK 0
 java.lang.Exception
@@ -4987,7 +5125,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.717
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.240
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg
 !STACK 0
 java.lang.Exception
@@ -5039,7 +5177,59 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.718
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.240
+!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request.msg
+!STACK 0
+java.lang.Exception
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
+	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
+	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
+	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
+	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
+	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
+	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
+	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
+	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
+	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
+	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
+	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
+	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
+	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.241
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage.msg
 !STACK 0
 java.lang.Exception
@@ -5091,7 +5281,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.718
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.242
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg
 !STACK 0
 java.lang.Exception
@@ -5143,7 +5333,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.772
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.288
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/VoIP/MCOAVoIPMsg.msg
 !STACK 0
 java.lang.Exception
@@ -5193,7 +5383,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.773
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.290
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/Video/MCoAVideoStreaming.msg
 !STACK 0
 java.lang.Exception
@@ -5243,7 +5433,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.826
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.348
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/ethernet/EtherApp.msg
 !STACK 0
 java.lang.Exception
@@ -5292,7 +5482,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.846
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.373
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/dhcp/DHCP.msg
 !STACK 0
 java.lang.Exception
@@ -5341,7 +5531,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.860
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.387
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TransportPacket.msg
 !STACK 0
 java.lang.Exception
@@ -5389,7 +5579,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.868
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.395
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TCPInterfacePacket.msg
 !STACK 0
 java.lang.Exception
@@ -5437,7 +5627,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.906
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.437
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -5485,7 +5675,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.911
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.443
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -5533,7 +5723,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.916
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.448
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -5581,7 +5771,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:49.937
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:01.472
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -5629,7 +5819,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.414
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.032
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/util/PowerControlMessages.msg
 !STACK 0
 java.lang.Exception
@@ -5677,7 +5867,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.440
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.060
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/udp/UDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -5726,7 +5916,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.525
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.151
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/tcp/TCPSegment.msg
 !STACK 0
 java.lang.Exception
@@ -5775,7 +5965,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.568
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.196
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/sctp/SCTPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -5824,7 +6014,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.624
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.255
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/profiles/avprofile/RTPMpegPacket.msg
 !STACK 0
 java.lang.Exception
@@ -5875,7 +6065,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.646
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.279
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderStatusMessage.msg
 !STACK 0
 java.lang.Exception
@@ -5924,7 +6114,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.655
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.286
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderControlMessage.msg
 !STACK 0
 java.lang.Exception
@@ -5973,7 +6163,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.718
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.342
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/UDPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -6022,7 +6212,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.731
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.354
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/TCPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -6071,7 +6261,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.740
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.364
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/SCTPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -6120,7 +6310,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.796
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.421
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/xmipv6/MobilityHeader.msg
 !STACK 0
 java.lang.Exception
@@ -6169,7 +6359,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.819
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.444
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/TED.msg
 !STACK 0
 java.lang.Exception
@@ -6218,7 +6408,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.832
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.459
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/LinkStatePacket.msg
 !STACK 0
 java.lang.Exception
@@ -6267,7 +6457,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.849
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.477
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/SignallingMsg.msg
 !STACK 0
 java.lang.Exception
@@ -6316,7 +6506,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.850
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.478
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -6365,7 +6555,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.851
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.478
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -6414,7 +6604,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.851
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.479
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -6463,7 +6653,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.852
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.480
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPHello.msg
 !STACK 0
 java.lang.Exception
@@ -6512,7 +6702,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:53.857
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.486
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -6561,7 +6751,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.050
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.712
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFTimer.msg
 !STACK 0
 java.lang.Exception
@@ -6610,7 +6800,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.060
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.723
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFPacket.msg
 !STACK 0
 java.lang.Exception
@@ -6659,7 +6849,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.111
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.766
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/olsr/OLSRpkt.msg
 !STACK 0
 java.lang.Exception
@@ -6709,7 +6899,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.178
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.829
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_UERR.msg
 !STACK 0
 java.lang.Exception
@@ -6759,7 +6949,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.193
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.845
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Timeout.msg
 !STACK 0
 java.lang.Exception
@@ -6809,7 +6999,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.202
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.855
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREQ.msg
 !STACK 0
 java.lang.Exception
@@ -6859,7 +7049,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.204
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.856
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREP.msg
 !STACK 0
 java.lang.Exception
@@ -6909,7 +7099,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.207
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.856
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RM.msg
 !STACK 0
 java.lang.Exception
@@ -6959,7 +7149,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.208
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.857
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RERR.msg
 !STACK 0
 java.lang.Exception
@@ -7009,7 +7199,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.209
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.858
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_PacketBBMessage.msg
 !STACK 0
 java.lang.Exception
@@ -7059,7 +7249,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.210
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:37.859
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Packet.msg
 !STACK 0
 java.lang.Exception
@@ -7109,7 +7299,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.553
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.237
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dsdv/DSDVhello.msg
 !STACK 0
 java.lang.Exception
@@ -7159,7 +7349,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.727
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.409
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ldp/LDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -7208,7 +7398,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.756
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.438
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6ExtensionHeaders.msg
 !STACK 0
 java.lang.Exception
@@ -7257,7 +7447,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.766
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.450
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6Datagram.msg
 !STACK 0
 java.lang.Exception
@@ -7306,7 +7496,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.810
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.490
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/IPDatagram.msg
 !STACK 0
 java.lang.Exception
@@ -7355,7 +7545,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.815
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.497
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ICMPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -7404,7 +7594,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.829
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.510
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ControlManetRouting.msg
 !STACK 0
 java.lang.Exception
@@ -7453,7 +7643,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.837
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.519
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/IPv6NDMessage.msg
 !STACK 0
 java.lang.Exception
@@ -7502,7 +7692,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.838
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.519
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/ICMPv6Message.msg
 !STACK 0
 java.lang.Exception
@@ -7551,7 +7741,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.861
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.546
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPv6ControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -7600,7 +7790,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.870
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.554
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPProtocolId.msg
 !STACK 0
 java.lang.Exception
@@ -7649,7 +7839,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.871
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.554
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -7698,7 +7888,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:54.931
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:38.620
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/arp/ARPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -7747,7 +7937,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.290
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.009
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ppp/PPPFrame.msg
 !STACK 0
 java.lang.Exception
@@ -7796,7 +7986,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.318
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.039
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/TransmComplete.msg
 !STACK 0
 java.lang.Exception
@@ -7845,7 +8035,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.319
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.040
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/SnrControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -7894,7 +8084,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.336
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.058
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/AirFrame.msg
 !STACK 0
 java.lang.Exception
@@ -7943,7 +8133,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.386
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.112
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/MacPkt.msg
 !STACK 0
 java.lang.Exception
@@ -7993,7 +8183,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.387
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.113
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/Mac80211Pkt.msg
 !STACK 0
 java.lang.Exception
@@ -8043,7 +8233,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.411
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.137
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211Primitives.msg
 !STACK 0
 java.lang.Exception
@@ -8093,7 +8283,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.429
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.155
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211MgmtFrames.msg
 !STACK 0
 java.lang.Exception
@@ -8143,7 +8333,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.537
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.273
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mac/Ieee80211Frame.msg
 !STACK 0
 java.lang.Exception
@@ -8193,7 +8383,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.580
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.329
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ext/ExtFrame.msg
 !STACK 0
 java.lang.Exception
@@ -8242,7 +8432,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.635
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.411
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ethernet/EtherFrame.msg
 !STACK 0
 java.lang.Exception
@@ -8291,7 +8481,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.650
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.428
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Radio80211aControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -8340,7 +8530,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.650
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.429
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/PhyControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -8389,7 +8579,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.651
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.429
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/MeshControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -8438,7 +8628,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.655
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.434
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Ieee802Ctrl.msg
 !STACK 0
 java.lang.Exception
@@ -8487,7 +8677,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.656
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.434
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/ControlInfoBreakLink.msg
 !STACK 0
 java.lang.Exception
@@ -8536,7 +8726,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.719
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.503
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/base/ByteArrayMessage.msg
 !STACK 0
 java.lang.Exception
@@ -8584,7 +8774,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.760
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.547
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/udpapp/UDPEchoAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -8633,7 +8823,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.855
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.652
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/tcpapp/GenericAppMsg.msg
 !STACK 0
 java.lang.Exception
@@ -8682,7 +8872,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.893
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.695
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/pingapp/PingPayload.msg
 !STACK 0
 java.lang.Exception
@@ -8731,7 +8921,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.912
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.715
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg
 !STACK 0
 java.lang.Exception
@@ -8783,7 +8973,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.913
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.715
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg
 !STACK 0
 java.lang.Exception
@@ -8835,7 +9025,59 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.913
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.716
+!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_Request.msg
+!STACK 0
+java.lang.Exception
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
+	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
+	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
+	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
+	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
+	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
+	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
+	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
+	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
+	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
+	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
+	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
+	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
+	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
+	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.716
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/VideoMessage.msg
 !STACK 0
 java.lang.Exception
@@ -8887,7 +9129,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.914
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.717
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg
 !STACK 0
 java.lang.Exception
@@ -8939,7 +9181,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.969
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.765
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/VoIP/MCOAVoIPMsg.msg
 !STACK 0
 java.lang.Exception
@@ -8989,7 +9231,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:55.970
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.766
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/Video/MCoAVideoStreaming.msg
 !STACK 0
 java.lang.Exception
@@ -9039,7 +9281,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.022
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.822
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/ethernet/EtherApp.msg
 !STACK 0
 java.lang.Exception
@@ -9088,7 +9330,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.043
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.843
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/dhcp/DHCP.msg
 !STACK 0
 java.lang.Exception
@@ -9137,7 +9379,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.055
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.857
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TransportPacket.msg
 !STACK 0
 java.lang.Exception
@@ -9185,7 +9427,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.064
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.865
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/tcpmodule/TCPInterfacePacket.msg
 !STACK 0
 java.lang.Exception
@@ -9233,7 +9475,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.105
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.907
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -9281,7 +9523,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.111
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.913
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -9329,7 +9571,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.115
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.918
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -9377,7 +9619,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:01:56.137
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:39.939
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/obsolete/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -9425,7 +9667,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.723
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:57.767
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/util/PowerControlMessages.msg
 !STACK 0
 java.lang.Exception
@@ -9473,7 +9715,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.754
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:57.794
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/udp/UDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -9522,7 +9764,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.856
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:57.883
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/tcp/TCPSegment.msg
 !STACK 0
 java.lang.Exception
@@ -9571,7 +9813,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.903
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:57.928
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/sctp/SCTPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -9620,7 +9862,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.960
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:57.988
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/profiles/avprofile/RTPMpegPacket.msg
 !STACK 0
 java.lang.Exception
@@ -9671,7 +9913,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.982
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.014
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderStatusMessage.msg
 !STACK 0
 java.lang.Exception
@@ -9720,7 +9962,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:30.990
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.021
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/rtp/RTPSenderControlMessage.msg
 !STACK 0
 java.lang.Exception
@@ -9769,7 +10011,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.045
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.077
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/UDPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -9818,7 +10060,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.057
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.090
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/TCPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -9867,7 +10109,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.066
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.100
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/transport/contract/SCTPCommand.msg
 !STACK 0
 java.lang.Exception
@@ -9916,7 +10158,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.121
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.155
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/xmipv6/MobilityHeader.msg
 !STACK 0
 java.lang.Exception
@@ -9965,7 +10207,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.159
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.178
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/TED.msg
 !STACK 0
 java.lang.Exception
@@ -10014,7 +10256,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.173
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.194
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ted/LinkStatePacket.msg
 !STACK 0
 java.lang.Exception
@@ -10063,7 +10305,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.191
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.213
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/SignallingMsg.msg
 !STACK 0
 java.lang.Exception
@@ -10112,7 +10354,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.192
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.214
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPResvMsg.msg
 !STACK 0
 java.lang.Exception
@@ -10161,7 +10403,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.193
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.215
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPathMsg.msg
 !STACK 0
 java.lang.Exception
@@ -10210,7 +10452,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.194
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.216
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -10259,7 +10501,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.195
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.217
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/RSVPHello.msg
 !STACK 0
 java.lang.Exception
@@ -10308,7 +10550,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.201
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.224
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/rsvp_te/IntServ.msg
 !STACK 0
 java.lang.Exception
@@ -10357,7 +10599,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.405
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.460
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFTimer.msg
 !STACK 0
 java.lang.Exception
@@ -10406,7 +10648,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.416
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.471
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ospfv2/OSPFPacket.msg
 !STACK 0
 java.lang.Exception
@@ -10455,7 +10697,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.457
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.513
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/olsr/OLSRpkt.msg
 !STACK 0
 java.lang.Exception
@@ -10505,7 +10747,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.518
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.576
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_UERR.msg
 !STACK 0
 java.lang.Exception
@@ -10555,7 +10797,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.536
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.593
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Timeout.msg
 !STACK 0
 java.lang.Exception
@@ -10605,7 +10847,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.545
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.602
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREQ.msg
 !STACK 0
 java.lang.Exception
@@ -10655,7 +10897,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.546
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.603
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RREP.msg
 !STACK 0
 java.lang.Exception
@@ -10705,7 +10947,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.546
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.604
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RM.msg
 !STACK 0
 java.lang.Exception
@@ -10755,7 +10997,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.547
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.604
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_RERR.msg
 !STACK 0
 java.lang.Exception
@@ -10805,7 +11047,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.548
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.605
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_PacketBBMessage.msg
 !STACK 0
 java.lang.Exception
@@ -10855,7 +11097,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.548
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.606
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dymo_fau/DYMO_Packet.msg
 !STACK 0
 java.lang.Exception
@@ -10905,7 +11147,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:31.902
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:58.968
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/manetrouting/dsdv/DSDVhello.msg
 !STACK 0
 java.lang.Exception
@@ -10955,7 +11197,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.076
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.148
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ldp/LDPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -11004,7 +11246,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.104
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.176
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6ExtensionHeaders.msg
 !STACK 0
 java.lang.Exception
@@ -11053,7 +11295,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.116
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.189
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv6/IPv6Datagram.msg
 !STACK 0
 java.lang.Exception
@@ -11102,7 +11344,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.157
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.228
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/IPDatagram.msg
 !STACK 0
 java.lang.Exception
@@ -11151,7 +11393,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.163
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.235
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ICMPMessage.msg
 !STACK 0
 java.lang.Exception
@@ -11200,7 +11442,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.176
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.248
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/ipv4/ControlManetRouting.msg
 !STACK 0
 java.lang.Exception
@@ -11249,7 +11491,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.192
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.257
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/IPv6NDMessage.msg
 !STACK 0
 java.lang.Exception
@@ -11298,7 +11540,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.193
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.258
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/icmpv6/ICMPv6Message.msg
 !STACK 0
 java.lang.Exception
@@ -11347,7 +11589,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.228
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.284
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPv6ControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -11396,7 +11638,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.236
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.292
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPProtocolId.msg
 !STACK 0
 java.lang.Exception
@@ -11445,7 +11687,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.237
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.292
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/contract/IPControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -11494,7 +11736,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.307
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.359
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/networklayer/arp/ARPPacket.msg
 !STACK 0
 java.lang.Exception
@@ -11543,7 +11785,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.692
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.742
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ppp/PPPFrame.msg
 !STACK 0
 java.lang.Exception
@@ -11592,7 +11834,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.722
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.773
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/TransmComplete.msg
 !STACK 0
 java.lang.Exception
@@ -11641,7 +11883,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.723
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.773
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/SnrControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -11690,7 +11932,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.740
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.791
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mfcore/AirFrame.msg
 !STACK 0
 java.lang.Exception
@@ -11739,7 +11981,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.793
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.843
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/MacPkt.msg
 !STACK 0
 java.lang.Exception
@@ -11789,7 +12031,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.793
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.843
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/mf80211/macLayer/Mac80211Pkt.msg
 !STACK 0
 java.lang.Exception
@@ -11839,7 +12081,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.817
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.869
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211Primitives.msg
 !STACK 0
 java.lang.Exception
@@ -11889,7 +12131,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.835
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:45:59.887
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mgmt/Ieee80211MgmtFrames.msg
 !STACK 0
 java.lang.Exception
@@ -11939,7 +12181,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.948
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.013
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ieee80211/mac/Ieee80211Frame.msg
 !STACK 0
 java.lang.Exception
@@ -11989,7 +12231,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:32.993
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.060
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ext/ExtFrame.msg
 !STACK 0
 java.lang.Exception
@@ -12038,7 +12280,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.050
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.119
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/ethernet/EtherFrame.msg
 !STACK 0
 java.lang.Exception
@@ -12087,7 +12329,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.064
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.135
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Radio80211aControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -12136,7 +12378,7 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.065
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.136
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/PhyControlInfo.msg
 !STACK 0
 java.lang.Exception
@@ -12185,252 +12427,8 @@ java.lang.Exception
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.065
+!ENTRY org.eclipse.cdt.core 2 0 2015-04-05 13:46:00.136
 !MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/MeshControlInfo.msg
-!STACK 0
-java.lang.Exception
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
-	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
-	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
-	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
-	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
-	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
-	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
-	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
-	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
-	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
-	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
-	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
-	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.070
-!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/Ieee802Ctrl.msg
-!STACK 0
-java.lang.Exception
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
-	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
-	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
-	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
-	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
-	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
-	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
-	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
-	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
-	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
-	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
-	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
-	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.070
-!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/linklayer/contract/ControlInfoBreakLink.msg
-!STACK 0
-java.lang.Exception
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
-	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
-	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
-	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
-	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
-	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
-	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
-	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
-	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
-	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
-	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
-	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
-	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.134
-!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/base/ByteArrayMessage.msg
-!STACK 0
-java.lang.Exception
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
-	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
-	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
-	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
-	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
-	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
-	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
-	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
-	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
-	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
-	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
-	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
-	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.174
-!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/udpapp/UDPEchoAppMsg.msg
-!STACK 0
-java.lang.Exception
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)
-	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:1)
-	at org.omnetpp.cdt.cache.CppScanner.getScannerInfo(CppScanner.java:136)
-	at org.omnetpp.cdt.cache.CppScanner.<init>(CppScanner.java:119)
-	at org.omnetpp.cdt.cache.DependencyCache.collectFileIncludes(DependencyCache.java:410)
-	at org.omnetpp.cdt.cache.DependencyCache$6.visit(DependencyCache.java:376)
-	at org.omnetpp.cdt.cache.DependencyCache$4.visit(DependencyCache.java:336)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:126)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:124)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:108)
-	at org.omnetpp.cdt.cache.DependencyCache.visitNonGeneratedSourceFiles(DependencyCache.java:321)
-	at org.omnetpp.cdt.cache.DependencyCache.collectIncludes(DependencyCache.java:367)
-	at org.omnetpp.cdt.cache.DependencyCache.computeCachedData(DependencyCache.java:277)
-	at org.omnetpp.cdt.cache.DependencyCache.getFolderDependencies(DependencyCache.java:213)
-	at org.omnetpp.cdt.build.MetaMakemake.translateOptions(MetaMakemake.java:75)
-	at org.omnetpp.cdt.build.MetaMakemake.generateMakefile(MetaMakemake.java:56)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefileFor(MakefileBuilder.java:354)
-	at org.omnetpp.cdt.build.MakefileBuilder.generateMakefiles(MakefileBuilder.java:337)
-	at org.omnetpp.cdt.build.MakefileBuilder.build(MakefileBuilder.java:77)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:514)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:423)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY org.eclipse.cdt.core 2 0 2015-04-02 09:11:33.284
-!MESSAGE Error getting ScannerInfo: Unable to determine language for resource L/mCoAplus_v02_2011_with_Statistics/src/applications/tcpapp/GenericAppMsg.msg
 !STACK 0
 java.lang.Exception
 	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsScannerInfoProvider.getScannerInformation(LanguageSettingsScannerInfoProvider.java:85)

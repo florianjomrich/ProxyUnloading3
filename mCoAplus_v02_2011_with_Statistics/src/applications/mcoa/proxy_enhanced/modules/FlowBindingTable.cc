@@ -205,7 +205,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             it < existingFlowBindingEntries.end(); it++) {
         if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
             cout << "Übereinstimmung gefunden" << " destPort: " << it->destPort
-                    << " srcPort: " << it->srcPort << endl;
+                    << " srcPort: " << it->srcPort <<" Src-Address: "<<it->srcAddress<<" DestAddress: "<<it->destAddress<< " CN is capable: "<<it->forThisConncectionCNisCapable<< endl;
             FlowBindingEntry newEntryToInsert = FlowBindingEntry();
             newEntryToInsert.setDestAddress(it->getDestAddress());
             newEntryToInsert.setSrcAddress(update->getNewCoAdress());
@@ -249,6 +249,28 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
     //replace old table with new table
     existingFlowBindingEntries = updatedEntries;
+
+}
+
+void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN){
+    std::vector<FlowBindingEntry>::iterator it;
+    std::vector<FlowBindingEntry> updatedEntries; //hier werden die neuen Einträge gespeichert.
+
+    cout<<"ADDRESSES OF CN: "<<addressOfCN<<endl;
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if (!strcmp(it->destAddress, addressOfCN)) {
+            it->forThisConncectionCNisCapable=true;
+        }
+        updatedEntries.push_back(*it);
+    }
+
+    //replace old table with new table
+    existingFlowBindingEntries = updatedEntries;
+
+    //just for Control
+    cout<<"Show new capable CN's in list of MN now: "<<endl;
+    this->printoutContentOftable();
 
 }
 

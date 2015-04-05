@@ -140,7 +140,16 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                             << endl;
 
                     //message to the network layer - to update there the FlowBindingTable
-                    send(messageFromHA, "uDPControllAppConnection$o");
+                    send(messageFromHA->dup(), "uDPControllAppConnection$o");
+
+                    //ACK capability to the MN:
+                    ACK_Request* messageACKtoMN = new ACK_Request();
+                    messageACKtoMN->setName("ACK_Request");
+                    messageACKtoMN->setSrcPort(messageFromHA->getSrcPort());
+                    messageACKtoMN->setDestPort(messageFromHA->getDestPort());
+                    messageACKtoMN->setSrcAddress(messageFromHA->getSrcAddress());
+                    messageACKtoMN->setDestAddress(messageFromHA->getDestAddress());
+                    sendToUDPMCOA(messageACKtoMN,localPort,messageFromHA->getSrcAddress(),2000,true);
 
                 }
                 return;
@@ -149,6 +158,22 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
         }
 
 
+        //**********************************************************************
+
+                if (dynamic_cast<ACK_Request*>(msg)) {
+                    if (isMN) {
+                        ACK_Request* messageACKfromCN =check_and_cast<
+                                ACK_Request *>(msg);
+
+                        cout<<humanReadableName<<" hat ein ACK_Request empfangen vom CN mit Absender Addresse: "<<messageACKfromCN->getDestAddress()<<endl;
+
+                                //Update own table of the MN
+                                                send(messageACKfromCN->dup(), "uDPControllAppConnection$o");
+
+                                                return;
+                    }
+
+                }
         //**********************************************************************
 
         if (dynamic_cast<FlowBindingUpdate*>(msg)) {

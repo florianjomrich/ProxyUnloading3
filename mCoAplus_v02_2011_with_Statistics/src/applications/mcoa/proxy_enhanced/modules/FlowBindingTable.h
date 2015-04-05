@@ -56,6 +56,8 @@ public:
 
     virtual void updateExistingFlowBindingEntry(FlowBindingUpdate* update);
 
+    virtual void updateEntriesWithNewCapableCN(const char* addressOfCN);
+
 
     virtual void printoutContentOftable();
 
