@@ -1,0 +1,17 @@
+/*
+ * MyStringFileWriter.h
+ *
+ *  Created on: Apr 7, 2015
+ *      Author: ubuntu
+ */
+
+#ifndef MYSTRINGFILEWRITER_H_
+#define MYSTRINGFILEWRITER_H_
+
+class MyStringFileWriter {
+public:
+    MyStringFileWriter();
+    virtual ~MyStringFileWriter();
+};
+
+#endif /* MYSTRINGFILEWRITER_H_ */

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/evaluation/MyStringFileWriter.cpp&apos; to &apos;MyStringFileWriter.cc&apos;" description="Rename resource &apos;MyStringFileWriter.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/applications/mcoa/evaluation/MyStringFileWriter.cpp" name="MyStringFileWriter.cc" stamp="1428404018170" updateReferences="true"/>
+</session>

@@ -1,0 +1,22 @@
+/*
+ * MyStringFileWriter.cpp
+ *
+ *  Created on: Apr 7, 2015
+ *      Author: ubuntu
+ */
+
+#include <evaluation/MyStringFileWriter.h>
+
+MyStringFileWriter::MyStringFileWriter() {
+    // TODO Auto-generated constructor stub
+
+}
+
+MyStringFileWriter::~MyStringFileWriter() {
+    // TODO Auto-generated destructor stub
+}
+
+
+void MyStringFileWriter::printOutStringToFile(char* string){
+    std::cout<<string<<endl;
+}

@@ -26,6 +26,8 @@
 #include <omnetpp.h>
 #include "MCoAUDPBase.h"
 #include "MCoAVideoStreaming_m.h"
+//for evaluation:
+#include <MyFileWriter.h>
 
 /**
  * A "Realtime" VideoStream client application.
@@ -60,6 +62,8 @@ class INET_API Proxy_Enhanced_MCoAVideoCli : public MCoAUDPBase
      int seq_number_counter;
      cPar *waitInterval;
 
+     //for evlauation:
+     MyFileWriter fileWriter ;
 
 
 

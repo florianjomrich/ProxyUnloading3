@@ -248,8 +248,8 @@ InterfaceEntry *IPv6::getSourceInterfaceFrom(cPacket *msg, bool isTunneled) {
 void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
 
 
-    if (isHA && datagram->getTransportProtocol() == IP_PROT_UDP)
-        cout << "DATAGRAM-NAME: " << datagram->getName()<<endl;
+   // if (isHA && datagram->getTransportProtocol() == IP_PROT_UDP)
+    //    cout << "DATAGRAM-NAME: " << datagram->getName()<<endl;
 
     EV << "\n<<=======HandleMessagefromNetwork() Called=========>>  " << endl;
     // check for header biterror

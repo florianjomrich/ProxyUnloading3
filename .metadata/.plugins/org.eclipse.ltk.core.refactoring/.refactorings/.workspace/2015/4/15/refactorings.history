@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/evaluation/MyStringFileWriter.cc" element2="/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/evaluation/MyStringFileWriter.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1428404353293"/>
+</session>

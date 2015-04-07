@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 //
 // based on the video streaming app of the similar name by Johnny Lai
 //
@@ -27,7 +26,6 @@
 #include "VideoMessage_m.h"
 #include "UDPControlInfo_m.h"
 
-
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
@@ -37,29 +35,30 @@ using std::cout;
 
 Define_Module(Proxy_Enhanced_MCoAVideoCli);
 
-
-void Proxy_Enhanced_MCoAVideoCli::initialize()
-{
+void Proxy_Enhanced_MCoAVideoCli::initialize() {
     //PROXY UNLOADING FJ
-    cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
+    cout << "Initializing Proxy_Enhanced_MCoAVideoCli module" << endl;
     startTime = par("startTime");
-    seq_number_counter=0;
+    seq_number_counter = 0;
     waitInterval = &par("waitInterval");
 
+    //for evaluation:
+    fileWriter = MyFileWriter();
 
-	MCoAUDPBase::startMCoAUDPBase();
+    MCoAUDPBase::startMCoAUDPBase();
 
-	PktRcv.setName("MCOA VIDEO Packet Rcv");
-	PktLost.setName("MCOA VIDEO Packet Lost");
-	PktDelay.setName("MCOA VIDEO Delay");
+    PktRcv.setName("MCOA VIDEO Packet Rcv");
+    PktLost.setName("MCOA VIDEO Packet Lost");
+    PktDelay.setName("MCOA VIDEO Delay");
 
-    lastSeq=0;
+    lastSeq = 0;
 
     int localPort = par("localPort");
     bindToPort(localPort);
 
-    if (startTime>=0){
-        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context MCoAVideoCli");
+    if (startTime >= 0) {
+        cMessage *start_proxying_context = new cMessage(
+                "Starting_Proxying_Context MCoAVideoCli");
         //timer->setContextPointer(d);
         start_proxying_context->setKind(PROXY_CONTEXT_START);
         scheduleAt(startTime, start_proxying_context);
@@ -67,90 +66,98 @@ void Proxy_Enhanced_MCoAVideoCli::initialize()
 
 }
 
-void Proxy_Enhanced_MCoAVideoCli::finish()
-{
-	//Delete StatsPkt
-	StatsPkt.clear();
+void Proxy_Enhanced_MCoAVideoCli::finish() {
+    //Delete StatsPkt
+    StatsPkt.clear();
 
 }
 
-void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
-{
-    if (msg->isSelfMessage())
-    {
-    	if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR ){
-			MCoAUDPBase::treatMessage(msg);
+void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg) {
+    if (msg->isSelfMessage()) {
+        if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR) {
+            MCoAUDPBase::treatMessage(msg);
 
-			return; // and that's it!
-		}
-    	if(msg->getKind()== PROXY_CONTEXT_START){
-    	    cout<<"!! Proxying Context Started !!"<<endl;
-    	    sendControlData(msg);
+            return; // and that's it!
+        }
+        if (msg->getKind() == PROXY_CONTEXT_START) {
+            cout << "!! Proxying Context Started !!" << endl;
+            sendControlData(msg);
 
-    	      }
-    	if(msg->getKind()== REQUEST_FOR_NEW_VIDEO_PAKET){
+        }
+        if (msg->getKind() == REQUEST_FOR_NEW_VIDEO_PAKET) {
 
-    	    sendControlData(msg);
+            sendControlData(msg);
 
-    	}
+        }
 
+    } else {
 
+        if (dynamic_cast<VideoMessage*>(msg)) {
 
-    }
-    else
-    {
+            VideoMessage* currentVideoMessage = dynamic_cast<VideoMessage*>(msg);
+            cout << "MCoAClient " << MCoAUDPBase::getHumanReadabelName()
+                    << ": Video Message from Server ist eingegangen mit sequence number: "
+                    << currentVideoMessage->getSequenceNumber() << endl;
 
+            UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(
+                    msg->getControlInfo());
+            IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
+            cout << "MCoAClient: Absender des Pakets war: " << srcIPAdresse
+                    << endl;
 
-    	if(dynamic_cast<VideoMessage*>(msg)){
+            if (currentVideoMessage->getSequenceNumber()
+                    >= seq_number_counter) {
 
-    	    VideoMessage* currentVideoMessage = dynamic_cast<VideoMessage*>(msg);
-    	    cout<<"MCoAClient "<<MCoAUDPBase::getHumanReadabelName()<<": Video Message from Server ist eingegangen mit sequence number: "<<currentVideoMessage->getSequenceNumber()<<endl;
+                //#############################################
+                //write log for evaluation:
+                fileWriter.printOutStringToFile(
+                        MCoAUDPBase::getHumanReadabelName(),
+                        "Video Message erhalten: ", seq_number_counter,
+                        simTime().str().c_str());
+                //#############################################
 
+                seq_number_counter++;
+                delete msg;
+                return;
+            }
+            cout << "Sequenz Nummer war bereits zu klein" << endl;
+            delete msg;
 
-    	    UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
-    	              IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
-    	     cout<<"MCoAClient: Absender des Pakets war: "<<srcIPAdresse<<endl;
+        }
 
+        else {
+            cout << "MCoAClient of " << MCoAUDPBase::getHumanReadabelName()
+                    << " received unkown message: " << msg->getName() << endl;
 
-    	    if(currentVideoMessage->getSequenceNumber()>=seq_number_counter){
-
-    	        seq_number_counter++;
-    	        delete msg;
-    	        return;
-    	    }
-    	    cout<<"Sequenz Nummer war bereits zu klein"<<endl;
-    	    delete msg;
-
-
-    	}
-
-    	else{
-    	    cout<<"MCoAClient of "<<MCoAUDPBase::getHumanReadabelName()<<" received unkown message: "<<msg->getName()<<endl;
-
-
-    	}
+        }
     }
 }
 
-void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
+void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg) {
     IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
 
     RequestVideoStream* requestVideoStream = new RequestVideoStream();
-    requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
+    requestVideoStream->setName(
+            "MCoACli (MN) requests Video Stream from MCoASrv (CN).");
     requestVideoStream->setSequenceNumber(seq_number_counter);
 
-    sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
+    sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true); //Port 1000 für Video - Port 2000 für Kontrolldaten
+
+    //#############################################
+    //write log for evaluation:
+    fileWriter.printOutStringToFile(MCoAUDPBase::getHumanReadabelName(),
+            "Video Message gesendet: ", seq_number_counter,
+            simTime().str().c_str());
+    //#############################################
 
     //request next video package
-      cMessage *requestForNewVideoPaket = new cMessage("Request for new Video Paket");
-                requestForNewVideoPaket->setKind(REQUEST_FOR_NEW_VIDEO_PAKET);
+    cMessage *requestForNewVideoPaket = new cMessage(
+            "Request for new Video Paket");
+    requestForNewVideoPaket->setKind(REQUEST_FOR_NEW_VIDEO_PAKET);
 
+    simtime_t interval = (*waitInterval);
+    scheduleAt(simTime() + interval, requestForNewVideoPaket);
 
-      simtime_t interval = (*waitInterval);
-      scheduleAt(simTime()+interval, requestForNewVideoPaket);
-
-      delete msg;
+    delete msg;
 }
-
-
 
