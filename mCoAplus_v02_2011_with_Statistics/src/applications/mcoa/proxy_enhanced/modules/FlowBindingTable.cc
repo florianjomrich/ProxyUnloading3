@@ -109,8 +109,7 @@ bool FlowBindingTable::entryAlreadyExistsInTable(int& dport, int& sport,
 
 //#############################################################
 
-
-bool FlowBindingTable::cnOfConnectionIsNotCapable(const char* destAddress){
+bool FlowBindingTable::cnOfConnectionIsNotCapable(const char* destAddress) {
 
     std::vector<FlowBindingEntry>::iterator it;
 
@@ -133,7 +132,8 @@ const char* FlowBindingTable::getCorrectDestinationAddressForConnection(
         const char* sourceAddress) {
 
     cout
-            << "Home Agent or capable CN is replacing the Dest-Address with the current set CoA Address of the MN"<<endl;
+            << "Home Agent or capable CN is replacing the Dest-Address with the current set CoA Address of the MN"
+            << endl;
 
     std::vector<FlowBindingEntry>::iterator it;
 
@@ -205,8 +205,11 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             it < existingFlowBindingEntries.end(); it++) {
         if (!strcmp(update->getHomeAddress(), it->srcAddress)) {
             cout << "Übereinstimmung gefunden" << " destPort: " << it->destPort
-                    << " srcPort: " << it->srcPort <<" Src-Address: "<<it->srcAddress<<" DestAddress: "<<it->destAddress<< " CN is capable: "<<it->forThisConncectionCNisCapable<< endl;
-            FlowBindingEntry newEntryToInsert = FlowBindingEntry();
+                    << " srcPort: " << it->srcPort << " Src-Address: "
+                    << it->srcAddress << " DestAddress: " << it->destAddress
+                    << " CN is capable: " << it->forThisConncectionCNisCapable
+                    << endl;
+            newEntryToInsert = FlowBindingEntry();
             newEntryToInsert.setDestAddress(it->getDestAddress());
             newEntryToInsert.setSrcAddress(update->getNewCoAdress());
             newEntryToInsert.setDestPort(it->getDestPort());
@@ -221,7 +224,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             if (entryAlreadyExistsInTable(newEntryToInsert.destPort,
                     newEntryToInsert.srcPort, newEntryToInsert.destAddress,
                     newEntryToInsert.srcAddress)) {
-                return;
+                break;
             } else { //add the new entry:
                 updatedEntries.push_back(newEntryToInsert);
             }
@@ -236,11 +239,15 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
             it < existingFlowBindingEntries.end(); it++) {
 
         if ((it->getLocalHostIdentifier()
-                == localHostidentifierWhoHasToBeUpdated)
-                && (!entryAlreadyExistsInTable(newEntryToInsert.destPort,
-                        newEntryToInsert.srcPort, newEntryToInsert.destAddress,
-                        newEntryToInsert.srcAddress))) {
+                == localHostidentifierWhoHasToBeUpdated)) {
             it->isActive = false;
+            if (newEntryToInsert.destPort == it->destPort
+                    && newEntryToInsert.srcPort == it->srcPort
+                    && !strcmp(newEntryToInsert.destAddress, it->destAddress)
+                    && !strcmp(newEntryToInsert.srcAddress, it->srcAddress)) {
+                cout<<"SETZE AKTIV"<<endl;
+                it->isActive = true;
+            }
         }
         //add all the others and also the old entry again.
         updatedEntries.push_back(*it);
@@ -252,15 +259,41 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
 }
 
-void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN){
+void FlowBindingTable::setEntryActive(FlowBindingEntry newEntryToInsert,
+        int localHostidentifierWhoHasToBeUpdated) {
+
+    std::vector<FlowBindingEntry>::iterator it;
+
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+
+        //set the other entries of the node to inactive
+        if (it->getLocalHostIdentifier()
+                == localHostidentifierWhoHasToBeUpdated) {
+            it->isActive = false;
+        }
+
+        //set the existing fitting entry active
+        if (it->destPort == newEntryToInsert.destPort
+                && it->srcPort == newEntryToInsert.srcPort
+                && !strcmp(it->destAddress, newEntryToInsert.srcAddress)
+                && !strcmp(it->srcAddress, newEntryToInsert.destAddress)) {
+            cout << "AKTIV gesetzt" << endl;
+            it->isActive = true;
+        }
+
+    }
+}
+
+void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN) {
     std::vector<FlowBindingEntry>::iterator it;
     std::vector<FlowBindingEntry> updatedEntries; //hier werden die neuen Einträge gespeichert.
 
-    cout<<"ADDRESSES OF CN: "<<addressOfCN<<endl;
+    cout << "ADDRESSES OF CN: " << addressOfCN << endl;
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
         if (!strcmp(it->destAddress, addressOfCN)) {
-            it->forThisConncectionCNisCapable=true;
+            it->forThisConncectionCNisCapable = true;
         }
         updatedEntries.push_back(*it);
     }
@@ -269,7 +302,7 @@ void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN){
     existingFlowBindingEntries = updatedEntries;
 
     //just for Control
-    cout<<"Show new capable CN's in list of MN now: "<<endl;
+    cout << "Show new capable CN's in list of MN now: " << endl;
     this->printoutContentOftable();
 
 }
@@ -284,8 +317,7 @@ void FlowBindingTable::printoutContentOftable() {
                 << "] Tabelleneintrag  DestAddress:" << it->destAddress
                 << " SrcAddress: " << it->srcAddress << "  DPort: "
                 << it->destPort << " SPort: " << it->srcPort << " isActive: "
-                << it->isActive
-                << " CN is capable: "
+                << it->isActive << " CN is capable: "
                 << it->forThisConncectionCNisCapable << endl;
 
     }

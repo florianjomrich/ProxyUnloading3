@@ -312,6 +312,8 @@
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/_scripts"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/_scripts/xsd2html"/>
 <includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/_scripts/xmlschema"/>
+<includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/evaluation"/>
+<includePath path="/home/ubuntu/ProxyUnloading3/mCoAplus_v02_2011_with_Statistics/out/gcc-debug/src/applications/mcoa/evaluation"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>

@@ -58,6 +58,7 @@ public:
 
     virtual void updateEntriesWithNewCapableCN(const char* addressOfCN);
 
+    virtual void setEntryActive(FlowBindingEntry newEntryToInsert, int localHostidentifierWhoHasToBeUpdated);
 
     virtual void printoutContentOftable();
 
