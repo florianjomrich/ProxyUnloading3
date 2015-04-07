@@ -249,7 +249,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
                return;
             }
-            if (isCN) {
+            if (isCN && isCapableCN) {
 
                 FlowBindingUpdate* messageFromHA = check_and_cast<
                         FlowBindingUpdate *>(msg);

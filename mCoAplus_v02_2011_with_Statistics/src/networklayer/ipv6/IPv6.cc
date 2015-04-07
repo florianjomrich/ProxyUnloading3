@@ -247,6 +247,10 @@ InterfaceEntry *IPv6::getSourceInterfaceFrom(cPacket *msg, bool isTunneled) {
 
 void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
 
+
+    if (isHA && datagram->getTransportProtocol() == IP_PROT_UDP)
+        cout << "DATAGRAM-NAME: " << datagram->getName()<<endl;
+
     EV << "\n<<=======HandleMessagefromNetwork() Called=========>>  " << endl;
     // check for header biterror
     if (datagram->hasBitError()) {
@@ -665,8 +669,11 @@ void IPv6::routeMulticastPacket(IPv6Datagram *datagram, InterfaceEntry *destIE,
 void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
 
     //*************************************************************
-    if (isHA && datagram->getTransportProtocol() == IP_PROT_UDP)
-        cout << "DATAGRAM-NAME: " << datagram->getName();
+   // if (isHA && datagram->getTransportProtocol() == IP_PROT_UDP)
+      //  cout << "DATAGRAM-NAME: " << datagram->getName();
+
+
+
     //TEST OB MAN DIE SRC IP ADRESSE ÄNDERN KANN ZUM UPPER LAYER HOCH:
 
     /* if (datagram->getTransportProtocol() == IP_PROT_UDP) { //handelt es sich um ein UDP Paket ?

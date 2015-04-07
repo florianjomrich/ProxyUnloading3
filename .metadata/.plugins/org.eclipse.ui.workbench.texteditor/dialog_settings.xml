@@ -13,8 +13,11 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="######################" key="selection"/>
+		<item value="replaceFlowSourceAddress" key="selection"/>
 		<list key="findhistory">
+			<item value="replaceFlowSourceAddress"/>
+			<item value="DATAGRAM-NAME:"/>
+			<item value="routePacket"/>
 			<item value="######################"/>
 			<item value="isHA"/>
 			<item value="isCNandNotCapable"/>

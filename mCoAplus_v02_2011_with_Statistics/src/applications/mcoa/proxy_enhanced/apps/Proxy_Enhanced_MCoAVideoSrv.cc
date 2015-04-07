@@ -165,7 +165,7 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *msg)
     UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
                 IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
 
-		cout<<"Src Adresse, an die Video geschickt wird: "<<myControllInfo->getSrcAddr()<<"mit SourcePort: "<<myControllInfo->getSrcPort()<<endl;
+		cout<<"MCoASrv: Src Adresse, an die Video geschickt wird: "<<myControllInfo->getSrcAddr()<<" mit SourcePort: "<<myControllInfo->getSrcPort()<<endl;
 
 		VideoMessage* newVideoData = new VideoMessage();
 		newVideoData->setName("Video Datei vom VideoSrv");

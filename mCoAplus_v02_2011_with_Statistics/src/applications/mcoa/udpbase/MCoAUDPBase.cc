@@ -212,7 +212,8 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 							//Please note dup objects need to add controlinfo.
 						if(!isMN){
 						    if(!msg->getControlInfo())//only send when not already control info was attached to the message
-						    sendToUDP(msg, it->mSrc, srcPort, it->mDest, destPort , true);
+						    //sendToUDP(msg, it->mSrc, srcPort, it->mDest, destPort , true);
+						    sendToUDP(msg, it->mSrc, srcPort, destAddr, destPort , true);
 						}
 						else{
 						    if(!msg->getControlInfo())
