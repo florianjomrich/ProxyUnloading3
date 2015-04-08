@@ -58,7 +58,9 @@ public:
 
     virtual void updateEntriesWithNewCapableCN(const char* addressOfCN);
 
-    virtual void setEntryActive(FlowBindingEntry newEntryToInsert, int localHostidentifierWhoHasToBeUpdated);
+    virtual void setEntryActive(const char* ipAddressThatShouldBeActive);
+
+    virtual std::vector<FlowBindingEntry> getCNsToBeInformed(FlowBindingUpdate* receivedFlowBindingUpdate);
 
     virtual void printoutContentOftable();
 

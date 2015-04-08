@@ -132,6 +132,27 @@ void IPv6::endService(cPacket *msg) {
                 receivedFlowBindingUpdate);
         cout << "Aktualisierter Tabellenstand:" << endl;
         flowBindingTable->printoutContentOftable();
+
+
+        if(isHA){
+            //now get the information of the CNs that have to be informed about this change as well:
+            cout<<"Acquire now a list of CNs that have to be informed as well"<<endl;
+                    std::vector<FlowBindingEntry> flowBindingEntriesToUpdate = flowBindingTable->getCNsToBeInformed(receivedFlowBindingUpdate);
+
+                    FlowBindingUpdate* flowBindingUpdateForCNs = receivedFlowBindingUpdate->dup();
+                    flowBindingUpdateForCNs->setHasToBeDeliveredToCNs(true);
+
+                    std::vector<FlowBindingEntry>::iterator it;
+                    for (it = flowBindingEntriesToUpdate.begin();
+                              it < flowBindingEntriesToUpdate.end(); it++){
+                        flowBindingUpdateForCNs->setCNDestAddress(it->destAddress);
+                        cout<<"Flow Binding Update to send for CN: "<<it->destAddress<<endl;
+                        send(flowBindingUpdateForCNs, "uDPControllAppConnection$o");
+                    }
+
+        }
+
+
         return;
     }
 

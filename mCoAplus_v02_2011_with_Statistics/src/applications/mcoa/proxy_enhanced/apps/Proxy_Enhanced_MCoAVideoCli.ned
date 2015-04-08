@@ -49,6 +49,8 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
     	bool isHA;
     	
     	string humanReadableName;
+    	
+    	int mobileNodeNumber;
     
     	
     gates:

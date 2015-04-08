@@ -20,5 +20,7 @@ packet FlowBindingUpdate {
    string HomeAddress;
    string NewCoAdress;
    string DestAddress;
+   string CNDestAddress;
    bool wasSendFromHA;
+   bool hasToBeDeliveredToCNs;
 }

@@ -57,6 +57,7 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
     videoSize = &par("videoSize");
     localPort = par("localPort");
     int destPort = par("destPort");
+    int correspondentNodeNumber = par("correspondentNodeNumber");
     //PROXY UNLOADING
     simtime_t startTime = par("startTime");
     seq_number_counter = 0;
@@ -130,7 +131,7 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
     else{
 
         if(dynamic_cast<RequestVideoStream*>(msg)){
-            cout<<"MCoASrv: Request for sending Video received"<<endl;
+            cout<<"MCoASrv of" << MCoAUDPBase::getHumanReadabelName()<<": Request for sending Video received"<<endl;
 
             RequestVideoStream* requestForVideoStream =  dynamic_cast<RequestVideoStream*>(msg);
 
@@ -165,7 +166,7 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *msg)
     UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
                 IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
 
-		cout<<"MCoASrv: Src Adresse, an die Video geschickt wird: "<<myControllInfo->getSrcAddr()<<" mit SourcePort: "<<myControllInfo->getSrcPort()<<endl;
+		cout<<"MCoASrv of " << MCoAUDPBase::getHumanReadabelName()<<": Src Adresse, an die Video geschickt wird: "<<myControllInfo->getSrcAddr()<<" mit SourcePort: "<<myControllInfo->getSrcPort()<<endl;
 
 		VideoMessage* newVideoData = new VideoMessage();
 		newVideoData->setName("Video Datei vom VideoSrv");

@@ -58,6 +58,8 @@ simple Proxy_Enhanced_MCoAVideoSrv like MCoAUDPBase
         bool isHA;
 
         string humanReadableName;
+        
+        int correspondentNodeNumber;
 
     gates:
         input udpIn;

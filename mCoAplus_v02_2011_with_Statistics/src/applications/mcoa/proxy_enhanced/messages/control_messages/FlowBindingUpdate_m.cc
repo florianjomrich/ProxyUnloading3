@@ -39,7 +39,9 @@ FlowBindingUpdate::FlowBindingUpdate(const char *name, int kind) : ::cPacket(nam
     this->HomeAddress_var = 0;
     this->NewCoAdress_var = 0;
     this->DestAddress_var = 0;
+    this->CNDestAddress_var = 0;
     this->wasSendFromHA_var = 0;
+    this->hasToBeDeliveredToCNs_var = 0;
 }
 
 FlowBindingUpdate::FlowBindingUpdate(const FlowBindingUpdate& other) : ::cPacket(other)
@@ -64,7 +66,9 @@ void FlowBindingUpdate::copy(const FlowBindingUpdate& other)
     this->HomeAddress_var = other.HomeAddress_var;
     this->NewCoAdress_var = other.NewCoAdress_var;
     this->DestAddress_var = other.DestAddress_var;
+    this->CNDestAddress_var = other.CNDestAddress_var;
     this->wasSendFromHA_var = other.wasSendFromHA_var;
+    this->hasToBeDeliveredToCNs_var = other.hasToBeDeliveredToCNs_var;
 }
 
 void FlowBindingUpdate::parsimPack(cCommBuffer *b)
@@ -73,7 +77,9 @@ void FlowBindingUpdate::parsimPack(cCommBuffer *b)
     doPacking(b,this->HomeAddress_var);
     doPacking(b,this->NewCoAdress_var);
     doPacking(b,this->DestAddress_var);
+    doPacking(b,this->CNDestAddress_var);
     doPacking(b,this->wasSendFromHA_var);
+    doPacking(b,this->hasToBeDeliveredToCNs_var);
 }
 
 void FlowBindingUpdate::parsimUnpack(cCommBuffer *b)
@@ -82,7 +88,9 @@ void FlowBindingUpdate::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->HomeAddress_var);
     doUnpacking(b,this->NewCoAdress_var);
     doUnpacking(b,this->DestAddress_var);
+    doUnpacking(b,this->CNDestAddress_var);
     doUnpacking(b,this->wasSendFromHA_var);
+    doUnpacking(b,this->hasToBeDeliveredToCNs_var);
 }
 
 const char * FlowBindingUpdate::getHomeAddress() const
@@ -115,6 +123,16 @@ void FlowBindingUpdate::setDestAddress(const char * DestAddress)
     this->DestAddress_var = DestAddress;
 }
 
+const char * FlowBindingUpdate::getCNDestAddress() const
+{
+    return CNDestAddress_var.c_str();
+}
+
+void FlowBindingUpdate::setCNDestAddress(const char * CNDestAddress)
+{
+    this->CNDestAddress_var = CNDestAddress;
+}
+
 bool FlowBindingUpdate::getWasSendFromHA() const
 {
     return wasSendFromHA_var;
@@ -123,6 +141,16 @@ bool FlowBindingUpdate::getWasSendFromHA() const
 void FlowBindingUpdate::setWasSendFromHA(bool wasSendFromHA)
 {
     this->wasSendFromHA_var = wasSendFromHA;
+}
+
+bool FlowBindingUpdate::getHasToBeDeliveredToCNs() const
+{
+    return hasToBeDeliveredToCNs_var;
+}
+
+void FlowBindingUpdate::setHasToBeDeliveredToCNs(bool hasToBeDeliveredToCNs)
+{
+    this->hasToBeDeliveredToCNs_var = hasToBeDeliveredToCNs;
 }
 
 class FlowBindingUpdateDescriptor : public cClassDescriptor
@@ -172,7 +200,7 @@ const char *FlowBindingUpdateDescriptor::getProperty(const char *propertyname) c
 int FlowBindingUpdateDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 4+basedesc->getFieldCount(object) : 4;
+    return basedesc ? 6+basedesc->getFieldCount(object) : 6;
 }
 
 unsigned int FlowBindingUpdateDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -188,8 +216,10 @@ unsigned int FlowBindingUpdateDescriptor::getFieldTypeFlags(void *object, int fi
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<4) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<6) ? fieldTypeFlags[field] : 0;
 }
 
 const char *FlowBindingUpdateDescriptor::getFieldName(void *object, int field) const
@@ -204,9 +234,11 @@ const char *FlowBindingUpdateDescriptor::getFieldName(void *object, int field) c
         "HomeAddress",
         "NewCoAdress",
         "DestAddress",
+        "CNDestAddress",
         "wasSendFromHA",
+        "hasToBeDeliveredToCNs",
     };
-    return (field>=0 && field<4) ? fieldNames[field] : NULL;
+    return (field>=0 && field<6) ? fieldNames[field] : NULL;
 }
 
 int FlowBindingUpdateDescriptor::findField(void *object, const char *fieldName) const
@@ -216,7 +248,9 @@ int FlowBindingUpdateDescriptor::findField(void *object, const char *fieldName) 
     if (fieldName[0]=='H' && strcmp(fieldName, "HomeAddress")==0) return base+0;
     if (fieldName[0]=='N' && strcmp(fieldName, "NewCoAdress")==0) return base+1;
     if (fieldName[0]=='D' && strcmp(fieldName, "DestAddress")==0) return base+2;
-    if (fieldName[0]=='w' && strcmp(fieldName, "wasSendFromHA")==0) return base+3;
+    if (fieldName[0]=='C' && strcmp(fieldName, "CNDestAddress")==0) return base+3;
+    if (fieldName[0]=='w' && strcmp(fieldName, "wasSendFromHA")==0) return base+4;
+    if (fieldName[0]=='h' && strcmp(fieldName, "hasToBeDeliveredToCNs")==0) return base+5;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -232,9 +266,11 @@ const char *FlowBindingUpdateDescriptor::getFieldTypeString(void *object, int fi
         "string",
         "string",
         "string",
+        "string",
+        "bool",
         "bool",
     };
-    return (field>=0 && field<4) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<6) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *FlowBindingUpdateDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -277,7 +313,9 @@ std::string FlowBindingUpdateDescriptor::getFieldAsString(void *object, int fiel
         case 0: return oppstring2string(pp->getHomeAddress());
         case 1: return oppstring2string(pp->getNewCoAdress());
         case 2: return oppstring2string(pp->getDestAddress());
-        case 3: return bool2string(pp->getWasSendFromHA());
+        case 3: return oppstring2string(pp->getCNDestAddress());
+        case 4: return bool2string(pp->getWasSendFromHA());
+        case 5: return bool2string(pp->getHasToBeDeliveredToCNs());
         default: return "";
     }
 }
@@ -295,7 +333,9 @@ bool FlowBindingUpdateDescriptor::setFieldAsString(void *object, int field, int 
         case 0: pp->setHomeAddress((value)); return true;
         case 1: pp->setNewCoAdress((value)); return true;
         case 2: pp->setDestAddress((value)); return true;
-        case 3: pp->setWasSendFromHA(string2bool(value)); return true;
+        case 3: pp->setCNDestAddress((value)); return true;
+        case 4: pp->setWasSendFromHA(string2bool(value)); return true;
+        case 5: pp->setHasToBeDeliveredToCNs(string2bool(value)); return true;
         default: return false;
     }
 }
@@ -313,8 +353,10 @@ const char *FlowBindingUpdateDescriptor::getFieldStructName(void *object, int fi
         NULL,
         NULL,
         NULL,
+        NULL,
+        NULL,
     };
-    return (field>=0 && field<4) ? fieldStructNames[field] : NULL;
+    return (field>=0 && field<6) ? fieldStructNames[field] : NULL;
 }
 
 void *FlowBindingUpdateDescriptor::getFieldStructPointer(void *object, int field, int i) const

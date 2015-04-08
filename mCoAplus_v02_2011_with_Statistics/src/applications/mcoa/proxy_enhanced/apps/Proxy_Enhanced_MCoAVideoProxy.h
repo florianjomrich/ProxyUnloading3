@@ -55,6 +55,7 @@ class INET_API Proxy_Enhanced_MCoAVideoProxy : public MCoAUDPBase
 
     //For ProxyUnloading FJ
      simtime_t startTime;
+     int correspondentNodeNumber;
 
 
   protected:

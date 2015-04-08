@@ -22,7 +22,9 @@
  *    string HomeAddress;
  *    string NewCoAdress;
  *    string DestAddress;
+ *    string CNDestAddress;
  *    bool wasSendFromHA;
+ *    bool hasToBeDeliveredToCNs;
  * }
  * </pre>
  */
@@ -32,7 +34,9 @@ class FlowBindingUpdate : public ::cPacket
     opp_string HomeAddress_var;
     opp_string NewCoAdress_var;
     opp_string DestAddress_var;
+    opp_string CNDestAddress_var;
     bool wasSendFromHA_var;
+    bool hasToBeDeliveredToCNs_var;
 
   private:
     void copy(const FlowBindingUpdate& other);
@@ -57,8 +61,12 @@ class FlowBindingUpdate : public ::cPacket
     virtual void setNewCoAdress(const char * NewCoAdress);
     virtual const char * getDestAddress() const;
     virtual void setDestAddress(const char * DestAddress);
+    virtual const char * getCNDestAddress() const;
+    virtual void setCNDestAddress(const char * CNDestAddress);
     virtual bool getWasSendFromHA() const;
     virtual void setWasSendFromHA(bool wasSendFromHA);
+    virtual bool getHasToBeDeliveredToCNs() const;
+    virtual void setHasToBeDeliveredToCNs(bool hasToBeDeliveredToCNs);
 };
 
 inline void doPacking(cCommBuffer *b, FlowBindingUpdate& obj) {obj.parsimPack(b);}

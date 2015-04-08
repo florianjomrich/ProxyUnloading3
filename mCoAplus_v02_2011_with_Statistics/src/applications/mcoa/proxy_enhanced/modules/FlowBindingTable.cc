@@ -52,7 +52,7 @@ void FlowBindingTable::insertNewFlowBindingEntry(
     newEntryToInsert.setSrcAddress(newRequest->getSrcAddress());
     newEntryToInsert.setDestPort(newRequest->getDestPort());
     newEntryToInsert.setSrcPort(newRequest->getSrcPort());
-    cout << "war noch hier" << endl;
+    //cout << "war noch hier" << endl;
 
     newEntryToInsert.setLocalHostIdentifier(localHostCounter);
     newEntryToInsert.setForThisConncectionCNisCapable(false);
@@ -234,7 +234,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
     //else
     //set all other entries not active - who have the same localHostIdentifier-ID
-    //but are not the same entry - so no duplicates are handled
+    //but are not the same entry - if entry already exists set it active again
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
 
@@ -245,7 +245,7 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
                     && newEntryToInsert.srcPort == it->srcPort
                     && !strcmp(newEntryToInsert.destAddress, it->destAddress)
                     && !strcmp(newEntryToInsert.srcAddress, it->srcAddress)) {
-                cout<<"SETZE AKTIV"<<endl;
+                //cout<<"SETZE AKTIV"<<endl;
                 it->isActive = true;
             }
         }
@@ -259,30 +259,38 @@ void FlowBindingTable::updateExistingFlowBindingEntry(
 
 }
 
-void FlowBindingTable::setEntryActive(FlowBindingEntry newEntryToInsert,
-        int localHostidentifierWhoHasToBeUpdated) {
+void FlowBindingTable::setEntryActive(const char* ipAddressThatShouldBeActive) {
 
     std::vector<FlowBindingEntry>::iterator it;
 
+    int localHostIdentifierToCareAboutNow;
+
+    //set the existing fitting entry active
     for (it = existingFlowBindingEntries.begin();
             it < existingFlowBindingEntries.end(); it++) {
 
-        //set the other entries of the node to inactive
-        if (it->getLocalHostIdentifier()
-                == localHostidentifierWhoHasToBeUpdated) {
-            it->isActive = false;
-        }
-
-        //set the existing fitting entry active
-        if (it->destPort == newEntryToInsert.destPort
-                && it->srcPort == newEntryToInsert.srcPort
-                && !strcmp(it->destAddress, newEntryToInsert.srcAddress)
-                && !strcmp(it->srcAddress, newEntryToInsert.destAddress)) {
+        if (!strcmp(it->srcAddress, ipAddressThatShouldBeActive)) {
             cout << "AKTIV gesetzt" << endl;
             it->isActive = true;
+            localHostIdentifierToCareAboutNow = it->localHostIdentifier;
+
+            //set all the other entries to inactive now
+            std::vector<FlowBindingEntry>::iterator it2;
+            for (it2 = existingFlowBindingEntries.begin();
+                    it2 < existingFlowBindingEntries.end(); it2++) {
+                if (localHostIdentifierToCareAboutNow == it2->localHostIdentifier && strcmp(it2->srcAddress, ipAddressThatShouldBeActive)) {
+                    it2->isActive = false;
+
+                }
+
+            }
+
         }
 
     }
+
+
+
 }
 
 void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN) {
@@ -305,6 +313,20 @@ void FlowBindingTable::updateEntriesWithNewCapableCN(const char* addressOfCN) {
     cout << "Show new capable CN's in list of MN now: " << endl;
     this->printoutContentOftable();
 
+}
+
+std::vector<FlowBindingEntry> FlowBindingTable::getCNsToBeInformed(FlowBindingUpdate* receivedFlowBindingUpdate){
+
+    std::vector<FlowBindingEntry>::iterator it;
+    std::vector<FlowBindingEntry> entriesToInform;
+
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if(!strcmp(receivedFlowBindingUpdate->getNewCoAdress(),it->srcAddress)){
+            entriesToInform.push_back(*it);
+        }
+    }
+    return entriesToInform;
 }
 
 void FlowBindingTable::printoutContentOftable() {
