@@ -26,6 +26,7 @@
 #include <omnetpp.h>
 #include "MCoAUDPBase.h"
 #include "MCoAVideoStreaming_m.h"
+#include "SetAddressActive_m.h"
 //for evaluation:
 #include <MyFileWriter.h>
 
@@ -77,6 +78,7 @@ class INET_API Proxy_Enhanced_MCoAVideoCli : public MCoAUDPBase
     virtual void finish();
     virtual void handleMessage(cMessage *msg);
     virtual void sendControlData(cMessage *msg);
+
     //@}
 
 };

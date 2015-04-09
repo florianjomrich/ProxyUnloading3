@@ -31,6 +31,7 @@
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
 #define REQUEST_FOR_NEW_VIDEO_PAKET 147
 
+
 using std::cout;
 
 Define_Module(Proxy_Enhanced_MCoAVideoCli);
@@ -63,6 +64,7 @@ void Proxy_Enhanced_MCoAVideoCli::initialize() {
         //timer->setContextPointer(d);
         start_proxying_context->setKind(PROXY_CONTEXT_START);
         scheduleAt(startTime, start_proxying_context);
+
     }
 
 }
@@ -90,6 +92,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg) {
             sendControlData(msg);
 
         }
+
 
     } else {
 
@@ -170,4 +173,5 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg) {
 
     delete msg;
 }
+
 

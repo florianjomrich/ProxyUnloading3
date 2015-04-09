@@ -30,6 +30,7 @@
 #include "RequetConnectionToLegacyServer_m.h"
 #include "FlowBindingUpdate_m.h"
 #include "ACK_Request_m.h"
+#include "SetAddressActive_m.h"
 
 /**
  * A "Realtime" VideoStream client application.
@@ -74,6 +75,7 @@ protected:
     virtual void initialize();
     virtual void finish();
     virtual void handleMessage(cMessage *msg);
+    virtual void sendChangeDataFlowMessage();
     //@}
 
 };
