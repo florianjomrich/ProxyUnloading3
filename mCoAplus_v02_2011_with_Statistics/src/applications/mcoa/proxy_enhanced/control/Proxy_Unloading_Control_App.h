@@ -62,7 +62,7 @@ protected:
     bool isCN;
     bool isCapableCN;
     const char* humanReadableName;
-    int nextFreeProxyingPort = 2001;
+    cMessage *timeoutEvent;  // holds pointer to the timeout self-message
 
     cPar *proxyRequestForConnectionTimeOut;
     simtime_t startTime;

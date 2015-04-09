@@ -67,7 +67,7 @@ void Proxy_Unloading_Control_App::initialize() {
     if(startTime>0){
         //############## TO INFLUENCE THE DATA FLOW #####################
         if(isMN /*&& !strcmp(humanReadableName,"MN[1]")*/){
-           // cout<<"HURZ !!!"<<endl;
+
             cMessage *set_certain_AddressActive = new cMessage(
                           "Change the Control Flow through own message");
             set_certain_AddressActive->setKind(CHANGE_DATA_FLOW);
@@ -97,7 +97,13 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
         }
         if(msg->getKind() == CHANGE_DATA_FLOW){
                  sendChangeDataFlowMessage();
-                 cout<<"I WAS HERE !!!"<<endl;
+
+                 //schedule New Timer - if the CN does not respond properly with an ACK:
+                 cMessage *set_certain_AddressActive = new cMessage(
+                                           "Change the Control Flow through own message");
+                             set_certain_AddressActive->setKind(CHANGE_DATA_FLOW);
+                             scheduleAt(simTime()+1.1,set_certain_AddressActive);
+
                  delete msg;
              }
 
@@ -353,7 +359,7 @@ void Proxy_Unloading_Control_App::sendChangeDataFlowMessage(){
     //IPvXAddress ha = IPvXAddress();
     ha.set("2001:db8::2aa:1a2");
     //for(int i=0;i<1;i++){
-        cout<<"SetAddressActive Nachricht gesendet von"<<humanReadableName<<endl;
+        cout<<"SetAddressActive Nachricht gesendet von"<<humanReadableName<<"zur Zeit: "<<simTime()<<endl;
         sendToUDPMCOA(addressToBeSetActive->dup(), localPort, ha, 2000, true);
    // }
 
