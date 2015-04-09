@@ -23,6 +23,7 @@
 #include <FlowBindingEntry.h>
 #include <RequetConnectionToLegacyServer_m.h>
 #include <FlowBindingUpdate_m.h>
+#include <SetAddressActive_m.h>
 // alternative #include <string.h>
 
 class FlowBindingTable: public cSimpleModule {
@@ -63,6 +64,8 @@ public:
     virtual std::vector<FlowBindingEntry> getCNsToBeInformed(FlowBindingUpdate* receivedFlowBindingUpdate);
 
     virtual void printoutContentOftable();
+
+    virtual void setIPAddressActive(SetAddressActive* fromHA);
 
 };
 

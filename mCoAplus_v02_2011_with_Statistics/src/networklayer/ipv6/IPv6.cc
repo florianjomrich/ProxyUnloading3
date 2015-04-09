@@ -158,10 +158,18 @@ void IPv6::endService(cPacket *msg) {
 
 
     if(dynamic_cast<ACK_Request*>(msg) && isMN){
-        cout<<" The network layer of "<<myHumanReadableName<<" updates its FlowBindingTabel with a new capable CN"<<endl;
+        cout<<" The network layer of "<<myHumanReadableName<<" updates its FlowBindingTable with a new capable CN"<<endl;
         ACK_Request* messageFromProxyControlApp =check_and_cast<ACK_Request *>(msg);
         cout<<"ADDRESSES OF CN: ON IPV6"<<messageFromProxyControlApp->getDestAddress()<<endl;
         flowBindingTable->updateEntriesWithNewCapableCN(messageFromProxyControlApp->getDestAddress());
+        return;
+    }
+
+
+    if(dynamic_cast<SetAddressActive*>(msg) && isCN){
+        SetAddressActive* fromHA = check_and_cast<SetAddressActive*>(msg);
+        cout<<" The network layer of "<<myHumanReadableName<<" sets a new active IP Adress for a MN"<<endl;
+        flowBindingTable->setIPAddressActive(fromHA);
         return;
     }
 

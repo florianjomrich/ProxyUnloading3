@@ -329,6 +329,34 @@ std::vector<FlowBindingEntry> FlowBindingTable::getCNsToBeInformed(FlowBindingUp
     return entriesToInform;
 }
 
+
+void FlowBindingTable::setIPAddressActive(SetAddressActive* fromHA){
+    std::vector<FlowBindingEntry>::iterator it;
+
+    cout<<"Flow Binding Table will aktive Adresse ändern zu: "<<fromHA->getAddressToBeSetActive()<<endl;
+    //activate given IP Address
+    int localHostIdentifier;
+    for (it = existingFlowBindingEntries.begin();
+            it < existingFlowBindingEntries.end(); it++) {
+        if(!strcmp(it->getSrcAddress(),fromHA->getAddressToBeSetActive())){
+            localHostIdentifier = it->getLocalHostIdentifier();
+            it->setIsActive(true);
+            cout<<"Übereinstimmung gefunden"<<endl;
+        }
+    }
+
+    //deactivate everything else
+    for (it = existingFlowBindingEntries.begin();
+              it < existingFlowBindingEntries.end(); it++) {
+          if(strcmp(it->getSrcAddress(),fromHA->getAddressToBeSetActive()) && localHostIdentifier == it->localHostIdentifier){
+              it->setIsActive(false);
+          }
+      }
+
+
+    printoutContentOftable();
+}
+
 void FlowBindingTable::printoutContentOftable() {
 
     std::vector<FlowBindingEntry>::iterator it;

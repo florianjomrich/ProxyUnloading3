@@ -309,12 +309,12 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             }
             if (isCN) {
-                 SetAddressActive* messageFromMN = check_and_cast<
+                 SetAddressActive* messageFromHA = check_and_cast<
                          SetAddressActive*>(msg);
                  cout
-                         << "SetAddressActive Message ist beim "<<humanReadableName<<" eingegangen. Absender war: "<<messageFromMN->getName()
+                         << "SetAddressActive Message ist beim "<<humanReadableName<<" eingegangen. Absender war: "<<messageFromHA->getName()
                          << endl;
-
+                 send(messageFromHA, "uDPControllAppConnection$o");
 
              }
             return;
@@ -347,7 +347,7 @@ void Proxy_Unloading_Control_App::sendChangeDataFlowMessage(){
 
     SetAddressActive* addressToBeSetActive = new SetAddressActive();
     addressToBeSetActive->setName(humanReadableName);
-    //addressToBeSetActive->
+    addressToBeSetActive->setAddressToBeSetActive("2001:db8::2aa:201");
 
     IPvXAddress ha = IPAddressResolver().resolve("HA");
     //IPvXAddress ha = IPvXAddress();
