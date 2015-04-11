@@ -73,6 +73,7 @@ protected:
 
     double setActiveIPAddressTimeOut;
     double requestForConnectionTimeOut;
+    double flowBindingUpdateTimeOut;
     simtime_t startTime;
 
     //timing messages

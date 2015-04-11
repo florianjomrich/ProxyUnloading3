@@ -54,6 +54,7 @@ void Proxy_Unloading_Control_App::initialize() {
 
     //for timers and acknowledgements - delays:
     setActiveIPAddressTimeOut = par("setActiveIPAddressTimeOut");
+    flowBindingUpdateTimeOut = par("flowBindingUpdateTimeOut");
     requestForConnectionTimeOut = par("requestForConnectionTimeOut");
 
     flowBindingUpdatestimeOutMessage = new cMessage();
@@ -84,14 +85,17 @@ void Proxy_Unloading_Control_App::initialize() {
         scheduleAt(startTime + requestForConnectionTimeOut,
                 requestForConnectionTimeOutMessage);
 
+        scheduleAt(startTime + flowBindingUpdateTimeOut,
+                flowBindingUpdatestimeOutMessage);
+
         //############## TO INFLUENCE THE DATA FLOW #####################
         if (isMN) {
 
-            cMessage* setActiveIPAddressTimeOut_ForCN0 = new cMessage(
+         /*   cMessage* setActiveIPAddressTimeOut_ForCN0 = new cMessage(
                     "Change the Control Flow through own message");
             setActiveIPAddressTimeOut_ForCN0->setKind(CHANGE_DATA_FLOW);
             scheduleAt(startTime + setActiveIPAddressTimeOut,
-                    setActiveIPAddressTimeOut_ForCN0);
+                    setActiveIPAddressTimeOut_ForCN0);*/
 
         }
 
@@ -112,17 +116,12 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             << " received a message" << endl;
 
     if (msg->isSelfMessage()) {
-        if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR) {
-            MCoAUDPBase::treatMessage(msg);
 
-            return; // and that's it!
 
-        }
-
-//##########################################################################
+//################ peridocially check RequestFor Connection Vector #####OK####
         if (msg == requestForConnectionTimeOutMessage) {
 
-            if (!requestForConnectionToSend.empty()) {
+            if (!requestForConnectionToSend.empty() && isMN) {
                 RequetConnectionToLegacyServer* nextRequestToSend =
                         requestForConnectionToSend.front();
 
@@ -143,11 +142,46 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             //rescedule new TimingEvent for the Next Time.
             scheduleAt(simTime() + requestForConnectionTimeOut, msg);
+            return;
         }
 
 //##########################################################################
 
-        //now check all the timing events!!!
+//################ peridocially check Flow Binding Update Vector ##########
+        if (msg == flowBindingUpdatestimeOutMessage) {
+
+            if (!flowBindingUpdatesToSend.empty()) {
+                if (isMN) {
+                    FlowBindingUpdate* nextToSendFlowBindingUpdate =
+                            flowBindingUpdatesToSend.front();
+
+
+                    //get Home Agents correct address:
+                    RoutingTable6* rt6 = RoutingTable6Access().get();
+                    sendToUDPMCOA(nextToSendFlowBindingUpdate->dup(), localPort, rt6->getHomeNetHA_adr(),
+                                      2000, true);
+                }
+               if(isHA){
+
+                   FlowBindingUpdate* nextToSendFlowBindingUpdate =
+                                              flowBindingUpdatesToSend.front();
+
+                   IPvXAddress dest = IPvXAddress();
+                                    dest.set(nextToSendFlowBindingUpdate->getCNDestAddress());
+
+                   sendToUDPMCOA(nextToSendFlowBindingUpdate->dup(), localPort, dest,
+                                               2000, true);
+               }
+
+            }
+
+            //rescedule new TimingEvent for the Next Time.
+            scheduleAt(simTime() + requestForConnectionTimeOut, msg);
+        }
+
+//##########################################################################
+
+//################ peridocially check Flow Binding Update Vector ##########
         if (msg->getKind() == CHANGE_DATA_FLOW) {
 
             //send the Message again
@@ -158,6 +192,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
         }
 
+
+//##########################################################################
     } else {
 
         if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
@@ -257,9 +293,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 requestForConnectionToSendCounter = 0;
                 if (!requestForConnectionToSend.empty()) {
                     requestForConnectionToSend.erase(
-                                       requestForConnectionToSend.begin());
+                            requestForConnectionToSend.begin());
                 }
-
 
                 return;
             }
@@ -287,18 +322,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         messageFromIPLayer->getDestAddress());
                 flowBindingUpdateToHA->setWasSendFromHA(false); //for avoiding infinite loop at HomeAgent
 
-                //get Home Agents correct address:
-                RoutingTable6* rt6 = RoutingTable6Access().get();
-                //  rt6->getHomeNetHA_adr()
 
-                // IPvXAddress ha = IPAddressResolver().resolve("HA");
-                //    sendToUDPMCOA(flowBindingUpdateToHA->dup(), localPort,  ha, 2000, true); //for MN[1] ????
-                IPvXAddress testAddresse = IPvXAddress();
-                testAddresse.set("2001:db8::2aa:1a2");
-                sendToUDPMCOA(flowBindingUpdateToHA, localPort, testAddresse,
-                        2000, true);
-                //  sendToUDPMCOA(flowBindingUpdateToHA, localPort,
-                //      rt6->getHomeNetHA_adr(), 2000, true);
+                flowBindingUpdatesToSend.push_back(flowBindingUpdateToHA);
 
                 return;
             }
@@ -317,18 +342,18 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
                     flowBindingUpdateToCN->setWasSendFromHA(true);
 
-                    IPvXAddress ha = IPAddressResolver().resolve("HA");
-
                     IPvXAddress dest = IPvXAddress();
                     dest.set(flowBindingUpdateToCN->getCNDestAddress());
+                    cout<<"DEST ADDRESSE: "<<dest<<endl;
 
-                    cout << "Address of MN: " << messageFromMN->getHomeAddress()
-                            << " Home Address des HomeAgents: " << ha
-                            << " FlowBinding to CN Destination Address: "
-                            << dest << endl;
+
                     if (!messageFromMN->getWasSendFromHA()) { //do not foreward self message --> otherwise infinite loop
-                        sendToUDPMCOA(flowBindingUpdateToCN, localPort, dest,
-                                2000, true);
+
+                        cout << "Home Agent forewards the Flow Binding Update from MN with address: " << messageFromMN->getHomeAddress()
+                                              << " to CN Destination Address: "
+                                              << dest << endl;
+                        flowBindingUpdatesToSend.push_back(flowBindingUpdateToCN->dup());
+
                     }
 
                 } else {

@@ -49,6 +49,7 @@ simple Proxy_Unloading_Control_App like MCoAUDPBase
         string humanReadableName;
        	volatile double setActiveIPAddressTimeOut @unit("s");
         volatile double requestForConnectionTimeOut @unit("s");
+        volatile double flowBindingUpdateTimeOut @unit("s");
 
 
     gates:
