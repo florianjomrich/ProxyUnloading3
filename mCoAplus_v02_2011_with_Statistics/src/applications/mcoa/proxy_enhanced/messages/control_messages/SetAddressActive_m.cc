@@ -37,6 +37,7 @@ Register_Class(SetAddressActive);
 SetAddressActive::SetAddressActive(const char *name, int kind) : ::cPacket(name,kind)
 {
     this->addressToBeSetActive_var = 0;
+    this->CorrespondentNodeToReceive_var = 0;
 }
 
 SetAddressActive::SetAddressActive(const SetAddressActive& other) : ::cPacket(other)
@@ -59,18 +60,21 @@ SetAddressActive& SetAddressActive::operator=(const SetAddressActive& other)
 void SetAddressActive::copy(const SetAddressActive& other)
 {
     this->addressToBeSetActive_var = other.addressToBeSetActive_var;
+    this->CorrespondentNodeToReceive_var = other.CorrespondentNodeToReceive_var;
 }
 
 void SetAddressActive::parsimPack(cCommBuffer *b)
 {
     ::cPacket::parsimPack(b);
     doPacking(b,this->addressToBeSetActive_var);
+    doPacking(b,this->CorrespondentNodeToReceive_var);
 }
 
 void SetAddressActive::parsimUnpack(cCommBuffer *b)
 {
     ::cPacket::parsimUnpack(b);
     doUnpacking(b,this->addressToBeSetActive_var);
+    doUnpacking(b,this->CorrespondentNodeToReceive_var);
 }
 
 const char * SetAddressActive::getAddressToBeSetActive() const
@@ -81,6 +85,16 @@ const char * SetAddressActive::getAddressToBeSetActive() const
 void SetAddressActive::setAddressToBeSetActive(const char * addressToBeSetActive)
 {
     this->addressToBeSetActive_var = addressToBeSetActive;
+}
+
+int SetAddressActive::getCorrespondentNodeToReceive() const
+{
+    return CorrespondentNodeToReceive_var;
+}
+
+void SetAddressActive::setCorrespondentNodeToReceive(int CorrespondentNodeToReceive)
+{
+    this->CorrespondentNodeToReceive_var = CorrespondentNodeToReceive;
 }
 
 class SetAddressActiveDescriptor : public cClassDescriptor
@@ -130,7 +144,7 @@ const char *SetAddressActiveDescriptor::getProperty(const char *propertyname) co
 int SetAddressActiveDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 1+basedesc->getFieldCount(object) : 1;
+    return basedesc ? 2+basedesc->getFieldCount(object) : 2;
 }
 
 unsigned int SetAddressActiveDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -143,8 +157,9 @@ unsigned int SetAddressActiveDescriptor::getFieldTypeFlags(void *object, int fie
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<1) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<2) ? fieldTypeFlags[field] : 0;
 }
 
 const char *SetAddressActiveDescriptor::getFieldName(void *object, int field) const
@@ -157,8 +172,9 @@ const char *SetAddressActiveDescriptor::getFieldName(void *object, int field) co
     }
     static const char *fieldNames[] = {
         "addressToBeSetActive",
+        "CorrespondentNodeToReceive",
     };
-    return (field>=0 && field<1) ? fieldNames[field] : NULL;
+    return (field>=0 && field<2) ? fieldNames[field] : NULL;
 }
 
 int SetAddressActiveDescriptor::findField(void *object, const char *fieldName) const
@@ -166,6 +182,7 @@ int SetAddressActiveDescriptor::findField(void *object, const char *fieldName) c
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount(object) : 0;
     if (fieldName[0]=='a' && strcmp(fieldName, "addressToBeSetActive")==0) return base+0;
+    if (fieldName[0]=='C' && strcmp(fieldName, "CorrespondentNodeToReceive")==0) return base+1;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -179,8 +196,9 @@ const char *SetAddressActiveDescriptor::getFieldTypeString(void *object, int fie
     }
     static const char *fieldTypeStrings[] = {
         "string",
+        "int",
     };
-    return (field>=0 && field<1) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<2) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *SetAddressActiveDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -221,6 +239,7 @@ std::string SetAddressActiveDescriptor::getFieldAsString(void *object, int field
     SetAddressActive *pp = (SetAddressActive *)object; (void)pp;
     switch (field) {
         case 0: return oppstring2string(pp->getAddressToBeSetActive());
+        case 1: return long2string(pp->getCorrespondentNodeToReceive());
         default: return "";
     }
 }
@@ -236,6 +255,7 @@ bool SetAddressActiveDescriptor::setFieldAsString(void *object, int field, int i
     SetAddressActive *pp = (SetAddressActive *)object; (void)pp;
     switch (field) {
         case 0: pp->setAddressToBeSetActive((value)); return true;
+        case 1: pp->setCorrespondentNodeToReceive(string2long(value)); return true;
         default: return false;
     }
 }
@@ -250,8 +270,9 @@ const char *SetAddressActiveDescriptor::getFieldStructName(void *object, int fie
     }
     static const char *fieldStructNames[] = {
         NULL,
+        NULL,
     };
-    return (field>=0 && field<1) ? fieldStructNames[field] : NULL;
+    return (field>=0 && field<2) ? fieldStructNames[field] : NULL;
 }
 
 void *SetAddressActiveDescriptor::getFieldStructPointer(void *object, int field, int i) const

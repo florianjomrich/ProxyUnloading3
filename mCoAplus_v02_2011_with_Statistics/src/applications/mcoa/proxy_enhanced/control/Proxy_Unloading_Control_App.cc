@@ -49,9 +49,23 @@ void Proxy_Unloading_Control_App::initialize() {
     isCN = par("isCN");
     isCapableCN = par("isCapableCN");
     humanReadableName = par("humanReadableName");
-    proxyRequestForConnectionTimeOut = &par("proxyRequestForConnectionTimeOut");
+
     startTime = par("startTime");
-    //cout << "START ZEIT: " << startTime << endl;
+
+    //for timers and acknowledgements - delays:
+    setActiveIPAddressTimeOut = par("setActiveIPAddressTimeOut");
+    requestForConnectionTimeOut = par("requestForConnectionTimeOut");
+
+    flowBindingUpdatestimeOutMessage = new cMessage();
+    requestForConnectionTimeOutMessage = new cMessage();
+
+    flowBindingUpdatesToSend = std::vector<FlowBindingUpdate*>();
+    requestForConnectionToSend = std::vector<RequetConnectionToLegacyServer*>();
+    addresseToBeSetActive = std::vector<SetAddressActive*>();
+
+    requestForConnectionToSendCounter=0;
+
+    //##########################################
 
     MCoAUDPBase::startMCoAUDPBase();
 
@@ -61,20 +75,29 @@ void Proxy_Unloading_Control_App::initialize() {
 
     lastSeq = 0;
 
+
     int localPort = par("localPort");
     bindToPort(localPort);
 
-    if(startTime>0){
-        //############## TO INFLUENCE THE DATA FLOW #####################
-        if(isMN /*&& !strcmp(humanReadableName,"MN[1]")*/){
+    if (startTime > 0) {
 
-            cMessage *set_certain_AddressActive = new cMessage(
-                          "Change the Control Flow through own message");
-            set_certain_AddressActive->setKind(CHANGE_DATA_FLOW);
-            scheduleAt(startTime*10,set_certain_AddressActive);
+        //############## schedule the timers for handling the requests periodicaly:
+        scheduleAt(startTime + requestForConnectionTimeOut,
+                requestForConnectionTimeOutMessage);
+
+        //############## TO INFLUENCE THE DATA FLOW #####################
+        if (isMN) {
+
+            cMessage* setActiveIPAddressTimeOut_ForCN0 = new cMessage(
+                    "Change the Control Flow through own message");
+            setActiveIPAddressTimeOut_ForCN0->setKind(CHANGE_DATA_FLOW);
+            scheduleAt(startTime + setActiveIPAddressTimeOut,
+                    setActiveIPAddressTimeOut_ForCN0);
+
         }
 
-            //########################################################
+        //########################################################
+
     }
 
 }
@@ -94,18 +117,46 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
             MCoAUDPBase::treatMessage(msg);
 
             return; // and that's it!
+
         }
-        if(msg->getKind() == CHANGE_DATA_FLOW){
-                 sendChangeDataFlowMessage();
 
-                 //schedule New Timer - if the CN does not respond properly with an ACK:
-                 cMessage *set_certain_AddressActive = new cMessage(
-                                           "Change the Control Flow through own message");
-                             set_certain_AddressActive->setKind(CHANGE_DATA_FLOW);
-                             scheduleAt(simTime()+1.1,set_certain_AddressActive);
+//##########################################################################
+        if (msg == requestForConnectionTimeOutMessage) {
 
-                 delete msg;
-             }
+            if (!requestForConnectionToSend.empty()) {
+                RequetConnectionToLegacyServer* nextRequestToSend =
+                        requestForConnectionToSend.front();
+
+                IPvXAddress ha = IPAddressResolver().resolve("HA");
+                cout<<"LISTE WAR NICHT LEER"<<endl;
+                sendToUDPMCOA(nextRequestToSend->dup(), localPort, ha, 2000, true);
+
+
+                //after the 5 time remove the current entry and stop asking the certain CN if he is capable anymore -> MN assumes than he is not.
+                requestForConnectionToSendCounter++;
+                if(requestForConnectionToSendCounter ==5){
+                    requestForConnectionToSendCounter = 0;
+                    requestForConnectionToSend.erase(requestForConnectionToSend.begin());
+                }
+
+            }
+
+            //rescedule new TimingEvent for the Next Time.
+            scheduleAt(simTime() + requestForConnectionTimeOut, msg);
+        }
+
+//##########################################################################
+
+        //now check all the timing events!!!
+        if (msg->getKind() == CHANGE_DATA_FLOW) {
+
+            //send the Message again
+            sendChangeDataFlowMessage(0);
+
+            //schedule New Timer - if the CN does not respond properly with an ACK:
+            scheduleAt(simTime() + setActiveIPAddressTimeOut, msg);
+
+        }
 
     } else {
 
@@ -117,10 +168,12 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << " meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
                         << endl;
 
-                IPvXAddress ha = IPAddressResolver().resolve("HA");
+
                 RequetConnectionToLegacyServer* messageAnHA = check_and_cast<
                         RequetConnectionToLegacyServer *>(msg);
-                sendToUDPMCOA(messageAnHA, localPort, ha, 2000, true);
+
+                requestForConnectionToSend.push_back(messageAnHA);
+
                 return;
             }
 
@@ -142,10 +195,10 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
 
                 //REALLY DIRTY HACK BUT OTHERWISE WON'T WORK  - sending only one packet won't reach the CN properly
-                for (int i = 0; i < 2; i++) {
+               // for (int i = 0; i < 2; i++) {
                     sendToUDPMCOA(messageToCN->dup(), localPort, cn, 2000,
                             true);
-                }
+               // }
 
                 return;
             }
@@ -304,25 +357,30 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 SetAddressActive* messageFromMN = check_and_cast<
                         SetAddressActive*>(msg);
                 cout
-                        << "SetAddressActive Message ist beim Home Agent eingegangen. Absender war: "<<messageFromMN->getName()
-                        << endl;
+                        << "SetAddressActive Message ist beim Home Agent eingegangen. Absender war: "
+                        << messageFromMN->getName() << endl;
 
-                IPvXAddress cn1 = IPAddressResolver().resolve("CN[1]");
-                sendToUDPMCOA(messageFromMN->dup(), localPort, cn1, 2000, true);
-                IPvXAddress cn0 = IPAddressResolver().resolve("CN[0]");
-                                   sendToUDPMCOA(messageFromMN->dup(), localPort, cn0, 2000, true);
-
+                if (messageFromMN->getCorrespondentNodeToReceive() == 1) {
+                    IPvXAddress cn1 = IPAddressResolver().resolve("CN[1]");
+                    sendToUDPMCOA(messageFromMN->dup(), localPort, cn1, 2000,
+                            true);
+                }
+                if (messageFromMN->getCorrespondentNodeToReceive() == 0) {
+                    IPvXAddress cn0 = IPAddressResolver().resolve("CN[0]");
+                    sendToUDPMCOA(messageFromMN->dup(), localPort, cn0, 2000,
+                            true);
+                }
 
             }
             if (isCN) {
-                 SetAddressActive* messageFromHA = check_and_cast<
-                         SetAddressActive*>(msg);
-                 cout
-                         << "SetAddressActive Message ist beim "<<humanReadableName<<" eingegangen. Absender war: "<<messageFromHA->getName()
-                         << endl;
-                 send(messageFromHA, "uDPControllAppConnection$o");
+                SetAddressActive* messageFromHA = check_and_cast<
+                        SetAddressActive*>(msg);
+                cout << "SetAddressActive Message ist beim "
+                        << humanReadableName << " eingegangen. Absender war: "
+                        << messageFromHA->getName() << endl;
+                send(messageFromHA, "uDPControllAppConnection$o");
 
-             }
+            }
             return;
         }
 
@@ -349,18 +407,22 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 }
 
 //to change the Control Flow through own Message from Mobile Node
-void Proxy_Unloading_Control_App::sendChangeDataFlowMessage(){
+void Proxy_Unloading_Control_App::sendChangeDataFlowMessage(
+        int corresPondentNodeToReceive) {
 
     SetAddressActive* addressToBeSetActive = new SetAddressActive();
     addressToBeSetActive->setName(humanReadableName);
     addressToBeSetActive->setAddressToBeSetActive("2001:db8::2aa:201");
+    addressToBeSetActive->setCorrespondentNodeToReceive(
+            corresPondentNodeToReceive);
 
     IPvXAddress ha = IPAddressResolver().resolve("HA");
     //IPvXAddress ha = IPvXAddress();
     ha.set("2001:db8::2aa:1a2");
     //for(int i=0;i<1;i++){
-        cout<<"SetAddressActive Nachricht gesendet von"<<humanReadableName<<"zur Zeit: "<<simTime()<<endl;
-        sendToUDPMCOA(addressToBeSetActive->dup(), localPort, ha, 2000, true);
-   // }
+    cout << "SetAddressActive Nachricht gesendet von " << humanReadableName
+            << " zur Zeit: " << simTime() << endl;
+    sendToUDPMCOA(addressToBeSetActive->dup(), localPort, ha, 2000, true);
+    // }
 
 }

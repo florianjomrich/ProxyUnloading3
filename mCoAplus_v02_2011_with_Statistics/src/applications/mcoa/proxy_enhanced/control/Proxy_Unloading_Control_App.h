@@ -62,12 +62,22 @@ protected:
     bool isCN;
     bool isCapableCN;
     const char* humanReadableName;
-    cMessage *timeoutEvent;  // holds pointer to the timeout self-message
 
-    cPar *proxyRequestForConnectionTimeOut;
+    //for timing - and resending if no Ack was received
+    std::vector<FlowBindingUpdate*> flowBindingUpdatesToSend;
+    std::vector<RequetConnectionToLegacyServer*> requestForConnectionToSend;
+    std::vector<SetAddressActive*> addresseToBeSetActive;
+
+    //counts for the MN if it gets to 5 - MN assumes CN as not capable
+    int requestForConnectionToSendCounter;
+
+    double setActiveIPAddressTimeOut;
+    double requestForConnectionTimeOut;
     simtime_t startTime;
 
-    cMessage* timeOutMessage;
+    //timing messages
+    cMessage* flowBindingUpdatestimeOutMessage;
+    cMessage* requestForConnectionTimeOutMessage;
 
 protected:
     ///@name Overridden cSimpleModule functions
@@ -75,7 +85,7 @@ protected:
     virtual void initialize();
     virtual void finish();
     virtual void handleMessage(cMessage *msg);
-    virtual void sendChangeDataFlowMessage();
+    virtual void sendChangeDataFlowMessage(int corresPondentNodeToReceive);
     //@}
 
 };

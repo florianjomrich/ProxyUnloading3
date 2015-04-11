@@ -20,6 +20,7 @@
  * <pre>
  * packet SetAddressActive {
  *     string addressToBeSetActive;
+ *     int CorrespondentNodeToReceive;
  * }
  * </pre>
  */
@@ -27,6 +28,7 @@ class SetAddressActive : public ::cPacket
 {
   protected:
     opp_string addressToBeSetActive_var;
+    int CorrespondentNodeToReceive_var;
 
   private:
     void copy(const SetAddressActive& other);
@@ -47,6 +49,8 @@ class SetAddressActive : public ::cPacket
     // field getter/setter methods
     virtual const char * getAddressToBeSetActive() const;
     virtual void setAddressToBeSetActive(const char * addressToBeSetActive);
+    virtual int getCorrespondentNodeToReceive() const;
+    virtual void setCorrespondentNodeToReceive(int CorrespondentNodeToReceive);
 };
 
 inline void doPacking(cCommBuffer *b, SetAddressActive& obj) {obj.parsimPack(b);}
