@@ -63,7 +63,7 @@ void Proxy_Unloading_Control_App::initialize() {
     requestForConnectionToSend = std::vector<RequetConnectionToLegacyServer*>();
     addresseToBeSetActive = std::vector<SetAddressActive*>();
 
-    requestForConnectionToSendCounter=0;
+    requestForConnectionToSendCounter = 0;
 
     //##########################################
 
@@ -74,7 +74,6 @@ void Proxy_Unloading_Control_App::initialize() {
     PktDelay.setName("MCOA VIDEO Delay");
 
     lastSeq = 0;
-
 
     int localPort = par("localPort");
     bindToPort(localPort);
@@ -128,15 +127,16 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         requestForConnectionToSend.front();
 
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                cout<<"LISTE WAR NICHT LEER"<<endl;
-                sendToUDPMCOA(nextRequestToSend->dup(), localPort, ha, 2000, true);
-
+                cout << "LISTE WAR NICHT LEER" << endl;
+                sendToUDPMCOA(nextRequestToSend->dup(), localPort, ha, 2000,
+                        true);
 
                 //after the 5 time remove the current entry and stop asking the certain CN if he is capable anymore -> MN assumes than he is not.
                 requestForConnectionToSendCounter++;
-                if(requestForConnectionToSendCounter ==5){
+                if (requestForConnectionToSendCounter == 5) {
                     requestForConnectionToSendCounter = 0;
-                    requestForConnectionToSend.erase(requestForConnectionToSend.begin());
+                    requestForConnectionToSend.erase(
+                            requestForConnectionToSend.begin());
                 }
 
             }
@@ -168,7 +168,6 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << " meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
                         << endl;
 
-
                 RequetConnectionToLegacyServer* messageAnHA = check_and_cast<
                         RequetConnectionToLegacyServer *>(msg);
 
@@ -195,10 +194,9 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
 
                 //REALLY DIRTY HACK BUT OTHERWISE WON'T WORK  - sending only one packet won't reach the CN properly
-               // for (int i = 0; i < 2; i++) {
-                    sendToUDPMCOA(messageToCN->dup(), localPort, cn, 2000,
-                            true);
-               // }
+                // for (int i = 0; i < 2; i++) {
+                sendToUDPMCOA(messageToCN->dup(), localPort, cn, 2000, true);
+                // }
 
                 return;
             }
@@ -254,6 +252,14 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
                 //Update own table of the MN
                 send(messageACKfromCN->dup(), "uDPControllAppConnection$o");
+
+                //remove the entry from the queue for no further asking
+                requestForConnectionToSendCounter = 0;
+                if (!requestForConnectionToSend.empty()) {
+                    requestForConnectionToSend.erase(
+                                       requestForConnectionToSend.begin());
+                }
+
 
                 return;
             }
